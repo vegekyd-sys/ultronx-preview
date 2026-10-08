@@ -1,0 +1,1191 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>定价详情 - 星擎</title>
+    <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAIAAAD/gAIDAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyhpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDkuMS1jMDAyIDc5LmYzNTRlZmM3MCwgMjAyMy8xMS8wOS0xMjowNTo1MyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIDI1LjUgKE1hY2ludG9zaCkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6MkI3OERDMjE0MkU2MTFGMUE4NjQ5QjA1QzE0REU3M0IiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6MkI3OERDMjI0MkU2MTFGMUE4NjQ5QjA1QzE0REU3M0IiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDoyQjc4REMxRjQyRTYxMUYxQTg2NDlCMDVDMTRERTczQiIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDoyQjc4REMyMDQyRTYxMUYxQTg2NDlCMDVDMTRERTczQiIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PhZzfoMAAAnTSURBVHja7Jx9TE7/G8eLKCpUVh5DD7TCVNoqI2FY0kqeFot5LtlaTAgR+oP4g61haiEPq6y0MDaWSmpGSaJSiFooiVSIvq+5t/M7P/dduvV04rz/MJ3Ofc7nvM91va/39fl87jQ0ZMiQIUOGDBkyZMiQIUOGDBkyZMiQIUOGjK6EkZGRxEeoo6NjYGDQt2/fdl6ndzs/r62tffjw4erq6oaGhvr6eqnRpKWlZWho6ObmNnv27NLS0tra2u4cja6ubnNzc11d3dGjR4cMGSIppniRzs7OkZGRr169Sk5ONjU17eYBKcgCvLSTJ0/yDocOHdrtNPXq1Ys3t3Tp0vT0dMXwpEWWAuRjRETEsGHDunFIaJOXl9fx48dfvnwpDEyKZIF3795FR0cvXry460NMU1OT97R9+3YxTVIk6+vXr5WVlcLgKioqjh07NmXKFD09va4ZiYmJiY+PT0xMTLMqSIssAio0NPTIkSN5eXmKIx8/fszIyAgKCuoC4UfIoUk5oCRKFgOdNGkSP/r6+j58+FAYJZXo4sWLq1ev7iQ7xptYtWrV7du3f/z40dwypEgWR8i7WbNmhYeH5+fnC2Pltzt37sTydHhAnT179sWLF9+/f29uFRIlS4EBAwasWbNGzJfC7GzYsGHgwIEdolDr1q0joBobG5vbAEmTBfT19Z2cnBCywsJCMWXBwcFQ2Z6bOjo6njt3rqys7Nu3b81tg7TIohQuWbJE+QR48fPzKyoqEsZdXl6empq6cePGfv36qXs7Y2NjrpaWlvb58+fmNqOmpmb//v10iBKyDllZWXPmzFE+hxAbP358SEgI4iL2FoGBgWo1t/b29ufPn+eD3KvtTFFtFi1aNHjw4O7vv8SmlGeAjqSkpBkzZqikzN3dPTExEUuhOP/t27c5OTn+/v6/vQuVAbG7c+eOWgH16dOnM2fOmJmZtX++ocO6MKKGMQlD/PLlC2ni6uqqshHhsbdt2wZN4g6JlGzlFjY2NrGxsVVVVW1XqIaGhitXrnh4eAwaNEha0yA0GZgdMV+EGM+WkpKCg1c+H6nCc+3atUsIsQ8fPpSUlKxfv/6XM6mbGI43b97w8GoFFBfns3369JHi7Bp8IZ+WlpYXLlwQBk0g3Lx5k8rVUruLitXX14ubSlRswoQJgkJlZ2erRRO+lDvi8qSSd61TxvukWhUUFChGj1ckyq5evWpra6syhXmqPXv2iPl9/fp14E/wwdZNuTL27t2rpaXFZXvSRDMhhpA3NTUJT1tcXEyTaGBgAKHK58MXNP3WhbcEPog7dXFx0ei5wKMiW1AmPBUMkmXa2trKlKEvdEgUB7Vo4uIkMh/sgrxT+Zo7EnZ2dhD0/v17sTOKj48fM2aMcrIg/FhH5LyN/oDTbty4MXfu3K4R8g7p0n4Pmp7r16+Lm7i4uDh45PbKr4uDhw4dEgqlShCAmI+DBw9Kzhl01PRAQkIC/aOYMtzT8OHDlflC2g4cOPD06VMshTJTHMRDeXp69u/fX+MvxvTp02/duiXmi34YHk1MTFROVBFitASCe+A//BgRESGFNZGuAM4egp48eSJWMQytyjUOOqQFCxbQP6F6tIQkr7e3Nwc1/ingGzMyMgS+cBikpJub28iRI5VPphrs27cvICCgiyRWmnxFRUXl5uYK9oosO3Xq1OjRoyU75t7ddePS0tLk5GT+paIRMnp6epjvcePGIfl0TvR3CLlM1v+B/jkzMxMfYGxsjGzhLXGtM2fORPJxD0gVLkEm63+ora29d+8eIQZlkAVlRJaVlRUNAEFXVlYmnRDrLZFxQFZqaiolz8LCgkzElMPaxIkTSUxDQ0N47OYNMJIiC1ATnz9/jhfFuyJhkIXttLa2dnBwoBPieLfzJSGyAJUR25mdnU2HiGMgxDR+LkSam5vb2tqia/BYV1f3j5IFI9h6okZ8sKmpCVIePHjw7NkzIyMj/Dp8jR07FhXT1tbOz8+nhf7nyJo/f354eDgenc7m1atX1D7hV4pZQFxYVVUVYaXob6DM0tIScgkx+MWX/ROOFOe5e/fux48fK2a7ampqsrKyFi5cqHwmsoWZCAwMfPTokdAekaRhYWF/55TDL6CtoZ2urq4WT42i7iTdkSNHPD09lT+iq6uL+Tp79iyBJkzY379/f+vWrfzq76TJ1NQ0NDS0oKBA5SopfGFE8/LyvLy8lD+LmcBD+Pn5FRcXi5fRdu7c+Qcr21IHoUFAUf5bn2snMXFVeK558+YpXwReEDiyErMqTG/h0QixHrZO0RKQZxSqqKio7aukUEaWkbAqL0hNJMTKy8vFa4XBwcE4sp7NlI+PD5WLFk/ddS0CsL6+Pj09XeVmALputJ8Qozgozm9sbCSLg4KCeiRNWKTIyEjx6k5bgOfMyckRC9ndu3exCypvQerBl3jCnreSmJhoZ2fXMzjS1NTktbu7u1Pd1KIJqxkfH6/Ya7lixQooE6sbKubk5NTSehSaJV5GQ/gDAgKoCdIVMp5EMcdy+fJltWhS7I3g8cRXGzVq1OnTpykIQumkPri4uJB9KimAL2yteLkfW7t27Vop7njgAUxMTJAMFEotpqAjLi7O3t5e5WWtrKwINzEF165dmzx5MhqvTBlHQkJCuKAQZbRN/v7+eA7Ol0pAKXx2QkKCWjSh34qdDa1f38bGJiYmBq8g7CKBr02bNtEG9O79a7tGaG/evPnSpUuC8IPCwsLly5d3f4jBFM6A8dG7qMUUFhxH7ujo2EZZUSxuixerk5OTUTF9fX1lIePgrl27SkpKSEwJ7SklvMXbjNq4f4pXvWXLFnWdN6kaFRX15MkTgTJSHgdvZmamzDgDmzZt2okTJyT93Z3WgTU9efIkj/HHWzkIxpSUFHGIEXEUX+VlIT09PVS/R5KFG0pLS6NPbn8rB184OCy+WPhRTHNz87+BLHLn6NGjvzxMOzFlypRf9psQYsuWLbO0tOypZFVUVPAM3t7enTGX4uzsfPjw4czMTKFPwJShoRiOziBLq/N4pHEpKChISkrCW0JZZ9wi8yemTp0aFhZmYWExYsQI/AGZrqOjQ9Dl5uZKy4u2FFmVlZUIuaura9fs4yDEVq5cKXzJV1FzeU+4E0mnIXWK1jc4OLjrB4eKRUdHC986RM6EDfdSJAsTiLUhL7plY5DCIWPWKbuS/qITrzErKwurqXLbUFdCS0vLwcGBLkqclRIii9RDoehvpbPTDNM7Z86cjv1TBe2thj9+/MAcxsbGxsXFdVLJ+zPgIVJTU8vLy9EEX19fqczMWFtbS3k9Chvh4eGxY8eO7k/DHoGO+sM9MmTIkCFDhgwZMmTIkCFDhgwZMmTIkCFDhhr4T4ABADZ0md6S/vOxAAAAAElFTkSuQmCC">
+    <meta name="description" content="创视星擎（星擎）套餐定价：Pro 正式版 ¥49,800/3个月、Pro+ 专业版 ¥99,800/6个月、Max 旗舰版 ¥198,800/12个月。含 AI 短视频创作、人工精制视频、矩阵账号运营、总播放量、买家线索与专业拍摄服务。">
+    <meta name="theme-color" content="#000000">
+    <link rel="canonical" href="https://www.ultronx.ai/pricing.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="星擎">
+    <meta property="og:title" content="定价详情 - 星擎｜Pro / Pro+ / Max 套餐完整权益">
+    <meta property="og:description" content="Pro ¥49,800/3个月 · Pro+ ¥99,800/6个月 · Max ¥198,800/12个月。完整权益、播放量与线索目标一页看清。">
+    <meta property="og:url" content="https://www.ultronx.ai/pricing.html">
+    <meta property="og:image" content="https://www.ultronx.ai/images/favicon.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="定价详情 - 星擎｜Pro / Pro+ / Max">
+    <meta name="twitter:description" content="Pro ¥49,800/3个月 · Pro+ ¥99,800/6个月 · Max ¥198,800/12个月。">
+    <meta name="twitter:image" content="https://www.ultronx.ai/images/favicon.png">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600;700&display=swap">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+        @font-face {
+            font-family: 'DIN Alternate';
+            src: local('DIN Alternate Bold'), local('DINAlternate-Bold');
+            font-weight: bold;
+        }
+
+        * {
+            font-family: 'Inter', 'Noto Sans SC', sans-serif;
+        }
+
+        html {
+            overflow-y: scroll;
+            overflow-x: hidden;
+            scrollbar-gutter: stable;
+        }
+
+        body {
+            background: #000;
+            color: #fff;
+            overflow-x: hidden;
+            margin: 0;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 32px;
+        }
+
+        .gradient-text {
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            color: transparent;
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.05);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 4px;
+        }
+
+        /* 旋转动画 */
+        .gradient-orbit {
+            animation: orbitRotate 40s linear infinite;
+            transform-origin: center center;
+            will-change: transform;
+        }
+
+        @keyframes orbitRotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+
+        /* 提示气泡：桌面 hover 显示；触屏/键盘点击也可以展开 */
+        @media (hover: hover) {
+            .info-icon:hover .tooltip { display: block; }
+        }
+        .info-icon.tip-open .tooltip { display: block; }
+        .info-icon { cursor: pointer; }
+                /* 表格Section标题样式 */
+        .section-header {
+            background: rgba(71, 85, 105, 0.3);
+            backdrop-filter: blur(10px);
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .navbar.scrolled {
+            background: rgba(0, 0, 0, 0.8);
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
+        }
+
+        .nav-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 72px;
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        .nav-logo img {
+            height: 30px;
+            width: auto;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 40px;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-link {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 400;
+            transition: color 0.2s;
+            position: relative;
+        }
+
+        .nav-link:hover {
+            color: white;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -28px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(135deg, rgb(122, 122, 255), rgb(77, 159, 255));
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+        }
+
+        /* Pricing Tabs - hide on desktop */
+        .pricing-tabs {
+            display: none;
+        }
+
+        /* Desktop footer background */
+        footer {
+            background: #000;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 80px 0;
+            position: relative;
+            z-index: 10;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 48px;
+            margin-bottom: 48px;
+        }
+
+        .footer-brand {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .footer-logo {
+            height: 30px;
+            margin-bottom: 16px;
+        }
+
+        .footer-tagline {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.4);
+            line-height: 1.6;
+            text-align: justify;
+            text-align-last: justify;
+            width: 142px;
+        }
+
+        .footer-column {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .footer-column h4 {
+            font-size: 16px;
+            font-weight: 600;
+            color: white;
+            margin-bottom: 16px;
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            align-items: flex-start;
+        }
+
+        .footer-links a {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.4);
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: white;
+            transform: scale(1.05);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding-top: 32px;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 24px;
+        }
+
+        .footer-copyright {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.4);
+        }
+
+        .footer-legal a {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.4);
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .footer-legal a:hover {
+            color: white;
+            transform: scale(1.05);
+        }
+
+        /* Mobile Responsive Styles */
+        @media (max-width: 768px) {
+            /* 隐藏移动端滚动条 */
+            html {
+                overflow-y: auto !important;
+                scrollbar-gutter: auto !important;
+                -ms-overflow-style: none !important;
+                scrollbar-width: none !important;
+            }
+
+            html::-webkit-scrollbar {
+                display: none !important;
+            }
+
+            body {
+                -ms-overflow-style: none !important;
+                scrollbar-width: none !important;
+            }
+
+            body::-webkit-scrollbar {
+                display: none !important;
+            }
+            /* Nav container height */
+            .nav-container {
+                height: 60px !important;
+                padding: 0 20px !important;
+            }
+
+            /* Nav logo size */
+            .nav-logo img {
+                height: 24px !important;
+            }
+
+            /* Page title and subtitle */
+            .text-center.mb-20 {
+                margin-bottom: 0 !important;
+                margin-top: 0 !important;
+                padding-top: 0 !important;
+            }
+
+            .text-center.mb-20 h2 {
+                font-size: 28px !important;
+                line-height: 1.2 !important;
+                margin-bottom: 12px !important;
+            }
+
+            .text-center.mb-20 p {
+                font-size: 14px !important;
+                line-height: 1.4 !important;
+            }
+
+            /* 移动端强制保持背景模糊 */
+            .gradient-orbit > div > div {
+                filter: blur(120px) !important;
+                -webkit-filter: blur(120px) !important;
+                transform: translateZ(0) !important;
+                -webkit-transform: translateZ(0) !important;
+            }
+
+            /* Pricing tabs mobile - show only on mobile */
+            .pricing-tabs {
+                display: flex !important;
+                justify-content: center !important;
+                padding: 10px 20px !important;
+                margin: 10px 0 10px 0 !important;
+                gap: 6px !important;
+                position: relative !important;
+                z-index: 99 !important;
+                transition: background 0.2s ease, backdrop-filter 0.2s ease !important;
+                background: transparent !important;
+            }
+
+            .pricing-tabs.is-stuck {
+                position: fixed !important;
+                top: 60px !important;
+                left: 0 !important;
+                right: 0 !important;
+                margin: 0 !important;
+                padding: 10px 20px !important;
+                background: rgba(3, 3, 8, 0.95) !important;
+                backdrop-filter: blur(10px) !important;
+                z-index: 999 !important;
+            }
+
+            .pricing-tab {
+                padding: 0 !important;
+                width: 100px !important;
+                height: 40px !important;
+                display: flex !important;
+                align-items: center !important;
+                justify-content: center !important;
+                text-align: center !important;
+                font-size: 13px !important;
+                font-weight: 400 !important;
+                color: rgba(255, 255, 255, 0.6) !important;
+                background: transparent !important;
+                border: none !important;
+                border-radius: 9999px !important;
+                cursor: pointer !important;
+                transition: all 0.3s ease !important;
+                white-space: nowrap !important;
+                flex: none !important;
+            }
+
+            .pricing-tab.active {
+                font-weight: 500 !important;
+                color: white !important;
+                background: rgba(122, 122, 255, 0.1) !important;
+                border: 1px solid rgba(122, 122, 255, 0.5) !important;
+                box-shadow: inset 0 0 16px rgba(122, 122, 255, 0.3) !important;
+            }
+
+            .pricing-tab:not(.active):hover {
+                color: rgba(255, 255, 255, 0.7) !important;
+            }
+
+            /* 移动端pricing卡片选中效果 */
+            #pricing-grid > div {
+                transition: all 0.3s ease !important;
+            }
+
+            #pricing-grid > div.card-active {
+                border: 2px solid rgba(122, 122, 255, 0.6) !important;
+                background: rgba(122, 122, 255, 0.08) !important;
+            }
+
+            #pricing-grid > div.card-active button {
+                background: #7A7AFF !important;
+                color: #fff !important;
+            }
+
+            #pricing-grid > div:not(.card-active) {
+                opacity: 0.5 !important;
+            }
+
+            /* Max卡片未选中时使用普通边框 */
+            #pricing-grid > div[data-plan="max"]:not(.card-active) {
+                border: 1px solid rgba(255, 255, 255, 0.10) !important;
+                background: rgba(255, 255, 255, 0.05) !important;
+                box-shadow: none !important;
+            }
+
+            /* Max卡片选中时使用紫色边框 */
+            #pricing-grid > div[data-plan="max"].card-active {
+                border: 2px solid rgba(122, 122, 255, 0.8) !important;
+                background: linear-gradient(180deg, rgba(122, 122, 255, 0.10) 0%, rgba(0, 0, 0, 0.00) 100%) !important;
+                box-shadow: 0 25px 50px -12px rgba(122, 122, 255, 0.20) !important;
+            }
+
+            /* Parent container padding */
+            .max-w-7xl.mx-auto.px-8 {
+                padding-left: 0 !important;
+                padding-right: 0 !important;
+            }
+
+            /* Pricing cards horizontal scroll */
+            #pricing-grid {
+                display: flex !important;
+                overflow-x: auto !important;
+                overflow-y: visible !important;
+                scroll-snap-type: x mandatory !important;
+                gap: 16px !important;
+                -webkit-overflow-scrolling: touch !important;
+                scrollbar-width: none !important;
+                padding: 20px 20px 40px 20px !important;
+                margin: 0 !important;
+            }
+
+            #pricing-grid::-webkit-scrollbar {
+                display: none !important;
+            }
+
+            #pricing-grid > div {
+                flex: 0 0 304px !important;
+                min-width: 304px !important;
+                scroll-snap-align: center !important;
+                overflow: visible !important;
+                margin: 0 !important;
+            }
+
+            /* Price amount font size */
+            #pricing-grid .text-5xl {
+                font-size: 36px !important;
+            }
+
+            /* Pricing card titles */
+            #pricing-grid .text-xl {
+                font-size: 18px !important;
+            }
+
+            /* Remove top margin from bottom text */
+            .text-center.mb-24 p {
+                margin-top: 0 !important;
+            }
+
+            /* Pricing button style */
+            #pricing-grid a,
+            #pricing-grid button {
+                padding: 14px 24px !important;
+                font-size: 15px !important;
+                height: auto !important;
+            }
+
+            /* Section padding and overflow adjustments */
+            body section.relative.py-32.overflow-hidden {
+                padding-top: 120px !important;
+                padding-bottom: 40px !important;
+                min-height: auto !important;
+                overflow: clip !important;
+            }
+
+            /* Card order - Max first */
+            #pricing-grid > div[data-plan="max"] {
+                order: 1 !important;
+            }
+
+            #pricing-grid > div[data-plan="pro-plus"] {
+                order: 2 !important;
+            }
+
+            #pricing-grid > div[data-plan="pro"] {
+                order: 3 !important;
+            }
+
+            /* Mobile menu toggle button */
+            .mobile-menu-toggle {
+                display: none !important;
+            }
+
+            .nav-menu {
+                display: flex !important;
+                position: static !important;
+                flex-direction: row !important;
+                gap: 12px !important;
+                background: transparent !important;
+                backdrop-filter: none !important;
+                border: none !important;
+                padding: 0 !important;
+                z-index: auto !important;
+            }
+
+            .nav-menu li {
+                width: auto !important;
+            }
+
+            .nav-link {
+                display: block;
+                padding: 8px 12px !important;
+                width: auto !important;
+                text-align: center;
+                font-size: 14px;
+            }
+
+            .nav-link::after {
+                display: none !important;
+            }
+
+            .nav-link:hover,
+            .nav-link:active,
+            .nav-link:focus {
+                color: rgba(255, 255, 255, 0.8) !important;
+            }
+
+            /* Footer padding */
+            footer {
+                padding: 40px 0 !important;
+            }
+
+            /* Mobile footer layout */
+            .footer-grid {
+                display: block !important;
+                text-align: center !important;
+                margin-bottom: 0 !important;
+            }
+
+            .footer-grid > div:not(.footer-brand) {
+                display: inline-block !important;
+                vertical-align: top !important;
+            }
+
+            .footer-brand {
+                margin-bottom: 16px !important;
+                width: 100% !important;
+                text-align: center !important;
+                display: block !important;
+            }
+
+            .footer-brand .footer-tagline {
+                display: none !important;
+            }
+
+            .footer-logo {
+                height: 24px !important;
+                margin-bottom: 0 !important;
+                display: block !important;
+                margin-left: auto !important;
+                margin-right: auto !important;
+            }
+
+            .footer-column {
+                display: inline-block !important;
+                margin: 0 !important;
+                vertical-align: top !important;
+            }
+
+            .footer-column h4 {
+                display: none !important;
+            }
+
+            .footer-column ul.footer-links {
+                display: inline-block !important;
+                padding: 0 !important;
+                margin: 0 !important;
+            }
+
+            .footer-column ul.footer-links li {
+                display: inline-block !important;
+                margin: 0 !important;
+            }
+
+            .footer-column ul.footer-links li a {
+                font-size: 12px !important;
+            }
+
+            .footer-column ul.footer-links li::after {
+                content: ' | ';
+                color: rgba(255, 255, 255, 0.4);
+                margin: 0 4px;
+            }
+
+            .footer-column:last-of-type ul.footer-links li:last-child::after {
+                content: '';
+            }
+
+            .footer-bottom {
+                display: flex !important;
+                flex-direction: column !important;
+                align-items: center !important;
+                gap: 12px !important;
+                margin-top: 0 !important;
+                padding-top: 12px !important;
+                text-align: center !important;
+                border-top: none !important;
+            }
+
+            .footer-bottom::before {
+                display: none !important;
+            }
+
+            .footer-copyright {
+                color: rgba(255, 255, 255, 0.4);
+                margin: 0 !important;
+                font-size: 12px !important;
+                line-height: 12px !important;
+            }
+
+            .footer-icp {
+                order: 2;
+            }
+
+            .footer-legal {
+                display: none !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTE2IiBoZWlnaHQ9IjMxIiB2aWV3Qm94PSIwIDAgMTE2IDMxIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8cGF0aCBkPSJNMTExLjU0NCAxOC4yMjg1QzExMS41NDQgMTguNDA1NCAxMTEuNTQ0IDE4LjQ5NDEgMTExLjM2NyAxOC40OTQxQzExMC4wNCAxOC41ODI2IDEwOC43MTIgMTguNjcxMyAxMDcuMzg1IDE4Ljc1OThDMTA2LjE0NiAxOC44NDgyIDEwNC45OTYgMTguOTM2OSAxMDMuNzU3IDE5LjAyNTRWMjAuNTMwM0gxMTAuOTI1QzExMS4yNzggMjAuNTMwMyAxMTEuMjc4IDIwLjUzIDExMS4yNzggMjAuODgzOFYyMi43NDIyQzExMS4yNzggMjIuOTE5MiAxMTEuMjc4IDIzLjAwNzggMTExLjAxMyAyMy4wMDc4SDEwNC4xMUMxMDQuMTk5IDIyLjY1NCAxMDQuMTEgMjIuNjUzMyAxMDMuOTM0IDIyLjY1MzNWMjMuODA0N0gxMTMuNzU3VjI2LjI4MjJIMTAzLjg0NVYyNy4yNTU5QzEwMy42NjggMjguNjcxNiAxMDIuNTE3IDI5LjkwOTkgMTAxLjEwMiAzMC4wODY5QzEwMC4yMTcgMzAuMTc1NCA5OS4yNDMzIDMwLjE3NTggOTguMzU4NCAzMC4xNzU4SDk3LjgyNzFWMjcuNjk4Mkg5OS42ODU1QzEwMC41NzEgMjcuNjk4MiAxMDAuODM2IDI3LjA3ODEgMTAwLjc0NyAyNi4zNzAxSDkxLjAxMjdDOTAuNDgyMSAyNi4zNzAxIDkwLjQ4MjQgMjYuMzcwNSA5MC40ODI0IDI1LjgzOThWMjMuODkyNkgxMDAuNjU5VjIyLjc0MjJIOTMuMDQ4OEM5Mi45NjA0IDIyLjc0MjIgOTIuODcxMSAyMi43NDIzIDkyLjg3MTEgMjIuNTY1NFYyMC4zNTI1SDEwMC42NTlWMTguOTM2NUM5Ny45MTU4IDE5LjAyNSA5NS4xNzIxIDE5LjIwMjUgOTIuNDI4NyAxOS4yOTFWMTcuMDc4MUM5OC44MDA0IDE2LjcyNDEgMTA1LjE3MiAxNi4zNzA2IDExMS41NDQgMTYuMDE2NlYxOC4yMjg1Wk00Ni4zMTg0IDUuNjY0MDZDNDYuNTgzOCA1LjY2NDA2IDQ2LjkzNzcgNS42NjQ1MiA0Ny4yMDMxIDUuNzUyOTNDNDcuNzM0MSA1Ljg0MTQyIDQ4LjA4ODUgNi4yODM1IDQ4IDYuODE0NDVDNDggNy4yNTY5MyA0Ny44MjI5IDcuNzg3OTkgNDcuNzM0NCA4LjIzMDQ3QzQ3LjIwMzQgMTAuMDAwMiA0Ni40OTU4IDExLjY4MTYgNDUuNTIyNSAxMy4yNzQ0QzQ1LjQzNCAxMy40NTEzIDQ1LjUyMTkgMTMuNDUxNyA0NS42MTA0IDEzLjU0QzQ2Ljc2MDggMTQuODY3NSA0Ny45MTEzIDE2LjE5NTIgNDguODg0OCAxNy43ODgxVjE3Ljg3NkM0OC4yNjUzIDE4LjQwNjkgNDcuNTU3OSAxOC45Mzg4IDQ2LjkzODUgMTkuNDY5N0M0Ni4zMTkxIDE4LjU4NDkgNDUuNjk5NCAxNy42OTk3IDQ1LjA4MDEgMTYuOTAzM0M0NS4wODAxIDE2LjkwMzMgNDUuMDc5NiAxNi45MDMzIDQ0Ljk5MTIgMTYuOTAzM1YyOS45MTIxSDQyLjA3MDNDNDIuMTU4OCAyNS44NDEzIDQyLjE1OTIgMjEuODU4NiA0Mi4xNTkyIDE3Ljk2NDhDNDEuMzYyOCAxOC43NjEyIDQwLjU2NjUgMTkuNTU3NyAzOS42ODE2IDIwLjI2NTZDMzkuMTUwNyAxOS40NjkyIDM4LjYxOTQgMTguNjczIDM4IDE3Ljc4ODFDNDEuMDk3MyAxNS4zMTAzIDQzLjMwOTMgMTIuMjEyOCA0NC42MzY3IDguNDk2MDlIMzkuMTUwNFY1LjY2NDA2SDQ2LjMxODRaTTU3LjI5MSA2LjE5NDM0QzU3LjIwMjUgMTAuMTc2NiA1Ny41NTY1IDE0LjE1OTMgNTYuNTgzIDE4LjE0MTZINTcuOTEwMkM1OC4xNzU0IDE4LjE0MTYgNTguMTc1OCAxOC4yMjk2IDU4LjE3NTggMTguNDA2MlYyNC45NTUxQzU4LjE3NTggMjUuMzA5MSA1OC4xNzUyIDI1LjY2MzYgNTguMjYzNyAyNi4wMTc2QzU4LjM1MjIgMjYuMzcxNCA1OC42MTc5IDI2LjYzNjUgNTguOTcxNyAyNi42MzY3SDYwLjI5OThDNjAuNzQyMiAyNi42MzY2IDYxLjA5NjEgMjYuMzcxMSA2MS4xODQ2IDI1LjkyODdDNjEuMjczIDI1LjIyMDkgNjEuMzYxNyAyNC40MjQ2IDYxLjQ1MDIgMjMuNzE2OFYyMS45NDYzQzYxLjUzODYgMjEuOTQ2NCA2MS42MjcgMjIuMDM1MSA2MS44MDM3IDIyLjAzNTJDNjIuNDIzMSAyMi4yMTIxIDYzLjA0MjcgMjIuMzg5NCA2My42NjIxIDIyLjU2NjRDNjMuODM5IDIyLjY1NDggNjMuOTI3NiAyMi42NTQ1IDYzLjkyNzcgMjIuODMxMUM2My45Mjc3IDIzLjcxNiA2My44Mzk4IDI0LjY5MDIgNjMuODM5OCAyNS41NzUyQzYzLjgzOTggMjYuMDE3NiA2My43NTA2IDI2LjU0ODggNjMuNjYyMSAyNi45OTEyQzYzLjMwODEgMjguNDk1MyA2Mi40MjI4IDI5LjI5MiA2MC44MzAxIDI5LjI5MkM1OS45NDUyIDI5LjI5MiA1OS4wNjAyIDI5LjI5MTYgNTguMDg2OSAyOS4yMDMxQzU3LjExMzYgMjkuMTE0NiA1Ni4zMTcxIDI4Ljc2MDggNTUuNzg2MSAyNy44NzZDNTUuNTIwNiAyNy4zNDUgNTUuMzQzOCAyNi43MjQ5IDU1LjM0MzggMjYuMTA1NVYyMS41OTI4QzU1LjI1NjIgMjEuNjgwNCA1NS4yNTQ5IDIxLjc2NzkgNTUuMjU0OSAyMS43Njk1QzU0LjQ1ODQgMjMuNDUwOSA1My40ODUgMjUuMDQ0MSA1Mi4yNDYxIDI2LjQ2QzUxLjI3MjcgMjcuNjEwMyA1MC4xMjIgMjguNTg0MiA0OC45NzE3IDI5LjU1NzZDNDguNzk1MyAyOS42NDU4IDQ4Ljc5NDcgMjkuNjQ1OSA0OC42MTgyIDI5LjU1NzZMNDYuODA3NiAyNy43NDcxQzQ2Ljg3NzYgMjcuNjk2MiA0Ni45MzY1IDI3LjY4MjcgNDYuOTM2NSAyNy42MTA0QzQ4LjQ0MDkgMjYuNDU5OSA0OS44NTc0IDI1LjEzMiA1MS4wMDc4IDIzLjUzOTFDNTIuNjg5IDIxLjMyNjggNTMuNzUwNSAxOC43NjA3IDU0LjEwNDUgMTYuMDE3NkM1NC40NTg1IDEzLjcxNjcgNTQuMzcwMSAxMS40MTUxIDU0LjM3MDEgOS4xMTQyNlY2LjE5NDM0SDU3LjI5MVpNNzkuMjM2MyAxNS4zOTc1QzgyLjA2ODEgMTUuMjIwNSA4NC44MTE4IDE0Ljk1NTMgODcuNjQzNiAxNC43NzgzVjE3LjYxMDRDODQuODExOCAxNy43ODczIDgyLjA2ODEgMTcuOTYzNiA3OS4yMzYzIDE4LjE0MDZWMjAuNDQyNEM4MS44MDI1IDIwLjUzMDkgODQuMzY4OCAyMC41MzAzIDg3LjAyMzQgMjAuNTMwM1YyMy4zNjIzSDc5LjMyNDJWMjYuMDE3Nkg4OS4zMjQyVjI4Ljg0ODZINjYuMjI3NUM2NS42MDgxIDI4Ljg0ODYgNjUuNjA3NCAyOC44NDkgNjUuNjA3NCAyOC4yMjk1VjI2LjAxNzZINzYuMjI3NVYyMy4yNzM0SDY4LjYxNjJWMjAuNDQyNEg3Ni4yMjc1VjE4LjIyOTVDNzUuNjk2NyAxOC4yMjk1IDc1LjE2NTYgMTguMzE4MyA3NC42MzQ4IDE4LjMxODRDNzMuMTMwMyAxOC40MDY5IDcxLjUzNjcgMTguNDk1NSA3MC4wMzIyIDE4LjU4NEM2OS42Nzg0IDE4LjU4NCA2OS4zMjQ1IDE4LjU4MzQgNjguOTcwNyAxOC42NzE5QzY4Ljg4MjIgMTguNjcxOSA2OC43OTM1IDE4Ljc2MDIgNjguNzA1MSAxOC44NDg2QzY4LjI2MjYgMTkuNDY4MSA2Ny45MDgzIDE5Ljk5OTcgNjcuNDY1OCAyMC42MTkxQzY3LjM3NzQgMjAuNzk1OCA2Ny4yODkyIDIwLjc5NTUgNjcuMTEyMyAyMC43MDdDNjYuNDA0NCAyMC4zNTMxIDY1LjYwNzMgMjAuMDg4MyA2NC44OTk0IDE5LjczNDRDNjQuODkyNyAxOS43MzQyIDY0LjgxMTYgMTkuNzMwMyA2NC44MTE1IDE5LjY0NTVDNjYuMzE1OSAxNy42MTAxIDY3LjY0MzQgMTUuMzk3MiA2OC41MjgzIDEzLjAwNzhDNjkuNTAxOCAxMy4xODQ4IDcwLjM4NjkgMTMuMzYyNCA3MS4zNjA0IDEzLjYyNzlDNzEuMDA2NCAxNC40MjQ0IDcwLjY1MTggMTUuMTMyMyA3MC4yOTc5IDE1LjkyODdDNzIuMjQ0OCAxNS44NDAyIDc0LjE5MjEgMTUuNjYyNyA3Ni4yMjc1IDE1LjU3NDJWMTIuNjU0M0g3OS4yMzYzVjE1LjM5NzVaTTQ2LjgwNzYgMjcuNzQ3MUM0Ni43OTIxIDI3Ljc1ODMgNDYuNzc1OCAyNy43NzExIDQ2Ljc1OTggMjcuNzg3MVYyNy42OTkyTDQ2LjgwNzYgMjcuNzQ3MVpNNjEuMDExNyAxLjQxNTA0QzYxLjI3NzIgMS40MTUwNCA2MS40NTQzIDEuNDE1NDMgNjEuNzE5NyAxLjUwMzkxQzYyLjMzOTIgMS41OTI0IDYyLjYwNDUgMS45NDU5OSA2Mi42MDQ1IDIuNTY1NDNWMTguNjcxOUg1OS41OTU3VjQuMjQ3MDdINTIuMjUxVjE4LjY3MTlINDkuMjQyMlYzLjAwNzgxQzQ5LjI0MjIgMi43NDI0MSA0OS4yNDE2IDIuNTY1MjQgNDkuMzMwMSAyLjI5OThDNDkuNDE4NiAxLjg1NzQyIDQ5LjY4NDUgMS41OTIzOSA1MC4xMjcgMS41MDM5MUM1MC4zOTI0IDEuNDE1NDYgNTAuNjU4IDEuNDE1MDQgNTAuODM1IDEuNDE1MDRINjEuMDExN1pNMTA4LjE4MSAwQzEwOC4wMDQgMC43MDc4MjYgMTA3LjgyNyAxLjMyNzM0IDEwNy42NSAyLjAzNTE2QzExMC4wNCAyLjIxMjEyIDExMi4yNTIgMi4yMTE5MSAxMTQuNDY0IDIuMjExOTFWNC44NjcxOUgxMTMuNDkxQzExMy4xMzcgNy4yNTY1NyAxMTIuMzQgOS4zODA4NSAxMTAuNzQ3IDExLjIzOTNDMTEyLjA3NSAxMi40NzgyIDExMy42NjggMTMuMzYzMSAxMTUuMjYxIDE0LjI0OEMxMTUuMDg0IDE0LjUxMzQgMTE0LjkwNiAxNC42OTA2IDExNC43MjkgMTQuOTU2MUMxMTQuMzc2IDE1LjM5ODUgMTE0LjAyMiAxNS45Mjk3IDExMy42NjggMTYuMzcyMUMxMTMuNTggMTYuNDYwNSAxMTMuNDkxIDE2LjU0ODQgMTEzLjQwMiAxNi40NkMxMTEuODk4IDE1LjY2MzUgMTEwLjQ4MiAxNC43NzgzIDEwOS4xNTQgMTMuNjI3OUMxMDguOTc4IDEzLjUzOTQgMTA4Ljg4OSAxMy4zNjI0IDEwOC43MTIgMTMuMTg1NUMxMDcuMjk2IDE0LjQyNDUgMTA1LjYxNSAxNS4yMjE3IDEwMy44NDUgMTUuOTI5N0MxMDMuODQ1IDE1Ljg0MTIgMTAzLjc1NyAxNS44NDA0IDEwMy43NTcgMTUuNzUyQzEwMy41OCAxNS4wNDQgMTAzLjMxNCAxNC40MjQ3IDEwMy4xMzcgMTMuNzE2OEMxMDMuMDQ4IDEzLjU0IDEwMy4xMzcgMTMuNDUxNyAxMDMuMzEzIDEzLjM2MzNDMTA0LjQ2NCAxMi43NDM4IDEwNS42MTUgMTIuMTIzNiAxMDYuNjc3IDExLjMyNzFMMTA2Ljk0MiAxMS4wNjE1QzEwNi4wNTggOS45MTEyMSAxMDUuNDM4IDguNjcyNTYgMTA0LjkwNyA3LjI1Njg0SDEwNC44MThDMTA0LjY0MSA3LjUyMjIxIDEwNC40NjQgNy41MjIwNyAxMDQuMTEgNy40MzM1OUMxMDMuNjY4IDcuMjU2NiAxMDMuMzE0IDcuMDc5MzMgMTAyLjg3MSA2LjkwMjM0QzEwMy40MDIgNS43NTIwNiAxMDMuOTM0IDQuNjAyMDQgMTA0LjM3NiAzLjM2MzI4QzEwNC43MyAyLjMwMTMzIDEwNC45OTYgMS4yMzg3IDEwNS4zNSAwLjE3Njc1OEMxMDUuMzUgMC4wODgzNDA1IDEwNS40MzggMCAxMDUuNTI2IDBIMTA4LjE4MVpNOTIuNTE1NiA1LjEzMTg0QzkzLjMxMjEgNS4xMzE4NCA5NC4xMDkyIDUuMjIwNyA5NC45OTQxIDUuMjIwN0M5NC45MDU2IDUuMzk3NjIgOTQuNzI4MSA1LjU3NDQ2IDk0LjYzOTYgNS44Mzk4NEgxMDAuODM1QzEwMS41NDMgNS44Mzk5MyAxMDIuMTYyIDYuMTA1MzIgMTAyLjYwNCA2LjcyNDYxQzEwMi43ODEgNi45OTAxIDEwMi44NyA3LjQzMzEzIDEwMi45NTkgNy43ODcxMUMxMDMuMDQ3IDguNTgzNDUgMTAyLjk1OSA5LjQ2ODM0IDEwMi45NTkgMTAuMjY0NlYxMy4xODQ2QzEwMi45NTkgMTQuMDY5NSAxMDIuNjkzIDE0Ljg2NTkgMTAxLjg5NiAxNS40ODU0QzEwMS40NTQgMTUuODM5MiAxMDAuOTIzIDE1LjkyODEgMTAwLjM5MyAxNi4wMTY2QzEwMC4wMzkgMTYuMDE2NiA5OS42ODQxIDE2LjEwNTUgOTkuMzMwMSAxNi4xMDU1Qzk5LjI0MTcgMTYuMTA1NSA5OS4xNTM1IDE2LjEwNTIgOTkuMTUzMyAxNS45Mjg3VjE0LjA3MDNDOTkuMTUzMyAxMy45ODE5IDk5LjI0MTYgMTMuODkyNyA5OS4zMzAxIDEzLjg5MjZDOTkuNDE4NiAxMy44MDQyIDk5LjU5NjEgMTMuODA0NyA5OS42ODQ2IDEzLjgwNDdDMTAwLjAzOCAxMy43MTYxIDEwMC4yMTUgMTMuNDUwNCAxMDAuMjE1IDEzLjA5NjdWOC43NTk3N0MxMDAuMjE1IDguNDA2MTEgMTAwLjEyNiA4LjMxNzM4IDk5Ljc3MjUgOC4zMTczOEg5My43NTQ5QzkzLjQ4OTUgOC4zMTc0IDkzLjMxMjYgOC40MDYxNyA5My4xMzU3IDguNTgzMDFDOTIuODcwMyA4LjkzNjk5IDkyLjYwNDQgOS4yOTExNSA5Mi4zMzg5IDkuNTU2NjRDOTIuMjUwNCA5LjY0NTAzIDkyLjE2MTcgOS42NDU1MSA5Mi4wNzMyIDkuNjQ1NTFDOTEuMjc2OSA5LjQ2ODUyIDkwLjU2ODYgOS4yMDI5NSA4OS45NDkyIDguOTM3NUM5MC4zOTE3IDguMzE4MDMgOTAuODM0NSA3Ljc4NjQ2IDkxLjE4ODUgNy4xNjY5OUM5MS42MzA4IDYuNTQ3NjcgOTEuOTg1IDUuODQwMDUgOTIuMzM4OSA1LjIyMDdDOTIuMzM4OSA1LjEzNDcxIDkyLjUwNjIgNS4xMzE5IDkyLjUxNTYgNS4xMzE4NFpNOTcuOTE2IDkuMTE0MjZDOTguNjIzNiA5LjExNDM4IDk4Ljk3NzQgOS40NjgyMiA5OC45Nzc1IDEwLjE3NThDOTkuMDY2IDExLjc2ODcgOTkuMDY1OSAxMy40NTEgOTguNzExOSAxNS4wNDM5Qzk4LjYyMzUgMTUuNDg1OSA5OC42MjMgMTUuNDg2MyA5OC4xODA3IDE1LjQ4NjNIOTMuNzU2OEM5My40OTEzIDE1LjQ4NjMgOTMuMTM2NiAxNS4zOTcxIDkyLjg3MTEgMTUuMzA4NkM5Mi4xNjM1IDE1LjA0MzEgOTEuODA5NyAxNC40MjQxIDkxLjgwOTYgMTMuNjI3OVYxMC45NzI3QzkxLjgwOTYgMTAuMTc2MyA5Mi42OTQyIDkuMjkxNzkgOTMuNTc5MSA5LjIwMzEyQzk0LjM3NTYgOS4xMTQ2MyA5NS4yNjEyIDkuMjAyNzUgOTYuMDU3NiA5LjExNDI2SDk3LjkxNlpNOTQuMzc2IDExLjUwMzlDOTQuMzczNSAxMS41MDY0IDk0LjI4NzEgMTEuNTkzNCA5NC4yODcxIDExLjY4MDdWMTIuODMxMUM5NC4yODcxIDEzLjAwOCA5NC4zNzU4IDEzLjA5NjcgOTQuNTUyNyAxMy4wOTY3SDk2Ljg1MzVDOTYuNzY1IDEyLjU2NTggOTYuNzY1NiAxMi4wMzQ4IDk2Ljc2NTYgMTEuNTAzOUg5NC4zNzZaTTg3LjgyMzIgMS41MDM5MUM4OCAxLjUwMzkxIDg4LjA4ODggMS41MDM5OCA4OC4wODg5IDEuNjgwNjZWMTIuMjExOUg2Ny42NDY1VjEuNTAzOTFIODcuODIzMlpNMTA2Ljk0MiA0Ljk1NjA1QzEwNi44NTcgNC45NTYwNSAxMDYuNzcyIDUuMDM3ODMgMTA2Ljc2NiA1LjA0Mzk1QzEwNi41ODkgNS4zMDk0MyAxMDYuNDk5IDUuNDg2ODQgMTA2LjMyMiA1Ljg0MDgyQzEwNi41ODggNS43NTIzMiAxMDYuODU0IDUuNjYzMzIgMTA3LjExOSA1LjQ4NjMzQzEwNy40NzMgNi45MDIyNiAxMDguMDkzIDguMjMwNDIgMTA4Ljk3OCA5LjM4MDg2QzEwOS45NTEgNy45NjUwNSAxMTAuMzkzIDYuNDYwMzUgMTEwLjc0NyA0Ljk1NjA1SDEwNi45NDJaTTcwLjY1NTMgNS40ODYzM0g4My4zMDk2VjguMzE4MzZINzAuNjU1M1Y5LjM3OTg4SDg1LjE2OFY0LjMzNTk0SDcwLjY1NTNWNS40ODYzM1pNNDMuNjYxMSAwLjM1MzUxNkM0My44MzggMC4xNzY2MjIgNDQuMDE1IDAuMjY0NjEgNDQuMTAzNSAwLjQ0MTQwNkM0NC45IDEuNjgwMzUgNDUuNTE5OCAzLjA5Njc3IDQ2LjA1MDggNC41MTI3QzQ1LjE2NTkgNC44NjY2NiA0NC4yODA0IDUuMjIwMjYgNDMuMzk1NSA1LjU3NDIyQzQyLjg2NDYgNC4wNjk5NSA0Mi4xNTY3IDIuNjU0MDggNDEuMzYwNCAxLjIzODI4QzQxLjk3OTcgMC45NzI4MjQgNDIuNTk5NCAwLjcwNzI0MyA0My4yMTg4IDAuNTMwMjczQzQzLjM5NTcgMC40NDE4OTQgNDMuNTcyNyAwLjQ0MTk1NSA0My42NjExIDAuMzUzNTE2Wk05NS44NzcgMS41OTE4SDk4LjI2NTZDOTguNTMxMSAxLjU5MTggOTguNTMxMiAxLjUwMzE2IDk4LjUzMTIgMS4zMjYxN1YwLjI2NDY0OEgxMDEuMjc1VjEuNTkxOEgxMDMuODQyVjQuMDcwMzFIMTAxLjI3NVY1LjA0Mjk3SDk4LjUzMTJWNC4wNzAzMUg5NS44NzdWNS4wNDI5N0g5My4xMzM4VjQuMDcwMzFIOTAuNjU1M0M5MC41NjY3IDQuMDcwMzEgOTAuMzkwMSA0LjA2OTQzIDkwLjQ3ODUgMy44OTI1OFYxLjU5MThIOTMuMTMzOFYwLjI2NDY0OEg5NS44NzdWMS41OTE4WiIgZmlsbD0id2hpdGUiLz4KPHBhdGggZD0iTTAgMC4xNzY3NThWNy4xNjc5MUwxMS41MDQ0IDE0LjYwMTVMMjYuMTk0NyAyNC4wNzA2VjI3LjE2NzlMMTAuNjE5NSAxNy4wNzk0TDkuNjQ2MDIgMTcuNjk4OUwwIDIzLjk4MjFWMjkuODIyOEwxMy42MjgzIDIwLjk3MzJMMjcuNzg3NiAzMC4xNzY4VjI1LjEzMjVWMjUuMDQ0VjIzLjE4NTZMMTYuOTAyNyAxNi4xMDZMMS41OTI5MiA2LjE5NDQ2VjMuMTg1NjFMMTYuOTAyNyAxMy4wOTcxTDE4LjQwNzEgMTIuMTIzN0wyNy43ODc2IDYuMDE3NDdWMC4xNzY3NThMMTMuODkzOCA5LjIwMzMxTDAgMC4xNzY3NThaIiBmaWxsPSJ3aGl0ZSIvPgo8L3N2Zz4K" alt="创视星擎">
+            </a>
+            <button class="mobile-menu-toggle" aria-label="菜单">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="https://xingqing.ultronx.tech/login" class="nav-link" id="xingqing-login-link">星擎</a></li>
+                <li><a href="pricing.html" class="nav-link">定价</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <section class="relative py-32 overflow-hidden" style="background: #000; min-height: 0; padding-top: 160px; padding-bottom: 24px;">
+        <!-- Background Gradient -->
+        <div class="fixed inset-0 flex items-start justify-center pointer-events-none" style="padding-top: 20px;">
+            <div class="relative w-[1600px] h-[1200px] gradient-orbit">
+                <!-- Purple gradient - top left -->
+                <div class="absolute top-0 left-[15%] w-[750px] h-[750px]">
+                    <div class="w-full h-full rounded-full" style="background: radial-gradient(circle, rgba(122, 122, 255, 0.4) 0%, rgba(152, 16, 250, 0.25) 40%, transparent 70%); filter: blur(120px);"></div>
+                </div>
+                <!-- Blue gradient - right middle -->
+                <div class="absolute top-[45%] right-[10%] w-[700px] h-[700px]">
+                    <div class="w-full h-full rounded-full" style="background: radial-gradient(circle, rgba(21, 93, 252, 0.35) 0%, rgba(43, 127, 255, 0.2) 40%, transparent 70%); filter: blur(100px);"></div>
+                </div>
+                <!-- Bottom purple glow -->
+                <div class="absolute bottom-[5%] left-[25%] w-[700px] h-[500px]">
+                    <div class="w-full h-full rounded-full" style="background: radial-gradient(circle, rgba(168, 85, 247, 0.3) 0%, rgba(139, 92, 246, 0.15) 40%, transparent 70%); filter: blur(130px);"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-8 relative z-10">
+            <!-- Title -->
+            <div class="text-center mb-20">
+                <h2 class="text-6xl md:text-7xl font-bold mb-6 gradient-text" style="background-image: linear-gradient(180deg, #fff 0%, rgba(255,255,255,0.4) 100%);">
+                    完整定价详情
+                </h2>
+                <p style="font-size: 20px; font-weight: 400; color: rgba(255, 255, 255, 0.5);">深入了解每个套餐的完整权益与服务内容</p>
+            </div>
+        </div>
+
+        <!-- Pricing Tabs -->
+        <div class="pricing-tabs">
+            <button class="pricing-tab active" data-plan="max">Max 旗舰版</button>
+            <button class="pricing-tab" data-plan="pro-plus">Pro+ 专业版</button>
+            <button class="pricing-tab" data-plan="pro">Pro 正式版</button>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-8 relative z-10">
+            <!-- Pricing Cards (使用首页样式) -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8" id="pricing-grid">
+                <!-- Pro -->
+                <div class="p-8 flex flex-col" data-plan="pro" style="border-radius: 24px; border: 1px solid rgba(255, 255, 255, 0.10); background: rgba(255, 255, 255, 0.05);">
+                    <h3 class="text-xl font-bold mb-3">Pro 正式版</h3>
+                    <div class="flex items-baseline mb-3">
+                        <span class="text-sm text-white/60">¥</span>
+                        <span class="text-5xl font-bold mx-1" style="font-family: 'DIN Alternate', 'Barlow Semi Condensed', 'Inter', sans-serif; font-variant-numeric: tabular-nums; background: linear-gradient(90deg, rgb(254, 154, 0), rgb(245, 73, 0)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">49,800</span>
+                        <span class="text-sm text-white/40 ml-1">/ 3个月</span>
+                    </div>
+
+                    <div class="border-t border-white/10 pt-4 mb-6 flex-grow mt-6">
+                        <p class="font-bold text-white/60 mb-3 uppercase tracking-wider flex items-center gap-1" style="font-size: 16px;">
+                            <svg width="7" height="10" viewBox="0 0 7 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M3.68395 0.328482C3.57814 -0.110154 3.4055 -0.109361 3.30081 0.330069L2.71051 2.8088C2.60526 3.24823 2.26778 3.72891 1.95927 3.87882L0.231805 4.71564C-0.0767104 4.86476 -0.0772673 5.11224 0.230134 5.26453L1.94757 6.11563C2.25497 6.26792 2.59356 6.75177 2.69937 7.19041L3.29858 9.67152C3.40439 10.1102 3.57591 10.1094 3.68005 9.66993L4.26534 7.19913C4.36947 6.7597 4.70639 6.27744 5.01435 6.12753L6.7691 5.27088C7.07706 5.12096 7.07706 4.87666 6.76854 4.72833L5.04164 3.89548C4.73312 3.74715 4.39398 3.26727 4.28817 2.82863L3.68395 0.328482Z" fill="currentColor"/>
+                            </svg>
+                            核心交付权益
+                        </p>
+                        <div class="space-y-3 text-sm mb-6">
+                            <div class="flex justify-between text-white/80"><span class="text-white/60">AI短视频创作</span><span style="background: linear-gradient(90deg, rgb(254, 154, 0), rgb(245, 73, 0)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">300条</span></div>
+                            <div class="flex justify-between text-white/80">
+                                <span class="text-white/60">人工精制视频</span>
+                                <div class="text-white/80 leading-relaxed text-right text-sm">
+                                    企宣片1条<span class="info-icon group relative inline-block ml-1 cursor-help align-text-bottom">
+                                        <svg class="w-4 h-4 align-middle text-white/60" viewBox="0 0 20 20" stroke="currentColor" fill="none"><circle cx="10" cy="10" r="7" stroke-width="1.5"/><text x="10" y="13.5" text-anchor="middle" font-size="11" fill="currentColor">i</text></svg>
+                                        <span class="tooltip hidden group-hover:block absolute bottom-full left-0 mb-1 px-3 py-1.5 text-xs text-white bg-black/80 backdrop-blur-xl rounded whitespace-nowrap z-50">不超过300秒</span>
+                                    </span><br/>
+                                    <span style="background: linear-gradient(90deg, rgb(254, 154, 0), rgb(245, 73, 0)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">产品视频3条</span><span class="info-icon group relative inline-block ml-1 cursor-help align-text-bottom">
+                                        <svg class="w-4 h-4 align-middle text-white/60" viewBox="0 0 20 20" stroke="currentColor" fill="none"><circle cx="10" cy="10" r="7" stroke-width="1.5"/><text x="10" y="13.5" text-anchor="middle" font-size="11" fill="currentColor">i</text></svg>
+                                        <span class="tooltip hidden group-hover:block absolute bottom-full left-0 mb-1 px-3 py-1.5 text-xs text-white bg-black/80 backdrop-blur-xl rounded whitespace-nowrap z-50">不超过30秒/条</span>
+                                    </span><br/>
+                                    <span class="text-white/40">–</span>
+                                </div>
+                            </div>
+                            <div class="flex justify-between text-white/80">
+                                <span class="text-white/60">矩阵账号运营</span>
+                                <div class="text-right text-sm">
+                                    10个<span class="info-icon group relative inline-block ml-1 cursor-help align-text-bottom">
+                                        <svg class="w-4 h-4 align-middle text-white/60" viewBox="0 0 20 20" stroke="currentColor" fill="none"><circle cx="10" cy="10" r="7" stroke-width="1.5"/><text x="10" y="13.5" text-anchor="middle" font-size="11" fill="currentColor">i</text></svg>
+                                        <span class="tooltip hidden group-hover:block absolute bottom-full left-0 mb-1 px-3 py-1.5 text-xs text-white bg-black/80 backdrop-blur-xl rounded whitespace-nowrap z-50">TikTok&Youtube私号</span>
+                                    </span><br/>
+                                    <span class="text-white/40">–</span>
+                                </div>
+                            </div>
+                            <div class="flex justify-between text-white/80"><span class="text-white/60">总播放量（消费品）</span><span style="background: linear-gradient(90deg, rgb(254, 154, 0), rgb(245, 73, 0)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">20万</span></div>
+                            <div class="flex justify-between text-white/80"><span class="text-white/60">总播放量（工业品）</span><span style="background: linear-gradient(90deg, rgb(254, 154, 0), rgb(245, 73, 0)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">5万</span></div>
+                            <div class="flex justify-between text-white/80">
+                                <span class="text-white/60">买家线索<span class="info-icon group relative inline-block ml-1 cursor-help align-text-bottom">
+                                    <svg class="w-4 h-4 align-middle text-white/60" viewBox="0 0 20 20" stroke="currentColor" fill="none"><circle cx="10" cy="10" r="7" stroke-width="1.5"/><text x="10" y="13.5" text-anchor="middle" font-size="11" fill="currentColor">i</text></svg>
+                                    <span class="tooltip hidden group-hover:block absolute bottom-full left-0 mb-1 px-3 py-1.5 text-xs text-white bg-black/80 backdrop-blur-xl rounded whitespace-nowrap z-50">包含表单留资、WhatsApp聊单、TK/FB/YouTube等平台留言私信等咨询线索</span>
+                                </span></span>
+                                <span style="background: linear-gradient(90deg, rgb(254, 154, 0), rgb(245, 73, 0)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">60个</span>
+                            </div>
+                            <div class="flex justify-between text-white/80">
+                                <span class="text-white/60">专业拍摄服务<span class="info-icon group relative inline-block ml-1 cursor-help align-text-bottom">
+                                    <svg class="w-4 h-4 align-middle text-white/60" viewBox="0 0 20 20" stroke="currentColor" fill="none"><circle cx="10" cy="10" r="7" stroke-width="1.5"/><text x="10" y="13.5" text-anchor="middle" font-size="11" fill="currentColor">i</text></svg>
+                                    <span class="tooltip hidden group-hover:block absolute bottom-full left-0 mb-1 px-3 py-1.5 text-xs text-white bg-black/80 backdrop-blur-xl rounded whitespace-nowrap z-50">6小时/次，限指定城市</span>
+                                </span></span>
+                                <span style="background: linear-gradient(90deg, rgb(254, 154, 0), rgb(245, 73, 0)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">1次</span>
+                            </div>
+                        </div>
+
+                        <div class="border-t border-white/10 pt-4 mb-6">
+                            <p class="font-bold text-white/60 mb-3 uppercase tracking-wider flex items-center gap-1" style="font-size: 16px;">
+                                <svg width="12" height="12" viewBox="0 0 7 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M3.68395 0.328482C3.57814 -0.110154 3.4055 -0.109361 3.30081 0.330069L2.71051 2.8088C2.60526 3.24823 2.26778 3.72891 1.95927 3.87882L0.231805 4.71564C-0.0767104 4.86476 -0.0772673 5.11224 0.230134 5.26453L1.94757 6.11563C2.25497 6.26792 2.59356 6.75177 2.69937 7.19041L3.29858 9.67152C3.40439 10.1102 3.57591 10.1094 3.68005 9.66993L4.26534 7.19913C4.36947 6.7597 4.70639 6.27744 5.01435 6.12753L6.7691 5.27088C7.07706 5.12096 7.07706 4.87666 6.76854 4.72833L5.04164 3.89548C4.73312 3.74715 4.39398 3.26727 4.28817 2.82863L3.68395 0.328482Z" fill="currentColor"/>
+                                </svg>
+                                账号体系搭建
+                            </p>
+                            <div class="space-y-3 text-sm">
+                                <div class="flex justify-between text-white/80"><span class="text-white/60">AI智能矩阵账号搭建</span><span class="text-right">自动创建矩阵账号<br/>一机一号一IP隔离</span></div>
+                                <div class="flex justify-between text-white/80"><span class="text-white/60">账号安全与风控</span><span class="text-right">账号权重监测<br/>风险预警与排除</span></div>
+                                <div class="flex justify-between text-white/80"><span class="text-white/60">官号运营支持</span><span class="text-right text-white/40">–<br/>–</span></div>
+                            </div>
+                        </div>
+
+                        <div class="border-t border-white/10 pt-4">
+                            <p class="font-bold text-white/60 mb-3 uppercase tracking-wider flex items-center gap-1" style="font-size: 16px;">
+                                <svg width="12" height="12" viewBox="0 0 7 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M3.68395 0.328482C3.57814 -0.110154 3.4055 -0.109361 3.30081 0.330069L2.71051 2.8088C2.60526 3.24823 2.26778 3.72891 1.95927 3.87882L0.231805 4.71564C-0.0767104 4.86476 -0.0772673 5.11224 0.230134 5.26453L1.94757 6.11563C2.25497 6.26792 2.59356 6.75177 2.69937 7.19041L3.29858 9.67152C3.40439 10.1102 3.57591 10.1094 3.68005 9.66993L4.26534 7.19913C4.36947 6.7597 4.70639 6.27744 5.01435 6.12753L6.7691 5.27088C7.07706 5.12096 7.07706 4.87666 6.76854 4.72833L5.04164 3.89548C4.73312 3.74715 4.39398 3.26727 4.28817 2.82863L3.68395 0.328482Z" fill="currentColor"/>
+                                </svg>
+                                内容策略与视频创作&数据监控
+                            </p>
+                            <div class="space-y-3 text-sm">
+                                <div class="flex justify-between text-white/80"><span class="text-white/60">策略优化</span><span class="text-right">数据复盘报告1次<br/>–<br/>–</span></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="w-full bg-white/10 hover:bg-white/20 rounded-2xl py-4 transition font-medium mt-auto block text-center" style="font-size: 18px; cursor: pointer; border: none; color: inherit;">立即订阅</button>
+                </div>
+
+                <!-- Pro+ -->
+                <div class="p-8 flex flex-col" data-plan="pro-plus" style="border-radius: 24px; border: 1px solid rgba(255, 255, 255, 0.10); background: rgba(255, 255, 255, 0.05);">
+                    <h3 class="text-xl font-bold mb-3">Pro+ 专业版</h3>
+                    <div class="flex items-baseline mb-3">
+                        <span class="text-sm text-white/60">¥</span>
+                        <span class="text-5xl font-bold mx-1" style="font-family: 'DIN Alternate', 'Barlow Semi Condensed', 'Inter', sans-serif; font-variant-numeric: tabular-nums; background: linear-gradient(90deg, rgb(0, 188, 125), rgb(0, 150, 137)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">99,800</span>
+                        <span class="text-sm text-white/40 ml-1">/ 6个月</span>
+                    </div>
+
+                    <div class="border-t border-white/10 pt-4 mb-6 flex-grow mt-6">
+                        <p class="font-bold text-white/60 mb-3 uppercase tracking-wider flex items-center gap-1" style="font-size: 16px;">
+                            <svg width="12" height="12" viewBox="0 0 7 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M3.68395 0.328482C3.57814 -0.110154 3.4055 -0.109361 3.30081 0.330069L2.71051 2.8088C2.60526 3.24823 2.26778 3.72891 1.95927 3.87882L0.231805 4.71564C-0.0767104 4.86476 -0.0772673 5.11224 0.230134 5.26453L1.94757 6.11563C2.25497 6.26792 2.59356 6.75177 2.69937 7.19041L3.29858 9.67152C3.40439 10.1102 3.57591 10.1094 3.68005 9.66993L4.26534 7.19913C4.36947 6.7597 4.70639 6.27744 5.01435 6.12753L6.7691 5.27088C7.07706 5.12096 7.07706 4.87666 6.76854 4.72833L5.04164 3.89548C4.73312 3.74715 4.39398 3.26727 4.28817 2.82863L3.68395 0.328482Z" fill="currentColor"/>
+                            </svg>
+                            核心交付权益
+                        </p>
+                        <div class="space-y-3 text-sm mb-6">
+                            <div class="flex justify-between text-white/80"><span class="text-white/60">AI短视频创作</span><span style="background: linear-gradient(90deg, rgb(0, 188, 125), rgb(0, 150, 137)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">720条</span></div>
+                            <div class="flex justify-between text-white/80">
+                                <span class="text-white/60">人工精制视频</span>
+                                <div class="text-white/80 leading-relaxed text-right text-sm">
+                                    企宣片1条<span class="info-icon group relative inline-block ml-1 cursor-help align-text-bottom">
+                                        <svg class="w-4 h-4 align-middle text-white/60" viewBox="0 0 20 20" stroke="currentColor" fill="none"><circle cx="10" cy="10" r="7" stroke-width="1.5"/><text x="10" y="13.5" text-anchor="middle" font-size="11" fill="currentColor">i</text></svg>
+                                        <span class="tooltip hidden group-hover:block absolute bottom-full left-0 mb-1 px-3 py-1.5 text-xs text-white bg-black/80 backdrop-blur-xl rounded whitespace-nowrap z-50">不超过300秒</span>
+                                    </span><br/>
+                                    <span style="background: linear-gradient(90deg, rgb(0, 188, 125), rgb(0, 150, 137)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">产品视频18条</span><span class="info-icon group relative inline-block ml-1 cursor-help align-text-bottom">
+                                        <svg class="w-4 h-4 align-middle text-white/60" viewBox="0 0 20 20" stroke="currentColor" fill="none"><circle cx="10" cy="10" r="7" stroke-width="1.5"/><text x="10" y="13.5" text-anchor="middle" font-size="11" fill="currentColor">i</text></svg>
+                                        <span class="tooltip hidden group-hover:block absolute bottom-full left-0 mb-1 px-3 py-1.5 text-xs text-white bg-black/80 backdrop-blur-xl rounded whitespace-nowrap z-50">不超过30秒/条</span>
+                                    </span><br/>
+                                    <span class="text-white/40">–</span>
+                                </div>
+                            </div>
+                            <div class="flex justify-between text-white/80">
+                                <span class="text-white/60">矩阵账号运营</span>
+                                <div class="text-right text-sm">
+                                    10个<span class="info-icon group relative inline-block ml-1 cursor-help align-text-bottom">
+                                        <svg class="w-4 h-4 align-middle text-white/60" viewBox="0 0 20 20" stroke="currentColor" fill="none"><circle cx="10" cy="10" r="7" stroke-width="1.5"/><text x="10" y="13.5" text-anchor="middle" font-size="11" fill="currentColor">i</text></svg>
+                                        <span class="tooltip hidden group-hover:block absolute bottom-full left-0 mb-1 px-3 py-1.5 text-xs text-white bg-black/80 backdrop-blur-xl rounded whitespace-nowrap z-50">TikTok&Youtube私号</span>
+                                    </span><br/>
+                                    <span class="text-white/40">–</span>
+                                </div>
+                            </div>
+                            <div class="flex justify-between text-white/80"><span class="text-white/60">总播放量（消费品）</span><span style="background: linear-gradient(90deg, rgb(0, 188, 125), rgb(0, 150, 137)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">40万</span></div>
+                            <div class="flex justify-between text-white/80"><span class="text-white/60">总播放量（工业品）</span><span style="background: linear-gradient(90deg, rgb(0, 188, 125), rgb(0, 150, 137)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">10万</span></div>
+                            <div class="flex justify-between text-white/80">
+                                <span class="text-white/60">买家线索<span class="info-icon group relative inline-block ml-1 cursor-help align-text-bottom">
+                                    <svg class="w-4 h-4 align-middle text-white/60" viewBox="0 0 20 20" stroke="currentColor" fill="none"><circle cx="10" cy="10" r="7" stroke-width="1.5"/><text x="10" y="13.5" text-anchor="middle" font-size="11" fill="currentColor">i</text></svg>
+                                    <span class="tooltip hidden group-hover:block absolute bottom-full left-0 mb-1 px-3 py-1.5 text-xs text-white bg-black/80 backdrop-blur-xl rounded whitespace-nowrap z-50">包含表单留资、WhatsApp聊单、TK/FB/YouTube等平台留言私信等咨询线索</span>
+                                </span></span>
+                                <span style="background: linear-gradient(90deg, rgb(0, 188, 125), rgb(0, 150, 137)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">150个</span>
+                            </div>
+                            <div class="flex justify-between text-white/80">
+                                <span class="text-white/60">专业拍摄服务<span class="info-icon group relative inline-block ml-1 cursor-help align-text-bottom">
+                                    <svg class="w-4 h-4 align-middle text-white/60" viewBox="0 0 20 20" stroke="currentColor" fill="none"><circle cx="10" cy="10" r="7" stroke-width="1.5"/><text x="10" y="13.5" text-anchor="middle" font-size="11" fill="currentColor">i</text></svg>
+                                    <span class="tooltip hidden group-hover:block absolute bottom-full left-0 mb-1 px-3 py-1.5 text-xs text-white bg-black/80 backdrop-blur-xl rounded whitespace-nowrap z-50">6小时/次，限指定城市</span>
+                                </span></span>
+                                <span style="background: linear-gradient(90deg, rgb(0, 188, 125), rgb(0, 150, 137)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">2次</span>
+                            </div>
+                        </div>
+
+                        <div class="border-t border-white/10 pt-4 mb-6">
+                            <p class="font-bold text-white/60 mb-3 uppercase tracking-wider flex items-center gap-1" style="font-size: 16px;">
+                                <svg width="12" height="12" viewBox="0 0 7 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M3.68395 0.328482C3.57814 -0.110154 3.4055 -0.109361 3.30081 0.330069L2.71051 2.8088C2.60526 3.24823 2.26778 3.72891 1.95927 3.87882L0.231805 4.71564C-0.0767104 4.86476 -0.0772673 5.11224 0.230134 5.26453L1.94757 6.11563C2.25497 6.26792 2.59356 6.75177 2.69937 7.19041L3.29858 9.67152C3.40439 10.1102 3.57591 10.1094 3.68005 9.66993L4.26534 7.19913C4.36947 6.7597 4.70639 6.27744 5.01435 6.12753L6.7691 5.27088C7.07706 5.12096 7.07706 4.87666 6.76854 4.72833L5.04164 3.89548C4.73312 3.74715 4.39398 3.26727 4.28817 2.82863L3.68395 0.328482Z" fill="currentColor"/>
+                                </svg>
+                                账号体系搭建
+                            </p>
+                            <div class="space-y-3 text-sm">
+                                <div class="flex justify-between text-white/80"><span class="text-white/60">AI智能矩阵账号搭建</span><span class="text-right">自动创建矩阵账号<br/>一机一号一IP隔离</span></div>
+                                <div class="flex justify-between text-white/80"><span class="text-white/60">账号安全与风控</span><span class="text-right">账号权重监测<br/>风险预警与排除</span></div>
+                                <div class="flex justify-between text-white/80"><span class="text-white/60">官号运营支持</span><span class="text-right text-white/40">–<br/>–</span></div>
+                            </div>
+                        </div>
+
+                        <div class="border-t border-white/10 pt-4">
+                            <p class="font-bold text-white/60 mb-3 uppercase tracking-wider flex items-center gap-1" style="font-size: 16px;">
+                                <svg width="12" height="12" viewBox="0 0 7 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M3.68395 0.328482C3.57814 -0.110154 3.4055 -0.109361 3.30081 0.330069L2.71051 2.8088C2.60526 3.24823 2.26778 3.72891 1.95927 3.87882L0.231805 4.71564C-0.0767104 4.86476 -0.0772673 5.11224 0.230134 5.26453L1.94757 6.11563C2.25497 6.26792 2.59356 6.75177 2.69937 7.19041L3.29858 9.67152C3.40439 10.1102 3.57591 10.1094 3.68005 9.66993L4.26534 7.19913C4.36947 6.7597 4.70639 6.27744 5.01435 6.12753L6.7691 5.27088C7.07706 5.12096 7.07706 4.87666 6.76854 4.72833L5.04164 3.89548C4.73312 3.74715 4.39398 3.26727 4.28817 2.82863L3.68395 0.328482Z" fill="currentColor"/>
+                                </svg>
+                                内容策略与视频创作&数据监控
+                            </p>
+                            <div class="space-y-3 text-sm">
+                                <div class="flex justify-between text-white/80"><span class="text-white/60">策略优化</span><span class="text-right">数据复盘报告2次<br/>–<br/>–</span></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="w-full bg-white/10 hover:bg-white/20 rounded-2xl py-4 transition font-medium mt-auto block text-center" style="font-size: 18px; cursor: pointer; border: none; color: inherit;">立即订阅</button>
+                </div>
+
+                <!-- Max -->
+                <div class="p-8 relative flex flex-col" data-plan="max" style="border-radius: 24px; border: 2px solid rgba(122, 122, 255, 0.8); background: linear-gradient(180deg, rgba(122, 122, 255, 0.10) 0%, rgba(0, 0, 0, 0.00) 100%); box-shadow: 0 25px 50px -12px rgba(122, 122, 255, 0.20); overflow: visible;">
+                    <div class="absolute inset-x-0 flex justify-center" style="top: -14px;">
+                        <span class="rounded-full px-5 py-1.5 text-sm font-bold flex items-center gap-1.5" style="background: linear-gradient(90deg, #7A7AFF 0%, #A855F7 100%);">
+                            <svg width="7" height="10" viewBox="0 0 7 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M3.68395 0.328482C3.57814 -0.110154 3.4055 -0.109361 3.30081 0.330069L2.71051 2.8088C2.60526 3.24823 2.26778 3.72891 1.95927 3.87882L0.231805 4.71564C-0.0767104 4.86476 -0.0772673 5.11224 0.230134 5.26453L1.94757 6.11563C2.25497 6.26792 2.59356 6.75177 2.69937 7.19041L3.29858 9.67152C3.40439 10.1102 3.57591 10.1094 3.68005 9.66993L4.26534 7.19913C4.36947 6.7597 4.70639 6.27744 5.01435 6.12753L6.7691 5.27088C7.07706 5.12096 7.07706 4.87666 6.76854 4.72833L5.04164 3.89548C4.73312 3.74715 4.39398 3.26727 4.28817 2.82863L3.68395 0.328482Z" fill="white"/>
+                            </svg>
+                            最受欢迎
+                            <svg width="7" height="10" viewBox="0 0 7 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M3.68395 0.328482C3.57814 -0.110154 3.4055 -0.109361 3.30081 0.330069L2.71051 2.8088C2.60526 3.24823 2.26778 3.72891 1.95927 3.87882L0.231805 4.71564C-0.0767104 4.86476 -0.0772673 5.11224 0.230134 5.26453L1.94757 6.11563C2.25497 6.26792 2.59356 6.75177 2.69937 7.19041L3.29858 9.67152C3.40439 10.1102 3.57591 10.1094 3.68005 9.66993L4.26534 7.19913C4.36947 6.7597 4.70639 6.27744 5.01435 6.12753L6.7691 5.27088C7.07706 5.12096 7.07706 4.87666 6.76854 4.72833L5.04164 3.89548C4.73312 3.74715 4.39398 3.26727 4.28817 2.82863L3.68395 0.328482Z" fill="white"/>
+                            </svg>
+                        </span>
+                    </div>
+
+                    <h3 class="text-xl font-bold mb-3">Max 旗舰版</h3>
+                    <div class="flex items-baseline mb-3">
+                        <span class="text-sm text-white/60">¥</span>
+                        <span class="text-5xl font-bold mx-1" style="font-family: 'DIN Alternate', 'Barlow Semi Condensed', 'Inter', sans-serif; font-variant-numeric: tabular-nums; background: linear-gradient(90deg, rgb(122, 122, 255), rgb(152, 16, 250)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">198,800</span>
+                        <span class="text-sm text-white/40 ml-1">/ 12个月</span>
+                    </div>
+
+                    <div class="border-t border-white/10 pt-4 mb-6 flex-grow mt-6">
+                        <p class="font-bold text-white/60 mb-3 uppercase tracking-wider flex items-center gap-1" style="font-size: 16px;">
+                            <svg width="12" height="12" viewBox="0 0 7 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M3.68395 0.328482C3.57814 -0.110154 3.4055 -0.109361 3.30081 0.330069L2.71051 2.8088C2.60526 3.24823 2.26778 3.72891 1.95927 3.87882L0.231805 4.71564C-0.0767104 4.86476 -0.0772673 5.11224 0.230134 5.26453L1.94757 6.11563C2.25497 6.26792 2.59356 6.75177 2.69937 7.19041L3.29858 9.67152C3.40439 10.1102 3.57591 10.1094 3.68005 9.66993L4.26534 7.19913C4.36947 6.7597 4.70639 6.27744 5.01435 6.12753L6.7691 5.27088C7.07706 5.12096 7.07706 4.87666 6.76854 4.72833L5.04164 3.89548C4.73312 3.74715 4.39398 3.26727 4.28817 2.82863L3.68395 0.328482Z" fill="currentColor"/>
+                            </svg>
+                            核心交付权益
+                        </p>
+                        <div class="space-y-3 text-sm mb-6">
+                            <div class="flex justify-between text-white/80"><span class="text-white/60">AI短视频创作</span><span style="background: linear-gradient(90deg, rgb(122, 122, 255), rgb(152, 16, 250)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">1,500条</span></div>
+                            <div class="flex justify-between text-white/80">
+                                <span class="text-white/60">人工精制视频</span>
+                                <div class="text-white/80 leading-relaxed text-right text-sm">
+                                    精品企宣片1条<span class="info-icon group relative inline-block ml-1 cursor-help align-text-bottom">
+                                        <svg class="w-4 h-4 align-middle text-white/60" viewBox="0 0 20 20" stroke="currentColor" fill="none"><circle cx="10" cy="10" r="7" stroke-width="1.5"/><text x="10" y="13.5" text-anchor="middle" font-size="11" fill="currentColor">i</text></svg>
+                                        <span class="tooltip hidden group-hover:block absolute bottom-full left-0 mb-1 px-3 py-1.5 text-xs text-white bg-black/80 backdrop-blur-xl rounded whitespace-nowrap z-50">不超过300秒</span>
+                                    </span><br/>
+                                    <span style="background: linear-gradient(90deg, rgb(122, 122, 255), rgb(152, 16, 250)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">精品级别产品视频20条</span><span class="info-icon group relative inline-block ml-1 cursor-help align-text-bottom">
+                                        <svg class="w-4 h-4 align-middle text-white/60" viewBox="0 0 20 20" stroke="currentColor" fill="none"><circle cx="10" cy="10" r="7" stroke-width="1.5"/><text x="10" y="13.5" text-anchor="middle" font-size="11" fill="currentColor">i</text></svg>
+                                        <span class="tooltip hidden group-hover:block absolute bottom-full left-0 mb-1 px-3 py-1.5 text-xs text-white bg-black/80 backdrop-blur-xl rounded whitespace-nowrap z-50">不超过30秒/条</span>
+                                    </span><br/>
+                                    <span style="background: linear-gradient(90deg, rgb(122, 122, 255), rgb(152, 16, 250)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">官号爆款视频24条</span><span class="info-icon group relative inline-block ml-1 cursor-help align-text-bottom">
+                                        <svg class="w-4 h-4 align-middle text-white/60" viewBox="0 0 20 20" stroke="currentColor" fill="none"><circle cx="10" cy="10" r="7" stroke-width="1.5"/><text x="10" y="13.5" text-anchor="middle" font-size="11" fill="currentColor">i</text></svg>
+                                        <span class="tooltip hidden group-hover:block absolute bottom-full left-0 mb-1 px-3 py-1.5 text-xs text-white bg-black/80 backdrop-blur-xl rounded whitespace-nowrap z-50">IP属性级别，不超过30秒/条，每月≤4条</span>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="flex justify-between text-white/80">
+                                <span class="text-white/60">矩阵账号运营</span>
+                                <div class="text-right text-sm">
+                                    <span style="background: linear-gradient(90deg, rgb(122, 122, 255), rgb(152, 16, 250)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">10个矩阵账号</span><span class="info-icon group relative inline-block ml-1 cursor-help align-text-bottom">
+                                        <svg class="w-4 h-4 align-middle text-white/60" viewBox="0 0 20 20" stroke="currentColor" fill="none"><circle cx="10" cy="10" r="7" stroke-width="1.5"/><text x="10" y="13.5" text-anchor="middle" font-size="11" fill="currentColor">i</text></svg>
+                                        <span class="tooltip hidden group-hover:block absolute bottom-full left-0 mb-1 px-3 py-1.5 text-xs text-white bg-black/80 backdrop-blur-xl rounded whitespace-nowrap z-50">TikTok&Youtube</span>
+                                    </span><br/>
+                                    <span style="background: linear-gradient(90deg, rgb(122, 122, 255), rgb(152, 16, 250)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">3个官方账号</span><span class="info-icon group relative inline-block ml-1 cursor-help align-text-bottom">
+                                        <svg class="w-4 h-4 align-middle text-white/60" viewBox="0 0 20 20" stroke="currentColor" fill="none"><circle cx="10" cy="10" r="7" stroke-width="1.5"/><text x="10" y="13.5" text-anchor="middle" font-size="11" fill="currentColor">i</text></svg>
+                                        <span class="tooltip hidden group-hover:block absolute bottom-full left-0 mb-1 px-3 py-1.5 text-xs text-white bg-black/80 backdrop-blur-xl rounded z-50 text-left" style="white-space: normal; min-width: 280px;">TikTok&Youtube&Facebook各1个<br/>*官号运营：<br/>注册与账号权重监测<br/>品牌定位与策略制定<br/>矩阵账号精品视频发布</span>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="flex justify-between text-white/80"><span class="text-white/60">总播放量（消费品）</span><span style="background: linear-gradient(90deg, rgb(122, 122, 255), rgb(152, 16, 250)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">80万</span></div>
+                            <div class="flex justify-between text-white/80"><span class="text-white/60">总播放量（工业品）</span><span style="background: linear-gradient(90deg, rgb(122, 122, 255), rgb(152, 16, 250)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">20万</span></div>
+                            <div class="flex justify-between text-white/80">
+                                <span class="text-white/60">买家线索<span class="info-icon group relative inline-block ml-1 cursor-help align-text-bottom">
+                                    <svg class="w-4 h-4 align-middle text-white/60" viewBox="0 0 20 20" stroke="currentColor" fill="none"><circle cx="10" cy="10" r="7" stroke-width="1.5"/><text x="10" y="13.5" text-anchor="middle" font-size="11" fill="currentColor">i</text></svg>
+                                    <span class="tooltip hidden group-hover:block absolute bottom-full left-0 mb-1 px-3 py-1.5 text-xs text-white bg-black/80 backdrop-blur-xl rounded whitespace-nowrap z-50">包含表单留资、WhatsApp聊单、TK/FB/YouTube等平台留言私信等咨询线索</span>
+                                </span></span>
+                                <span style="background: linear-gradient(90deg, rgb(122, 122, 255), rgb(152, 16, 250)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">400个</span>
+                            </div>
+                            <div class="flex justify-between text-white/80">
+                                <span class="text-white/60">专业拍摄服务<span class="info-icon group relative inline-block ml-1 cursor-help align-text-bottom">
+                                    <svg class="w-4 h-4 align-middle text-white/60" viewBox="0 0 20 20" stroke="currentColor" fill="none"><circle cx="10" cy="10" r="7" stroke-width="1.5"/><text x="10" y="13.5" text-anchor="middle" font-size="11" fill="currentColor">i</text></svg>
+                                    <span class="tooltip hidden group-hover:block absolute bottom-full left-0 mb-1 px-3 py-1.5 text-xs text-white bg-black/80 backdrop-blur-xl rounded whitespace-nowrap z-50">6小时/次，限指定城市</span>
+                                </span></span>
+                                <span style="background: linear-gradient(90deg, rgb(122, 122, 255), rgb(152, 16, 250)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">3次</span>
+                            </div>
+                        </div>
+
+                        <div class="border-t border-white/10 pt-4 mb-6">
+                            <p class="font-bold text-white/60 mb-3 uppercase tracking-wider flex items-center gap-1" style="font-size: 16px;">
+                                <svg width="12" height="12" viewBox="0 0 7 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M3.68395 0.328482C3.57814 -0.110154 3.4055 -0.109361 3.30081 0.330069L2.71051 2.8088C2.60526 3.24823 2.26778 3.72891 1.95927 3.87882L0.231805 4.71564C-0.0767104 4.86476 -0.0772673 5.11224 0.230134 5.26453L1.94757 6.11563C2.25497 6.26792 2.59356 6.75177 2.69937 7.19041L3.29858 9.67152C3.40439 10.1102 3.57591 10.1094 3.68005 9.66993L4.26534 7.19913C4.36947 6.7597 4.70639 6.27744 5.01435 6.12753L6.7691 5.27088C7.07706 5.12096 7.07706 4.87666 6.76854 4.72833L5.04164 3.89548C4.73312 3.74715 4.39398 3.26727 4.28817 2.82863L3.68395 0.328482Z" fill="currentColor"/>
+                                </svg>
+                                账号体系搭建
+                            </p>
+                            <div class="space-y-3 text-sm">
+                                <div class="flex justify-between text-white/80"><span class="text-white/60">AI智能矩阵账号搭建</span><span class="text-right">自动创建矩阵账号<br/>一机一号一IP隔离</span></div>
+                                <div class="flex justify-between text-white/80"><span class="text-white/60">账号安全与风控</span><span class="text-right">账号权重监测<br/>风险预警与排除</span></div>
+                                <div class="flex justify-between text-white/80"><span class="text-white/60">官号运营支持</span><span class="text-right">账号轻运营每2周1条<br/>官号运营策划方案</span></div>
+                            </div>
+                        </div>
+
+                        <div class="border-t border-white/10 pt-4">
+                            <p class="font-bold text-white/60 mb-3 uppercase tracking-wider flex items-center gap-1" style="font-size: 16px;">
+                                <svg width="12" height="12" viewBox="0 0 7 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M3.68395 0.328482C3.57814 -0.110154 3.4055 -0.109361 3.30081 0.330069L2.71051 2.8088C2.60526 3.24823 2.26778 3.72891 1.95927 3.87882L0.231805 4.71564C-0.0767104 4.86476 -0.0772673 5.11224 0.230134 5.26453L1.94757 6.11563C2.25497 6.26792 2.59356 6.75177 2.69937 7.19041L3.29858 9.67152C3.40439 10.1102 3.57591 10.1094 3.68005 9.66993L4.26534 7.19913C4.36947 6.7597 4.70639 6.27744 5.01435 6.12753L6.7691 5.27088C7.07706 5.12096 7.07706 4.87666 6.76854 4.72833L5.04164 3.89548C4.73312 3.74715 4.39398 3.26727 4.28817 2.82863L3.68395 0.328482Z" fill="currentColor"/>
+                                </svg>
+                                内容策略与视频创作&数据监控
+                            </p>
+                            <div class="space-y-3 text-sm">
+                                <div class="flex justify-between text-white/80"><span class="text-white/60">策略优化</span><span class="text-right">数据复盘报告6次<br/>用户画像持续优化<br/>内容深度/广度优化</span></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="w-full rounded-2xl py-4 transition font-medium mt-auto block text-center" style="background: #7A7AFF; color: #fff; font-size: 18px; cursor: pointer; border: none;" onmouseover="this.style.background='#6A6AEE'" onmouseout="this.style.background='#7A7AFF'">立即订阅</button>
+                </div>
+            </div>
+
+            <div class="text-center mb-24">
+                <p class="text-sm text-white/50" style="margin-top: 40px;">选择适合您的方案，开启AI短视频营销</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer role="contentinfo" aria-label="页脚导航和信息">
+        <div class="max-w-7xl mx-auto px-8">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <img src="images/视星擎.svg" alt="创视星擎" class="footer-logo">
+                    <p class="footer-tagline">重新定义短视频创作</p>
+                </div>
+
+                <div class="footer-column">
+                    <h4>产品</h4>
+                    <ul class="footer-links">
+                        <li><a href="product.html">功能特性</a></li>
+                        <li><a href="pricing.html">定价方案</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>关于</h4>
+                    <ul class="footer-links">
+                        <li><a href="pricing.html#contact">联系我们</a></li>
+                        <li><a href="pricing.html#">隐私政策</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p class="footer-copyright">© 2026 奥创天下. All rights reserved.</p>
+                <p class="footer-copyright footer-icp">浙ICP备2026015297号-1</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Navbar scroll effect
+        const navbar = document.querySelector('.navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile menu toggle
+        const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+
+        if (mobileMenuToggle) {
+            mobileMenuToggle.addEventListener('click', () => {
+                navMenu.classList.toggle('active');
+            });
+        }
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+            });
+        });
+
+        // Pricing tabs functionality
+        const pricingTabs = document.querySelectorAll('.pricing-tab');
+        const pricingGrid = document.querySelector('#pricing-grid');
+
+        // 移动端默认选中Max卡片
+        if (window.innerWidth <= 768 && pricingGrid) {
+            const maxCard = pricingGrid.querySelector('[data-plan="max"]');
+            if (maxCard) {
+                maxCard.classList.add('card-active');
+            }
+        }
+
+        pricingTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                const plan = tab.dataset.plan;
+
+                // Update tab state
+                pricingTabs.forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+
+                // Scroll to corresponding card on mobile
+                if (window.innerWidth <= 768 && pricingGrid) {
+                    const targetCard = pricingGrid.querySelector(`[data-plan="${plan}"]`);
+                    if (targetCard) {
+                        // 移除所有卡片的选中状态
+                        pricingGrid.querySelectorAll('[data-plan]').forEach(card => {
+                            card.classList.remove('card-active');
+                        });
+
+                        // 添加选中状态到目标卡片
+                        targetCard.classList.add('card-active');
+
+                        const scrollLeft = targetCard.offsetLeft - (pricingGrid.offsetWidth / 2) + (targetCard.offsetWidth / 2);
+                        pricingGrid.scrollTo({
+                            left: scrollLeft,
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+            });
+        });
+
+        // Fixed pricing tabs with background on scroll - 移动端
+        if (window.innerWidth <= 768) {
+            const pricingTabsEl = document.querySelector('.pricing-tabs');
+
+            if (pricingTabsEl) {
+                // 等待页面完全加载后再计算
+                window.addEventListener('load', function() {
+                    const placeholder = document.createElement('div');
+                    placeholder.style.display = 'none';
+                    pricingTabsEl.parentNode.insertBefore(placeholder, pricingTabsEl.nextSibling);
+
+                    const navHeight = 60;
+                    let tabsOriginalTop = pricingTabsEl.getBoundingClientRect().top + window.pageYOffset;
+
+                    console.log('Tabs original position:', tabsOriginalTop);
+
+                    function updateTabsPosition() {
+                        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+                        if (scrollTop > tabsOriginalTop - navHeight) {
+                            if (!pricingTabsEl.classList.contains('is-stuck')) {
+                                placeholder.style.height = pricingTabsEl.offsetHeight + 'px';
+                                placeholder.style.display = 'block';
+                                pricingTabsEl.classList.add('is-stuck');
+                                console.log('Tabs stuck at scroll:', scrollTop);
+                            }
+                        } else {
+                            if (pricingTabsEl.classList.contains('is-stuck')) {
+                                pricingTabsEl.classList.remove('is-stuck');
+                                placeholder.style.display = 'none';
+                                console.log('Tabs unstuck at scroll:', scrollTop);
+                            }
+                        }
+                    }
+
+                    let ticking = false;
+                    window.addEventListener('scroll', function() {
+                        if (!ticking) {
+                            window.requestAnimationFrame(function() {
+                                updateTabsPosition();
+                                ticking = false;
+                            });
+                            ticking = true;
+                        }
+                    }, { passive: true });
+
+                    // 初始检查
+                    updateTabsPosition();
+                });
+            }
+        }
+
+        // 星擎登录链接智能跳转（桌面端/移动端）
+        (function() {
+            const loginLink = document.getElementById('xingqing-login-link');
+            if (!loginLink) return;
+
+            loginLink.addEventListener('click', function(e) {
+                e.preventDefault();
+
+                // 检测是否为移动设备
+                const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
+                              || window.innerWidth <= 768;
+
+                // 根据设备类型跳转
+                if (isMobile) {
+                    window.location.href = 'https://m.ultronx.tech/login';
+                } else {
+                    window.location.href = 'https://xingqing.ultronx.tech/login';
+                }
+            });
+        })();
+    </script>
+
+    <script>
+    // ⓘ 提示：点击/触摸展开（触屏没有 hover），点别处收起；桌面仍可 hover
+    document.addEventListener('click', function (e) {
+        var icon = e.target.closest && e.target.closest('.info-icon');
+        document.querySelectorAll('.info-icon.tip-open').forEach(function (el) {
+            if (el !== icon) el.classList.remove('tip-open');
+        });
+        if (icon) { icon.classList.toggle('tip-open'); e.preventDefault(); }
+    });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') document.querySelectorAll('.info-icon.tip-open').forEach(function (el) { el.classList.remove('tip-open'); }); });
+    </script>
+</body>
+</html>
