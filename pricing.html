@@ -450,12 +450,27 @@
                 display: none !important;
             }
 
+            /* 卡片宽 = 视口 − 左留白20 − 间距16 − 右侧露头20 → 右侧第二张卡露一点，提示可滑动 */
             #pricing-grid > div {
-                flex: 0 0 304px !important;
-                min-width: 304px !important;
+                flex: 0 0 calc(100vw - 56px) !important;
+                min-width: calc(100vw - 56px) !important;
                 scroll-snap-align: center !important;
                 overflow: visible !important;
                 margin: 0 !important;
+            }
+
+            /* 权益行：左侧标签一律不换行；右侧数值靠右（过长时可自行换行） */
+            #pricing-grid .flex.justify-between {
+                align-items: flex-start !important;
+                gap: 12px !important;
+            }
+            #pricing-grid .flex.justify-between > :first-child {
+                white-space: nowrap !important;
+                flex: 0 0 auto !important;
+            }
+            #pricing-grid .flex.justify-between > :last-child {
+                text-align: right !important;
+                min-width: 0 !important;
             }
 
             /* Price amount font size */
