@@ -2595,6 +2595,28 @@
             border-radius: 24px;
         }
 
+        /* ===== 星帆（xingfan）：在星擎同一套版式语言内，建立自己的识别度 ===== */
+        :root {
+            --xf-accent-1: rgb(0, 188, 125);   /* 成交绿 */
+            --xf-accent-2: rgb(56, 189, 248);  /* 天青 */
+            --xf-radius: 24px;                 /* 与全站卡片圆角一致 */
+        }
+        /* 字体层级（先在此页统一，之后回推星擎） */
+        .xf-kicker     { font-size: 14px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: rgb(134, 239, 205); }
+        .xf-h2         { font-size: 56px; line-height: 1.12; font-weight: 700; }
+        .xf-sub        { font-size: 20px; line-height: 1.5; font-weight: 400; color: rgba(255,255,255,0.45); }
+        .xf-cardtitle  { font-size: 20px; line-height: 1.4; font-weight: 700; }
+        .xf-cardtitle-s{ font-size: 18px; line-height: 1.4; font-weight: 700; }
+        .xf-body       { font-size: 15px; line-height: 1.75; color: rgba(255,255,255,0.5); }
+        .xf-note       { font-size: 13px; font-weight: 500; letter-spacing: 0.04em; color: rgba(255,255,255,0.4); }
+        .xf-tile       { background: linear-gradient(135deg, var(--xf-accent-1), var(--xf-accent-2)); }
+        .xf-shot       { border-radius: var(--xf-radius); border: 1px solid rgba(255,255,255,0.12); background: #08080d; overflow: hidden; }
+        .xf-shot img   { display: block; width: 100%; height: auto; }
+        @media (max-width: 768px) {
+            .xf-h2 { font-size: 32px; }
+            .xf-sub { font-size: 16px; }
+        }
+
     </style>
 </head>
 <body>
@@ -2622,16 +2644,16 @@
         <div class="absolute inset-0 flex items-center justify-center">
             <div class="relative w-[1350px] h-[1350px] gradient-orbit">
                 <div class="absolute top-[4%] left-[50%] w-[600px] h-[600px] gradient-fade-1" style="margin-left: -300px;">
-                    <div class="w-full h-full rounded-full blur-[80px]" style="background: radial-gradient(circle, rgba(120,70,220,1) 0%, rgba(80,50,150,0.6) 40%, rgba(0,0,0,0) 70%);"></div>
+                    <div class="w-full h-full rounded-full blur-[80px]" style="background: radial-gradient(circle, rgba(0,188,125,0.95) 0%, rgba(0,120,90,0.6) 40%, rgba(0,0,0,0) 70%);"></div>
                 </div>
                 <div class="absolute bottom-[4%] left-[50%] w-[600px] h-[600px] gradient-fade-2" style="margin-left: -300px;">
-                    <div class="w-full h-full rounded-full blur-[80px]" style="background: radial-gradient(circle, rgba(50,120,220,1) 0%, rgba(30,80,150,0.6) 40%, rgba(0,0,0,0) 70%);"></div>
+                    <div class="w-full h-full rounded-full blur-[80px]" style="background: radial-gradient(circle, rgba(56,189,248,0.95) 0%, rgba(20,90,140,0.6) 40%, rgba(0,0,0,0) 70%);"></div>
                 </div>
             </div>
         </div>
 
         <div class="relative z-10 text-center px-8 max-w-6xl mx-auto w-full" style="padding-top: 80px;">
-            <p class="text-purple-300/80 uppercase tracking-wider mb-6 hero-item" style="font-size: 24px; font-weight: 500; letter-spacing: 0.46px; animation-delay: 0.2s;">星帆 · TikTok Shop 智能电商</p>
+            <p class="xf-kicker mb-6 hero-item" style="font-size: 24px; font-weight: 500; letter-spacing: 0.46px; animation-delay: 0.2s;">星帆 · TikTok Shop 智能电商</p>
 
             <h1 class="hero-title-desktop font-bold mb-8 gradient-text hero-item" style="font-size: 96px; line-height: 96px; letter-spacing: -2.4px; background-image: linear-gradient(171deg, #fff 0%, #e9d4ff 50%, #bedbff 100%); animation-delay: 0.4s;">
                 从开店到出单
@@ -2680,13 +2702,13 @@
 
     <!-- 定位 -->
     <section class="relative py-32 overflow-hidden" style="background: #000;">
-        <div class="absolute inset-0 flex items-center justify-center"><div class="absolute w-[70%] h-[70%] rounded-[16777200px]" style="opacity: 0.6; background: linear-gradient(90deg, rgba(152, 16, 250, 0.20) 0%, rgba(21, 93, 252, 0.20) 50%, rgba(230, 0, 118, 0.20) 100%); filter: blur(120px);"></div></div>
+        <div class="absolute inset-0 flex items-center justify-center"><div class="absolute w-[70%] h-[70%] rounded-[16777200px]" style="opacity: 0.6; background: linear-gradient(90deg, rgba(0, 188, 125, 0.18) 0%, rgba(56, 189, 248, 0.18) 50%, rgba(122, 122, 255, 0.14) 100%); filter: blur(120px);"></div></div>
         <div class="max-w-6xl mx-auto px-8 relative z-10">
             <div class="text-center mb-20">
-                <h2 class="text-6xl md:text-7xl font-bold mb-6 gradient-text fade-in-element" style="background-image: linear-gradient(180deg, #fff 0%, rgba(255,255,255,0.4) 100%);">
+                <h2 class="xf-h2 gradient-text fade-in-element mb-6" style="background-image: linear-gradient(180deg, #fff 0%, rgba(255,255,255,0.4) 100%);">
                     星帆是什么
                 </h2>
-                <p class="text-xl text-white/40 fade-in-element">消费品出海的 TikTok Shop 全托管</p>
+                <p class="xf-sub fade-in-element">消费品出海的 TikTok Shop 全托管</p>
             </div>
             <div class="max-w-4xl mx-auto text-center">
                 <p class="text-white/70 fade-in-element" style="font-size: 20px; line-height: 36px;">
@@ -2695,10 +2717,12 @@
                 </p>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-16 text-left">
                     <div class="relative bg-white/5 border border-white/10 rounded-3xl p-8 fade-in-element">
+                        <div class="xf-tile flex items-center justify-center mb-5" style="width: 40px; height: 40px; border-radius: 14px;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.5"></circle><path d="M5 20.5a7 7 0 0 1 14 0"></path></svg></div>
                         <p class="text-white/40 text-sm mb-3">对客户</p>
                         <p class="text-white" style="font-size: 17px; line-height: 30px;">不用自己从零搭电商团队 —— 选品、内容、投流、达人、客服都有人接，店铺开起来就能跑。</p>
                     </div>
                     <div class="relative bg-white/5 border border-white/10 rounded-3xl p-8 fade-in-element">
+                        <div class="xf-tile flex items-center justify-center mb-5" style="width: 40px; height: 40px; border-radius: 14px;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 18a9 9 0 1 1 16 0"></path><path d="M12 18l4-6"></path><circle cx="12" cy="18" r="1.4"></circle></svg></div>
                         <p class="text-white/40 text-sm mb-3">对结果</p>
                         <p class="text-white" style="font-size: 17px; line-height: 30px;">看的是 <strong class="text-white">GMV 与 ROI</strong>，不是"发了多少条视频"；每一分投放都能追到转化。</p>
                     </div>
@@ -2709,50 +2733,50 @@
 
     <!-- 5 个 Agent -->
     <section class="relative py-32 overflow-hidden" style="background: #000;">
-        <div class="absolute inset-0 flex items-center justify-center"><div class="absolute w-[70%] h-[70%] rounded-[16777200px]" style="opacity: 0.6; background: linear-gradient(90deg, rgba(152, 16, 250, 0.20) 0%, rgba(21, 93, 252, 0.20) 50%, rgba(230, 0, 118, 0.20) 100%); filter: blur(120px);"></div></div>
+        <div class="absolute inset-0 flex items-center justify-center"><div class="absolute w-[70%] h-[70%] rounded-[16777200px]" style="opacity: 0.6; background: linear-gradient(90deg, rgba(0, 188, 125, 0.18) 0%, rgba(56, 189, 248, 0.18) 50%, rgba(122, 122, 255, 0.14) 100%); filter: blur(120px);"></div></div>
         <div class="max-w-6xl mx-auto px-8 relative z-10">
             <div class="text-center mb-20">
-                <h2 class="text-6xl md:text-7xl font-bold mb-6 gradient-text fade-in-element" style="background-image: linear-gradient(180deg, #fff 0%, rgba(255,255,255,0.4) 100%);">
+                <h2 class="xf-h2 gradient-text fade-in-element mb-6" style="background-image: linear-gradient(180deg, #fff 0%, rgba(255,255,255,0.4) 100%);">
                     AI Agent 全链路
                 </h2>
-                <p class="text-xl text-white/40 fade-in-element">五个 Agent 协作，覆盖从选品到复盘的每个环节</p>
+                <p class="xf-sub fade-in-element">五个 Agent 协作，覆盖从选品到复盘的每个环节</p>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                     <div class="relative bg-white/5 border border-white/10 rounded-3xl p-8 fade-in-element">
-                        <div class="w-12 h-12 rounded-2xl flex items-center justify-center mb-6" style="background: linear-gradient(135deg, rgb(122, 122, 255), rgb(152, 16, 250));">
+                        <div class="w-12 h-12 rounded-2xl flex items-center justify-center mb-6" class="xf-tile">
                             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.5" y2="16.5"></line></svg>
                         </div>
-                        <h3 class="text-xl font-bold mb-3">洞察 Agent</h3>
+                        <h3 class="xf-cardtitle mb-3">洞察 Agent</h3>
                         <p class="text-white/50 leading-relaxed" style="font-size: 15px;">市场与选品洞察 —— 热卖品类挖掘、竞品定价监控、趋势预判，先找到值得打的品。</p>
                     </div>
                     <div class="relative bg-white/5 border border-white/10 rounded-3xl p-8 fade-in-element">
-                        <div class="w-12 h-12 rounded-2xl flex items-center justify-center mb-6" style="background: linear-gradient(135deg, rgb(122, 122, 255), rgb(152, 16, 250));">
+                        <div class="w-12 h-12 rounded-2xl flex items-center justify-center mb-6" class="xf-tile">
                             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V5a2 2 0 0 1 2-2h9l5 5v11a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2z"></path><polyline points="14 3 14 8 19 8"></polyline></svg>
                         </div>
-                        <h3 class="text-xl font-bold mb-3">策划 Agent</h3>
+                        <h3 class="xf-cardtitle mb-3">策划 Agent</h3>
                         <p class="text-white/50 leading-relaxed" style="font-size: 15px;">商品与活动策划 —— 标题 / 主图 / 详情页优化、定价策略、促销活动设计，把货讲清楚。</p>
                     </div>
                     <div class="relative bg-white/5 border border-white/10 rounded-3xl p-8 fade-in-element">
-                        <div class="w-12 h-12 rounded-2xl flex items-center justify-center mb-6" style="background: linear-gradient(135deg, rgb(122, 122, 255), rgb(152, 16, 250));">
+                        <div class="w-12 h-12 rounded-2xl flex items-center justify-center mb-6" class="xf-tile">
                             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="6 4 20 12 6 20 6 4"></polygon></svg>
                         </div>
-                        <h3 class="text-xl font-bold mb-3">制作 Agent</h3>
+                        <h3 class="xf-cardtitle mb-3">制作 Agent</h3>
                         <p class="text-white/50 leading-relaxed" style="font-size: 15px;">内容与素材生产 —— 产品短视频制作、带货脚本、A / B 测试素材批量生产，撑得住日更。</p>
                     </div>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8 md:max-w-4xl md:mx-auto">
                     <div class="relative bg-white/5 border border-white/10 rounded-3xl p-8 fade-in-element">
-                        <div class="w-12 h-12 rounded-2xl flex items-center justify-center mb-6" style="background: linear-gradient(135deg, rgb(122, 122, 255), rgb(152, 16, 250));">
+                        <div class="w-12 h-12 rounded-2xl flex items-center justify-center mb-6" class="xf-tile">
                             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.6" y1="10.5" x2="15.4" y2="6.5"></line><line x1="8.6" y1="13.5" x2="15.4" y2="17.5"></line></svg>
                         </div>
-                        <h3 class="text-xl font-bold mb-3">分发 Agent</h3>
+                        <h3 class="xf-cardtitle mb-3">分发 Agent</h3>
                         <p class="text-white/50 leading-relaxed" style="font-size: 15px;">投放与达人分发 —— 广告投流执行、达人筛选建联、商品卡流量优化，把流量放出去。</p>
                     </div>
                     <div class="relative bg-white/5 border border-white/10 rounded-3xl p-8 fade-in-element">
-                        <div class="w-12 h-12 rounded-2xl flex items-center justify-center mb-6" style="background: linear-gradient(135deg, rgb(122, 122, 255), rgb(152, 16, 250));">
+                        <div class="w-12 h-12 rounded-2xl flex items-center justify-center mb-6" class="xf-tile">
                             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="20" x2="20" y2="20"></line><rect x="6" y="12" width="3" height="8"></rect><rect x="11" y="8" width="3" height="12"></rect><rect x="16" y="4" width="3" height="16"></rect></svg>
                         </div>
-                        <h3 class="text-xl font-bold mb-3">数据 Agent</h3>
+                        <h3 class="xf-cardtitle mb-3">数据 Agent</h3>
                         <p class="text-white/50 leading-relaxed" style="font-size: 15px;">效果复盘与归因 —— GMV / ROI 追踪、转化漏斗、投流效果归因，每一分钱看得见。</p>
                     </div>
             </div>
@@ -2761,75 +2785,106 @@
 
     <!-- 核心交付 -->
     <section class="relative py-32 overflow-hidden" style="background: #000;">
-        <div class="absolute inset-0 flex items-center justify-center"><div class="absolute w-[70%] h-[70%] rounded-[16777200px]" style="opacity: 0.6; background: linear-gradient(90deg, rgba(152, 16, 250, 0.20) 0%, rgba(21, 93, 252, 0.20) 50%, rgba(230, 0, 118, 0.20) 100%); filter: blur(120px);"></div></div>
+        <div class="absolute inset-0 flex items-center justify-center"><div class="absolute w-[70%] h-[70%] rounded-[16777200px]" style="opacity: 0.6; background: linear-gradient(90deg, rgba(0, 188, 125, 0.18) 0%, rgba(56, 189, 248, 0.18) 50%, rgba(122, 122, 255, 0.14) 100%); filter: blur(120px);"></div></div>
         <div class="max-w-6xl mx-auto px-8 relative z-10">
             <div class="text-center mb-20">
-                <h2 class="text-6xl md:text-7xl font-bold mb-6 gradient-text fade-in-element" style="background-image: linear-gradient(180deg, #fff 0%, rgba(255,255,255,0.4) 100%);">
+                <h2 class="xf-h2 gradient-text fade-in-element mb-6" style="background-image: linear-gradient(180deg, #fff 0%, rgba(255,255,255,0.4) 100%);">
                     核心交付
                 </h2>
-                <p class="text-xl text-white/40 fade-in-element">一支全托管团队，六件事做到位</p>
+                <p class="xf-sub fade-in-element">一支全托管团队，六件事做到位</p>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                     <div class="relative bg-white/5 border border-white/10 rounded-3xl p-8 fade-in-element">
-                        <div class="text-sm text-white/40 mb-3">01</div>
-                        <h3 class="text-lg font-bold mb-2">店铺注册与开通</h3>
+                        <div class="xf-tile flex items-center justify-center mb-5" style="width: 44px; height: 44px; border-radius: 14px;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 9.5 5 4h14l1.5 5.5"></path><path d="M4 9.5V19a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1V9.5"></path><path d="M9.5 20v-6h5v6"></path></svg></div>
+                        <h3 class="xf-cardtitle-s mb-2">店铺注册与开通</h3>
                         <p class="text-white/50" style="font-size: 15px; line-height: 26px;">美国本土店 / 跨境店，把店先落地</p>
                     </div>
                     <div class="relative bg-white/5 border border-white/10 rounded-3xl p-8 fade-in-element">
-                        <div class="text-sm text-white/40 mb-3">02</div>
-                        <h3 class="text-lg font-bold mb-2">上架与详情页优化</h3>
+                        <div class="xf-tile flex items-center justify-center mb-5" style="width: 44px; height: 44px; border-radius: 14px;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3.5" width="16" height="17" rx="2"></rect><line x1="8" y1="8.5" x2="16" y2="8.5"></line><line x1="8" y1="12.5" x2="16" y2="12.5"></line><line x1="8" y1="16.5" x2="12" y2="16.5"></line></svg></div>
+                        <h3 class="xf-cardtitle-s mb-2">上架与详情页优化</h3>
                         <p class="text-white/50" style="font-size: 15px; line-height: 26px;">标题、主图、详情页 + A / B 持续测试</p>
                     </div>
                     <div class="relative bg-white/5 border border-white/10 rounded-3xl p-8 fade-in-element">
-                        <div class="text-sm text-white/40 mb-3">03</div>
-                        <h3 class="text-lg font-bold mb-2">短视频素材 + 小黄车</h3>
+                        <div class="xf-tile flex items-center justify-center mb-5" style="width: 44px; height: 44px; border-radius: 14px;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="6" width="13" height="12" rx="2"></rect><polygon points="15.5 10.5 21.5 7.5 21.5 16.5 15.5 13.5"></polygon></svg></div>
+                        <h3 class="xf-cardtitle-s mb-2">短视频素材 + 小黄车</h3>
                         <p class="text-white/50" style="font-size: 15px; line-height: 26px;">带货短视频制作与商品卡挂载</p>
                     </div>
                     <div class="relative bg-white/5 border border-white/10 rounded-3xl p-8 fade-in-element">
-                        <div class="text-sm text-white/40 mb-3">04</div>
-                        <h3 class="text-lg font-bold mb-2">广告投放与 ROI 优化</h3>
+                        <div class="xf-tile flex items-center justify-center mb-5" style="width: 44px; height: 44px; border-radius: 14px;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 17 9 11 13 15 21 7"></polyline><polyline points="14 7 21 7 21 14"></polyline></svg></div>
+                        <h3 class="xf-cardtitle-s mb-2">广告投放与 ROI 优化</h3>
                         <p class="text-white/50" style="font-size: 15px; line-height: 26px;">投流策略制定、预算分配、持续调优</p>
                     </div>
                     <div class="relative bg-white/5 border border-white/10 rounded-3xl p-8 fade-in-element">
-                        <div class="text-sm text-white/40 mb-3">05</div>
-                        <h3 class="text-lg font-bold mb-2">达人筛选与建联</h3>
+                        <div class="xf-tile flex items-center justify-center mb-5" style="width: 44px; height: 44px; border-radius: 14px;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.2"></circle><path d="M3.5 20a5.5 5.5 0 0 1 11 0"></path><circle cx="17.5" cy="9.5" r="2.6"></circle><path d="M15.8 20a5 5 0 0 1 5.7-4.6"></path></svg></div>
+                        <h3 class="xf-cardtitle-s mb-2">达人筛选与建联</h3>
                         <p class="text-white/50" style="font-size: 15px; line-height: 26px;">找对的达人，追带货效果</p>
                     </div>
                     <div class="relative bg-white/5 border border-white/10 rounded-3xl p-8 fade-in-element">
-                        <div class="text-sm text-white/40 mb-3">06</div>
-                        <h3 class="text-lg font-bold mb-2">客服 · 履约 · 评价</h3>
+                        <div class="xf-tile flex items-center justify-center mb-5" style="width: 44px; height: 44px; border-radius: 14px;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 13v-1.5a8 8 0 0 1 16 0V13"></path><rect x="2.5" y="12.5" width="4" height="6.5" rx="2"></rect><rect x="17.5" y="12.5" width="4" height="6.5" rx="2"></rect><path d="M19.5 19a4 4 0 0 1-4 4H13"></path></svg></div>
+                        <h3 class="xf-cardtitle-s mb-2">客服 · 履约 · 评价</h3>
                         <p class="text-white/50" style="font-size: 15px; line-height: 26px;">24 小时在线客服 + 履约监控 + 评价管理</p>
                     </div>
             </div>
             <div class="relative bg-white/5 border border-white/10 rounded-3xl p-8 mt-8 fade-in-element">
-                <h3 class="text-lg font-bold mb-3">专业团队配置</h3>
+                <h3 class="xf-cardtitle-s mb-3">专业团队配置</h3>
                 <p class="text-white/60" style="font-size: 16px; line-height: 30px;">店铺运营经理 · 商品运营 · 内容制作 · 投流优化师 · 达人合作 · 客服履约 —— 不是一个人兼着干，是一条完整的电商运营线。</p>
             </div>
         </div>
     </section>
 
-    <!-- 星擎 + 星帆 -->
+    <!-- 真实在跑 -->
     <section class="relative py-32 overflow-hidden" style="background: #000;">
-        <div class="absolute inset-0 flex items-center justify-center"><div class="absolute w-[70%] h-[70%] rounded-[16777200px]" style="opacity: 0.6; background: linear-gradient(90deg, rgba(152, 16, 250, 0.20) 0%, rgba(21, 93, 252, 0.20) 50%, rgba(230, 0, 118, 0.20) 100%); filter: blur(120px);"></div></div>
+        <div class="absolute inset-0 flex items-center justify-center"><div class="absolute w-[70%] h-[70%] rounded-[16777200px]" style="opacity: 0.6; background: linear-gradient(90deg, rgba(0, 188, 125, 0.18) 0%, rgba(56, 189, 248, 0.18) 50%, rgba(122, 122, 255, 0.14) 100%); filter: blur(120px);"></div></div>
         <div class="max-w-6xl mx-auto px-8 relative z-10">
             <div class="text-center mb-20">
-                <h2 class="text-6xl md:text-7xl font-bold mb-6 gradient-text fade-in-element" style="background-image: linear-gradient(180deg, #fff 0%, rgba(255,255,255,0.4) 100%);">
+                <h2 class="xf-h2 gradient-text fade-in-element mb-6" style="background-image: linear-gradient(180deg, #fff 0%, rgba(255,255,255,0.4) 100%);">
+                    真实在跑的三件事
+                </h2>
+                <p class="xf-sub fade-in-element">账号、互动、出单 —— 都在同一套后台里看得见</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <figure class="fade-in-element">
+                    <div class="xf-shot"><img src="images/3c-account-data.jpg" alt="账号资产" loading="lazy"></div>
+                    <figcaption class="mt-5"><span class="xf-cardtitle-s">账号资产</span><br><span class="xf-note">粉丝、点赞与主页信息，沉淀在账号上</span></figcaption>
+                </figure>
+                <figure class="fade-in-element">
+                    <div class="xf-shot"><img src="images/3c-comments.jpg" alt="买家互动" loading="lazy"></div>
+                    <figcaption class="mt-5"><span class="xf-cardtitle-s">买家互动</span><br><span class="xf-note">评论区就是询盘入口，AI 先帮你筛</span></figcaption>
+                </figure>
+                <figure class="fade-in-element">
+                    <div class="xf-shot"><img src="images/3c-sold-data.jpg" alt="店铺出单" loading="lazy"></div>
+                    <figcaption class="mt-5"><span class="xf-cardtitle-s">店铺出单</span><br><span class="xf-note">商品卡销量持续累积，看得见</span></figcaption>
+                </figure>
+            </div>
+            <p class="xf-note text-center mt-10 fade-in-element">* 配图为项目实拍截图，人物与客户信息已做模糊处理</p>
+        </div>
+    </section>
+
+    <!-- 星擎 + 星帆 -->
+    <section class="relative py-32 overflow-hidden" style="background: #000;">
+        <div class="absolute inset-0 flex items-center justify-center"><div class="absolute w-[70%] h-[70%] rounded-[16777200px]" style="opacity: 0.6; background: linear-gradient(90deg, rgba(0, 188, 125, 0.18) 0%, rgba(56, 189, 248, 0.18) 50%, rgba(122, 122, 255, 0.14) 100%); filter: blur(120px);"></div></div>
+        <div class="max-w-6xl mx-auto px-8 relative z-10">
+            <div class="text-center mb-20">
+                <h2 class="xf-h2 gradient-text fade-in-element mb-6" style="background-image: linear-gradient(180deg, #fff 0%, rgba(255,255,255,0.4) 100%);">
                     星擎 + 星帆
                 </h2>
-                <p class="text-xl text-white/40 fade-in-element">B2B 拿线索，B2C 出订单 —— 海外市场的两条腿</p>
+                <p class="xf-sub fade-in-element">B2B 拿线索，B2C 出订单 —— 海外市场的两条腿</p>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div class="relative bg-white/5 border border-white/10 rounded-3xl p-8 fade-in-element">
-                    <h3 class="text-xl font-bold mb-3">B2B + B2C</h3>
-                    <p class="text-white/50" style="font-size: 15px; line-height: 28px;">星擎做线索获客，星帆做电商出单，同一片海外市场，双模式覆盖。</p>
+                    <div class="xf-tile flex items-center justify-center mb-5" style="width: 40px; height: 40px; border-radius: 14px;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"></circle><path d="M3.5 12h17"></path><path d="M12 3.5a15 15 0 0 1 0 17a15 15 0 0 1 0-17z"></path></svg></div>
+                    <h3 class="xf-cardtitle mb-3">B2B + B2C</h3>
+                    <p class="xf-body">星擎做线索获客，星帆做电商出单，同一片海外市场，双模式覆盖。</p>
                 </div>
                 <div class="relative bg-white/5 border border-white/10 rounded-3xl p-8 fade-in-element">
-                    <h3 class="text-xl font-bold mb-3">数据互通</h3>
-                    <p class="text-white/50" style="font-size: 15px; line-height: 28px;">星擎沉淀的海外买家画像，让星帆选品与投流更准；星帆的消费者行为数据，反过来喂养 B 端内容策略。</p>
+                    <div class="xf-tile flex items-center justify-center mb-5" style="width: 40px; height: 40px; border-radius: 14px;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5.5" r="2.6"></circle><circle cx="6" cy="12" r="2.6"></circle><circle cx="18" cy="18.5" r="2.6"></circle><line x1="8.3" y1="10.8" x2="15.7" y2="6.7"></line><line x1="8.3" y1="13.2" x2="15.7" y2="17.3"></line></svg></div>
+                    <h3 class="xf-cardtitle mb-3">数据互通</h3>
+                    <p class="xf-body">星擎沉淀的海外买家画像，让星帆选品与投流更准；星帆的消费者行为数据，反过来喂养 B 端内容策略。</p>
                 </div>
                 <div class="relative bg-white/5 border border-white/10 rounded-3xl p-8 fade-in-element">
-                    <h3 class="text-xl font-bold mb-3">同一套底座</h3>
-                    <p class="text-white/50" style="font-size: 15px; line-height: 28px;">都由 ArcModel™ 与同一套 AI Agent 框架驱动 —— 一次建模，两个产品同步受益。</p>
+                    <div class="xf-tile flex items-center justify-center mb-5" style="width: 40px; height: 40px; border-radius: 14px;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.5 3.5 8 12 12.5 20.5 8z"></path><path d="M3.5 12.5 12 17l8.5-4.5"></path><path d="M3.5 16.5 12 21l8.5-4.5"></path></svg></div>
+                    <h3 class="xf-cardtitle mb-3">同一套底座</h3>
+                    <p class="xf-body">都由 ArcModel™ 与同一套 AI Agent 框架驱动 —— 一次建模，两个产品同步受益。</p>
                 </div>
             </div>
             <div class="text-center mt-16 fade-in-element">
@@ -2840,25 +2895,29 @@
 
     <!-- 适合谁 -->
     <section class="relative py-32 overflow-hidden" style="background: #000;">
-        <div class="absolute inset-0 flex items-center justify-center"><div class="absolute w-[70%] h-[70%] rounded-[16777200px]" style="opacity: 0.6; background: linear-gradient(90deg, rgba(152, 16, 250, 0.20) 0%, rgba(21, 93, 252, 0.20) 50%, rgba(230, 0, 118, 0.20) 100%); filter: blur(120px);"></div></div>
+        <div class="absolute inset-0 flex items-center justify-center"><div class="absolute w-[70%] h-[70%] rounded-[16777200px]" style="opacity: 0.6; background: linear-gradient(90deg, rgba(0, 188, 125, 0.18) 0%, rgba(56, 189, 248, 0.18) 50%, rgba(122, 122, 255, 0.14) 100%); filter: blur(120px);"></div></div>
         <div class="max-w-6xl mx-auto px-8 relative z-10">
             <div class="text-center mb-20">
-                <h2 class="text-6xl md:text-7xl font-bold mb-6 gradient-text fade-in-element" style="background-image: linear-gradient(180deg, #fff 0%, rgba(255,255,255,0.4) 100%);">
+                <h2 class="xf-h2 gradient-text fade-in-element mb-6" style="background-image: linear-gradient(180deg, #fff 0%, rgba(255,255,255,0.4) 100%);">
                     适合谁
                 </h2>
-                <p class="text-xl text-white/40 fade-in-element">如果你符合下面几条，星帆就是对的产品</p>
+                <p class="xf-sub fade-in-element">如果你符合下面几条，星帆就是对的产品</p>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div class="relative bg-white/5 border border-white/10 rounded-3xl p-8 fade-in-element">
+                <div class="relative bg-white/5 border border-white/10 rounded-3xl p-8 fade-in-element flex items-start gap-4">
+                    <svg class="flex-shrink-0" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="rgb(0,188,125)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-top: 5px;"><polyline points="20 6 9 17 4 12"></polyline></svg>
                     <p class="text-white" style="font-size: 17px; line-height: 30px;"><strong class="text-white">消费品 / DTC 品牌</strong> —— 家居、美妆、3C 配件、服饰、宠物、户外等，面向海外消费者直接销售。</p>
                 </div>
-                <div class="relative bg-white/5 border border-white/10 rounded-3xl p-8 fade-in-element">
+                <div class="relative bg-white/5 border border-white/10 rounded-3xl p-8 fade-in-element flex items-start gap-4">
+                    <svg class="flex-shrink-0" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="rgb(0,188,125)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-top: 5px;"><polyline points="20 6 9 17 4 12"></polyline></svg>
                     <p class="text-white" style="font-size: 17px; line-height: 30px;">已在或计划在 <strong class="text-white">TikTok Shop</strong> 开店 —— 想做出单，而不只是做曝光。</p>
                 </div>
-                <div class="relative bg-white/5 border border-white/10 rounded-3xl p-8 fade-in-element">
+                <div class="relative bg-white/5 border border-white/10 rounded-3xl p-8 fade-in-element flex items-start gap-4">
+                    <svg class="flex-shrink-0" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="rgb(0,188,125)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-top: 5px;"><polyline points="20 6 9 17 4 12"></polyline></svg>
                     <p class="text-white" style="font-size: 17px; line-height: 30px;">有稳定<strong class="text-white">供应链或货源</strong> —— 能配合备货、发货与售后。</p>
                 </div>
-                <div class="relative bg-white/5 border border-white/10 rounded-3xl p-8 fade-in-element">
+                <div class="relative bg-white/5 border border-white/10 rounded-3xl p-8 fade-in-element flex items-start gap-4">
+                    <svg class="flex-shrink-0" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="rgb(0,188,125)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-top: 5px;"><polyline points="20 6 9 17 4 12"></polyline></svg>
                     <p class="text-white" style="font-size: 17px; line-height: 30px;">接受用<strong class="text-white">内容 + 投流 + 达人</strong>的组合打法 —— 愿意让 AI 先把跑量的部分做扎实。</p>
                 </div>
             </div>
