@@ -25,6 +25,13 @@
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
+        /* 版式旋钮：改这里即可统一调整移动端版式 */
+        :root {
+            --page-pad: 20px;    /* 页面左右留白 */
+            --card-gap: 16px;    /* 卡片之间的间距 */
+            --card-peek: 20px;   /* 右侧第二张卡露出多少（提示可滑动） */
+        }
+
         @font-face {
             font-family: 'DIN Alternate';
             src: local('DIN Alternate Bold'), local('DINAlternate-Bold');
@@ -427,42 +434,42 @@
                 box-shadow: 0 25px 50px -12px rgba(122, 122, 255, 0.20) !important;
             }
 
-            /* Parent container padding */
-            .max-w-7xl.mx-auto.px-8 {
-                padding-left: 0 !important;
-                padding-right: 0 !important;
+            /* 只对「真正需要通栏」的容器清零内边距（原先是对所有同名容器一刀切） */
+            .max-w-7xl.bleed-mobile {
+                padding-left: 0;
+                padding-right: 0;
             }
 
-            /* 增值服务区块：移动端保留左右 20px 页面间距（与卡片左右留白一致） */
+            /* 增值服务区块：移动端保留页面左右留白（与卡片的 --page-pad 一致） */
             #upgrade-services {
-                padding-left: 20px !important;
-                padding-right: 20px !important;
+                padding-left: var(--page-pad);
+                padding-right: var(--page-pad);
             }
 
-            /* Pricing cards horizontal scroll */
+            /* Pricing cards horizontal scroll（id 选择器本身已压过 Tailwind 类，无需 !important） */
             #pricing-grid {
-                display: flex !important;
-                overflow-x: auto !important;
-                overflow-y: visible !important;
-                scroll-snap-type: x mandatory !important;
-                gap: 16px !important;
-                -webkit-overflow-scrolling: touch !important;
-                scrollbar-width: none !important;
-                padding: 20px 20px 40px 20px !important;
-                margin: 0 !important;
+                display: flex;
+                overflow-x: auto;
+                overflow-y: visible;
+                scroll-snap-type: x mandatory;
+                gap: var(--card-gap);
+                -webkit-overflow-scrolling: touch;
+                scrollbar-width: none;
+                padding: var(--page-pad) var(--page-pad) 40px var(--page-pad);
+                margin: 0;
             }
 
             #pricing-grid::-webkit-scrollbar {
                 display: none !important;
             }
 
-            /* 卡片宽 = 视口 − 左留白20 − 间距16 − 右侧露头20 → 右侧第二张卡露一点，提示可滑动 */
+            /* 卡片宽 = 视口 − 左留白 − 间距 − 右侧露头（数字都在 :root 变量里） */
             #pricing-grid > div {
-                flex: 0 0 calc(100vw - 56px) !important;
-                min-width: calc(100vw - 56px) !important;
-                scroll-snap-align: center !important;
-                overflow: visible !important;
-                margin: 0 !important;
+                flex: 0 0 calc(100vw - var(--page-pad) - var(--card-gap) - var(--card-peek));
+                min-width: calc(100vw - var(--page-pad) - var(--card-gap) - var(--card-peek));
+                scroll-snap-align: center;
+                overflow: visible;
+                margin: 0;
             }
 
             /* 权益行：左侧标签一律不换行；右侧数值靠右（过长时可自行换行） */
@@ -489,15 +496,6 @@
                 font-size: 18px !important;
             }
 
-            /* Remove top margin from bottom text */
-            .text-center.mb-24 p {
-                margin-top: 0 !important;
-            }
-
-            /* 底部注释文字：与上方「增值服务」卡片的块间距一致（gap 32px），不贴卡片边 */
-            #pricing-footnote {
-                margin-top: 32px !important;
-            }
 
             /* Pricing button style */
             #pricing-grid a,
@@ -668,6 +666,18 @@
                 display: none !important;
             }
         }
+        /* 数值/价格的渐变强调（原先同一串内联样式重复 30+ 次） */
+        .grad-purple { background: linear-gradient(90deg, rgb(122, 122, 255), rgb(152, 16, 250)); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+        .grad-green  { background: linear-gradient(90deg, rgb(0, 188, 125), rgb(0, 150, 137));  -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+        .grad-orange { background: linear-gradient(90deg, rgb(254, 154, 0), rgb(245, 73, 0));   -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+        /* 底部注释文字：与上方「增值服务」卡片的块间距一致（gap 32px） */
+        #pricing-footnote {
+            margin-top: 32px;
+        }
+
+        /* 大号价格的字体设定（原先重复 3 次的内联） */
+        .price-glyph { font-family: 'DIN Alternate', 'Barlow Semi Condensed', 'Inter', sans-serif; font-variant-numeric: tabular-nums; }
+
     </style>
 </head>
 <body>
@@ -709,7 +719,7 @@
             </div>
         </div>
 
-        <div class="max-w-7xl mx-auto px-8 relative z-10">
+        <div class="max-w-7xl mx-auto px-8 relative z-10 bleed-mobile">
             <!-- Title -->
             <div class="text-center mb-20">
                 <h2 class="text-6xl md:text-7xl font-bold mb-6 gradient-text" style="background-image: linear-gradient(180deg, #fff 0%, rgba(255,255,255,0.4) 100%);">
@@ -726,7 +736,7 @@
             <button class="pricing-tab" data-plan="pro">Lite 版</button>
         </div>
 
-        <div class="max-w-7xl mx-auto px-8 relative z-10">
+        <div class="max-w-7xl mx-auto px-8 relative z-10 bleed-mobile">
             <!-- Pricing Cards (使用首页样式) -->
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8" id="pricing-grid">
 <!-- 星擎Tiktok Lite版 -->
@@ -735,23 +745,23 @@
 <h3 class="text-xl font-bold mb-3">星擎Tiktok Lite版</h3>
 <div class="flex items-baseline mb-3">
 <span class="text-sm text-white/60">¥</span>
-<span class="text-5xl font-bold mx-1" style="font-family: 'DIN Alternate', 'Barlow Semi Condensed', 'Inter', sans-serif; font-variant-numeric: tabular-nums; background: linear-gradient(90deg, rgb(254, 154, 0), rgb(245, 73, 0)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">29,800</span>
+<span class="text-5xl font-bold mx-1 price-glyph grad-orange">29,800</span>
 <span class="text-sm text-white/40 ml-1">/ 1+3个月</span>
 </div>
 <div class="pt-4 mb-6 flex-grow mt-6">
 <div class="border-t border-white/10 pt-4 mb-6">
 <p class="font-bold text-white/60 mb-3 uppercase tracking-wider flex items-center gap-1" style="font-size: 16px;"><svg width="12" height="12" viewBox="0 0 7 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3.68395 0.328482C3.57814 -0.110154 3.4055 -0.109361 3.30081 0.330069L2.71051 2.8088C2.60526 3.24823 2.26778 3.72891 1.95927 3.87882L0.231805 4.71564C-0.0767104 4.86476 -0.0772673 5.11224 0.230134 5.26453L1.94757 6.11563C2.25497 6.26792 2.59356 6.75177 2.69937 7.19041L3.29858 9.67152C3.40439 10.1102 3.57591 10.1094 3.68005 9.66993L4.26534 7.19913C4.36947 6.7597 4.70639 6.27744 5.01435 6.12753L6.7691 5.27088C7.07706 5.12096 7.07706 4.87666 6.76854 4.72833L5.04164 3.89548C4.73312 3.74715 4.39398 3.26727 4.28817 2.82863L3.68395 0.328482Z" fill="currentColor"/></svg>AI内容生产服务</p>
 <div class="space-y-3 text-sm">
-<div class="flex justify-between text-white/80"><span class="text-white/60">拍摄服务（6小时/次）<span class="info-icon group relative inline-block ml-1 cursor-help align-text-bottom"><svg class="w-4 h-4 align-middle text-white/60" viewBox="0 0 20 20" stroke="currentColor" fill="none"><circle cx="10" cy="10" r="7" stroke-width="1.5"/><text x="10" y="13.5" text-anchor="middle" font-size="11" fill="currentColor">i</text></svg><span class="tooltip hidden group-hover:block absolute bottom-full left-0 mb-1 px-3 py-1.5 text-xs text-white bg-black/80 backdrop-blur-xl rounded whitespace-nowrap z-50">6小时/次，限指定城市</span></span></span><span style="background: linear-gradient(90deg, rgb(254, 154, 0), rgb(245, 73, 0)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">1次</span></div>
-<div class="flex justify-between text-white/80"><span class="text-white/60">AI混剪视频</span><span style="background: linear-gradient(90deg, rgb(254, 154, 0), rgb(245, 73, 0)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">240条</span></div>
+<div class="flex justify-between text-white/80"><span class="text-white/60">拍摄服务（6小时/次）<span class="info-icon group relative inline-block ml-1 cursor-help align-text-bottom"><svg class="w-4 h-4 align-middle text-white/60" viewBox="0 0 20 20" stroke="currentColor" fill="none"><circle cx="10" cy="10" r="7" stroke-width="1.5"/><text x="10" y="13.5" text-anchor="middle" font-size="11" fill="currentColor">i</text></svg><span class="tooltip hidden group-hover:block absolute bottom-full left-0 mb-1 px-3 py-1.5 text-xs text-white bg-black/80 backdrop-blur-xl rounded whitespace-nowrap z-50">6小时/次，限指定城市</span></span></span><span class="grad-orange">1次</span></div>
+<div class="flex justify-between text-white/80"><span class="text-white/60">AI混剪视频</span><span class="grad-orange">240条</span></div>
 <div class="flex justify-between text-white/80"><span class="text-white/60">企业宣传片（不超过60s）<span class="info-icon group relative inline-block ml-1 cursor-help align-text-bottom"><svg class="w-4 h-4 align-middle text-white/60" viewBox="0 0 20 20" stroke="currentColor" fill="none"><circle cx="10" cy="10" r="7" stroke-width="1.5"/><text x="10" y="13.5" text-anchor="middle" font-size="11" fill="currentColor">i</text></svg><span class="tooltip hidden group-hover:block absolute bottom-full left-0 mb-1 px-3 py-1.5 text-xs text-white bg-black/80 backdrop-blur-xl rounded whitespace-nowrap z-50">不超过60秒</span></span></span><span class="text-right">/</span></div>
 </div>
 </div>
 <div class="border-t border-white/10 pt-4 mb-6">
 <p class="font-bold text-white/60 mb-3 uppercase tracking-wider flex items-center gap-1" style="font-size: 16px;"><svg width="12" height="12" viewBox="0 0 7 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3.68395 0.328482C3.57814 -0.110154 3.4055 -0.109361 3.30081 0.330069L2.71051 2.8088C2.60526 3.24823 2.26778 3.72891 1.95927 3.87882L0.231805 4.71564C-0.0767104 4.86476 -0.0772673 5.11224 0.230134 5.26453L1.94757 6.11563C2.25497 6.26792 2.59356 6.75177 2.69937 7.19041L3.29858 9.67152C3.40439 10.1102 3.57591 10.1094 3.68005 9.66993L4.26534 7.19913C4.36947 6.7597 4.70639 6.27744 5.01435 6.12753L6.7691 5.27088C7.07706 5.12096 7.07706 4.87666 6.76854 4.72833L5.04164 3.89548C4.73312 3.74715 4.39398 3.26727 4.28817 2.82863L3.68395 0.328482Z" fill="currentColor"/></svg>海外账号矩阵与基础设施</p>
 <div class="space-y-3 text-sm">
-<div class="flex justify-between text-white/80"><span class="text-white/60">Tiktok卫星号（矩阵账号）</span><span style="background: linear-gradient(90deg, rgb(254, 154, 0), rgb(245, 73, 0)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">3个</span></div>
-<div class="flex justify-between text-white/80"><span class="text-white/60">Tiktok主号</span><span style="background: linear-gradient(90deg, rgb(254, 154, 0), rgb(245, 73, 0)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">1个</span></div>
+<div class="flex justify-between text-white/80"><span class="text-white/60">Tiktok卫星号（矩阵账号）</span><span class="grad-orange">3个</span></div>
+<div class="flex justify-between text-white/80"><span class="text-white/60">Tiktok主号</span><span class="grad-orange">1个</span></div>
 <div class="flex justify-between text-white/80"><span class="text-white/60">云真机服务</span><span class="text-right">3个卫星号+1个主号</span></div>
 </div>
 </div>
@@ -759,8 +769,8 @@
 <p class="font-bold text-white/60 mb-3 uppercase tracking-wider flex items-center gap-1" style="font-size: 16px;"><svg width="12" height="12" viewBox="0 0 7 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3.68395 0.328482C3.57814 -0.110154 3.4055 -0.109361 3.30081 0.330069L2.71051 2.8088C2.60526 3.24823 2.26778 3.72891 1.95927 3.87882L0.231805 4.71564C-0.0767104 4.86476 -0.0772673 5.11224 0.230134 5.26453L1.94757 6.11563C2.25497 6.26792 2.59356 6.75177 2.69937 7.19041L3.29858 9.67152C3.40439 10.1102 3.57591 10.1094 3.68005 9.66993L4.26534 7.19913C4.36947 6.7597 4.70639 6.27744 5.01435 6.12753L6.7691 5.27088C7.07706 5.12096 7.07706 4.87666 6.76854 4.72833L5.04164 3.89548C4.73312 3.74715 4.39398 3.26727 4.28817 2.82863L3.68395 0.328482Z" fill="currentColor"/></svg>精准触达与流量增长</p>
 <div class="space-y-3 text-sm">
 <div class="flex justify-between text-white/80"><span class="text-white/60">圈选数据定投</span><span class="text-right">精准人群定投</span></div>
-<div class="flex justify-between text-white/80"><span class="text-white/60">总播放量（工业品）</span><span style="background: linear-gradient(90deg, rgb(254, 154, 0), rgb(245, 73, 0)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">1.5万</span></div>
-<div class="flex justify-between text-white/80"><span class="text-white/60">总播放量（消费品）</span><span style="background: linear-gradient(90deg, rgb(254, 154, 0), rgb(245, 73, 0)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">6万</span></div>
+<div class="flex justify-between text-white/80"><span class="text-white/60">总播放量（工业品）</span><span class="grad-orange">1.5万</span></div>
+<div class="flex justify-between text-white/80"><span class="text-white/60">总播放量（消费品）</span><span class="grad-orange">6万</span></div>
 </div>
 </div>
 <div class="border-t border-white/10 pt-4 mb-6">
@@ -781,23 +791,23 @@
 <h3 class="text-xl font-bold mb-3">星擎Tiktok Pro版</h3>
 <div class="flex items-baseline mb-3">
 <span class="text-sm text-white/60">¥</span>
-<span class="text-5xl font-bold mx-1" style="font-family: 'DIN Alternate', 'Barlow Semi Condensed', 'Inter', sans-serif; font-variant-numeric: tabular-nums; background: linear-gradient(90deg, rgb(0, 188, 125), rgb(0, 150, 137)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">99,800</span>
+<span class="text-5xl font-bold mx-1 price-glyph grad-green">99,800</span>
 <span class="text-sm text-white/40 ml-1">/ 1+12个月</span>
 </div>
 <div class="pt-4 mb-6 flex-grow mt-6">
 <div class="border-t border-white/10 pt-4 mb-6">
 <p class="font-bold text-white/60 mb-3 uppercase tracking-wider flex items-center gap-1" style="font-size: 16px;"><svg width="12" height="12" viewBox="0 0 7 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3.68395 0.328482C3.57814 -0.110154 3.4055 -0.109361 3.30081 0.330069L2.71051 2.8088C2.60526 3.24823 2.26778 3.72891 1.95927 3.87882L0.231805 4.71564C-0.0767104 4.86476 -0.0772673 5.11224 0.230134 5.26453L1.94757 6.11563C2.25497 6.26792 2.59356 6.75177 2.69937 7.19041L3.29858 9.67152C3.40439 10.1102 3.57591 10.1094 3.68005 9.66993L4.26534 7.19913C4.36947 6.7597 4.70639 6.27744 5.01435 6.12753L6.7691 5.27088C7.07706 5.12096 7.07706 4.87666 6.76854 4.72833L5.04164 3.89548C4.73312 3.74715 4.39398 3.26727 4.28817 2.82863L3.68395 0.328482Z" fill="currentColor"/></svg>AI内容生产服务</p>
 <div class="space-y-3 text-sm">
-<div class="flex justify-between text-white/80"><span class="text-white/60">拍摄服务（6小时/次）<span class="info-icon group relative inline-block ml-1 cursor-help align-text-bottom"><svg class="w-4 h-4 align-middle text-white/60" viewBox="0 0 20 20" stroke="currentColor" fill="none"><circle cx="10" cy="10" r="7" stroke-width="1.5"/><text x="10" y="13.5" text-anchor="middle" font-size="11" fill="currentColor">i</text></svg><span class="tooltip hidden group-hover:block absolute bottom-full left-0 mb-1 px-3 py-1.5 text-xs text-white bg-black/80 backdrop-blur-xl rounded whitespace-nowrap z-50">6小时/次，限指定城市</span></span></span><span style="background: linear-gradient(90deg, rgb(0, 188, 125), rgb(0, 150, 137)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">2次</span></div>
-<div class="flex justify-between text-white/80"><span class="text-white/60">AI混剪视频</span><span style="background: linear-gradient(90deg, rgb(0, 188, 125), rgb(0, 150, 137)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">960条</span></div>
-<div class="flex justify-between text-white/80"><span class="text-white/60">企业宣传片（不超过60s）<span class="info-icon group relative inline-block ml-1 cursor-help align-text-bottom"><svg class="w-4 h-4 align-middle text-white/60" viewBox="0 0 20 20" stroke="currentColor" fill="none"><circle cx="10" cy="10" r="7" stroke-width="1.5"/><text x="10" y="13.5" text-anchor="middle" font-size="11" fill="currentColor">i</text></svg><span class="tooltip hidden group-hover:block absolute bottom-full left-0 mb-1 px-3 py-1.5 text-xs text-white bg-black/80 backdrop-blur-xl rounded whitespace-nowrap z-50">不超过60秒</span></span></span><span style="background: linear-gradient(90deg, rgb(0, 188, 125), rgb(0, 150, 137)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">1条</span></div>
+<div class="flex justify-between text-white/80"><span class="text-white/60">拍摄服务（6小时/次）<span class="info-icon group relative inline-block ml-1 cursor-help align-text-bottom"><svg class="w-4 h-4 align-middle text-white/60" viewBox="0 0 20 20" stroke="currentColor" fill="none"><circle cx="10" cy="10" r="7" stroke-width="1.5"/><text x="10" y="13.5" text-anchor="middle" font-size="11" fill="currentColor">i</text></svg><span class="tooltip hidden group-hover:block absolute bottom-full left-0 mb-1 px-3 py-1.5 text-xs text-white bg-black/80 backdrop-blur-xl rounded whitespace-nowrap z-50">6小时/次，限指定城市</span></span></span><span class="grad-green">2次</span></div>
+<div class="flex justify-between text-white/80"><span class="text-white/60">AI混剪视频</span><span class="grad-green">960条</span></div>
+<div class="flex justify-between text-white/80"><span class="text-white/60">企业宣传片（不超过60s）<span class="info-icon group relative inline-block ml-1 cursor-help align-text-bottom"><svg class="w-4 h-4 align-middle text-white/60" viewBox="0 0 20 20" stroke="currentColor" fill="none"><circle cx="10" cy="10" r="7" stroke-width="1.5"/><text x="10" y="13.5" text-anchor="middle" font-size="11" fill="currentColor">i</text></svg><span class="tooltip hidden group-hover:block absolute bottom-full left-0 mb-1 px-3 py-1.5 text-xs text-white bg-black/80 backdrop-blur-xl rounded whitespace-nowrap z-50">不超过60秒</span></span></span><span class="grad-green">1条</span></div>
 </div>
 </div>
 <div class="border-t border-white/10 pt-4 mb-6">
 <p class="font-bold text-white/60 mb-3 uppercase tracking-wider flex items-center gap-1" style="font-size: 16px;"><svg width="12" height="12" viewBox="0 0 7 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3.68395 0.328482C3.57814 -0.110154 3.4055 -0.109361 3.30081 0.330069L2.71051 2.8088C2.60526 3.24823 2.26778 3.72891 1.95927 3.87882L0.231805 4.71564C-0.0767104 4.86476 -0.0772673 5.11224 0.230134 5.26453L1.94757 6.11563C2.25497 6.26792 2.59356 6.75177 2.69937 7.19041L3.29858 9.67152C3.40439 10.1102 3.57591 10.1094 3.68005 9.66993L4.26534 7.19913C4.36947 6.7597 4.70639 6.27744 5.01435 6.12753L6.7691 5.27088C7.07706 5.12096 7.07706 4.87666 6.76854 4.72833L5.04164 3.89548C4.73312 3.74715 4.39398 3.26727 4.28817 2.82863L3.68395 0.328482Z" fill="currentColor"/></svg>海外账号矩阵与基础设施</p>
 <div class="space-y-3 text-sm">
-<div class="flex justify-between text-white/80"><span class="text-white/60">Tiktok卫星号（矩阵账号）</span><span style="background: linear-gradient(90deg, rgb(0, 188, 125), rgb(0, 150, 137)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">3个</span></div>
-<div class="flex justify-between text-white/80"><span class="text-white/60">Tiktok主号</span><span style="background: linear-gradient(90deg, rgb(0, 188, 125), rgb(0, 150, 137)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">1个</span></div>
+<div class="flex justify-between text-white/80"><span class="text-white/60">Tiktok卫星号（矩阵账号）</span><span class="grad-green">3个</span></div>
+<div class="flex justify-between text-white/80"><span class="text-white/60">Tiktok主号</span><span class="grad-green">1个</span></div>
 <div class="flex justify-between text-white/80"><span class="text-white/60">云真机服务</span><span class="text-right">3个卫星号+1个主号</span></div>
 </div>
 </div>
@@ -805,15 +815,15 @@
 <p class="font-bold text-white/60 mb-3 uppercase tracking-wider flex items-center gap-1" style="font-size: 16px;"><svg width="12" height="12" viewBox="0 0 7 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3.68395 0.328482C3.57814 -0.110154 3.4055 -0.109361 3.30081 0.330069L2.71051 2.8088C2.60526 3.24823 2.26778 3.72891 1.95927 3.87882L0.231805 4.71564C-0.0767104 4.86476 -0.0772673 5.11224 0.230134 5.26453L1.94757 6.11563C2.25497 6.26792 2.59356 6.75177 2.69937 7.19041L3.29858 9.67152C3.40439 10.1102 3.57591 10.1094 3.68005 9.66993L4.26534 7.19913C4.36947 6.7597 4.70639 6.27744 5.01435 6.12753L6.7691 5.27088C7.07706 5.12096 7.07706 4.87666 6.76854 4.72833L5.04164 3.89548C4.73312 3.74715 4.39398 3.26727 4.28817 2.82863L3.68395 0.328482Z" fill="currentColor"/></svg>精准触达与流量增长</p>
 <div class="space-y-3 text-sm">
 <div class="flex justify-between text-white/80"><span class="text-white/60">数据定投</span><span class="text-right">4个账号智能数据精准投放</span></div>
-<div class="flex justify-between text-white/80"><span class="text-white/60">总播放量</span><span style="background: linear-gradient(90deg, rgb(0, 188, 125), rgb(0, 150, 137)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">30万（不区分行业）</span></div>
+<div class="flex justify-between text-white/80"><span class="text-white/60">总播放量</span><span class="grad-green">30万（不区分行业）</span></div>
 </div>
 </div>
 <div class="border-t border-white/10 pt-4 mb-6">
 <p class="font-bold text-white/60 mb-3 uppercase tracking-wider flex items-center gap-1" style="font-size: 16px;"><svg width="12" height="12" viewBox="0 0 7 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3.68395 0.328482C3.57814 -0.110154 3.4055 -0.109361 3.30081 0.330069L2.71051 2.8088C2.60526 3.24823 2.26778 3.72891 1.95927 3.87882L0.231805 4.71564C-0.0767104 4.86476 -0.0772673 5.11224 0.230134 5.26453L1.94757 6.11563C2.25497 6.26792 2.59356 6.75177 2.69937 7.19041L3.29858 9.67152C3.40439 10.1102 3.57591 10.1094 3.68005 9.66993L4.26534 7.19913C4.36947 6.7597 4.70639 6.27744 5.01435 6.12753L6.7691 5.27088C7.07706 5.12096 7.07706 4.87666 6.76854 4.72833L5.04164 3.89548C4.73312 3.74715 4.39398 3.26727 4.28817 2.82863L3.68395 0.328482Z" fill="currentColor"/></svg>智能承接与商机转化</p>
 <div class="space-y-3 text-sm">
-<div class="flex justify-between text-white/80"><span class="text-white/60">建站</span><span style="background: linear-gradient(90deg, rgb(0, 188, 125), rgb(0, 150, 137)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">1个</span></div>
-<div class="flex justify-between text-white/80"><span class="text-white/60">Agent 智能体客服（含Token）</span><span style="background: linear-gradient(90deg, rgb(0, 188, 125), rgb(0, 150, 137)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">1个</span></div>
-<div class="flex justify-between text-white/80"><span class="text-white/60">线索<span class="info-icon group relative inline-block ml-1 cursor-help align-text-bottom"><svg class="w-4 h-4 align-middle text-white/60" viewBox="0 0 20 20" stroke="currentColor" fill="none"><circle cx="10" cy="10" r="7" stroke-width="1.5"/><text x="10" y="13.5" text-anchor="middle" font-size="11" fill="currentColor">i</text></svg><span class="tooltip hidden group-hover:block absolute bottom-full left-0 mb-1 px-3 py-1.5 text-xs text-white bg-black/80 backdrop-blur-xl rounded whitespace-nowrap z-50">含表单留资、WhatsApp 聊单、平台留言私信等咨询线索</span></span></span><span style="background: linear-gradient(90deg, rgb(0, 188, 125), rgb(0, 150, 137)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">150条</span></div>
+<div class="flex justify-between text-white/80"><span class="text-white/60">建站</span><span class="grad-green">1个</span></div>
+<div class="flex justify-between text-white/80"><span class="text-white/60">Agent 智能体客服（含Token）</span><span class="grad-green">1个</span></div>
+<div class="flex justify-between text-white/80"><span class="text-white/60">线索<span class="info-icon group relative inline-block ml-1 cursor-help align-text-bottom"><svg class="w-4 h-4 align-middle text-white/60" viewBox="0 0 20 20" stroke="currentColor" fill="none"><circle cx="10" cy="10" r="7" stroke-width="1.5"/><text x="10" y="13.5" text-anchor="middle" font-size="11" fill="currentColor">i</text></svg><span class="tooltip hidden group-hover:block absolute bottom-full left-0 mb-1 px-3 py-1.5 text-xs text-white bg-black/80 backdrop-blur-xl rounded whitespace-nowrap z-50">含表单留资、WhatsApp 聊单、平台留言私信等咨询线索</span></span></span><span class="grad-green">150条</span></div>
 <div class="flex justify-between text-white/80"><span class="text-white/60">续约专享</span><span class="text-right">/</span></div>
 </div>
 </div>
@@ -826,25 +836,25 @@
 <h3 class="text-xl font-bold mb-3">星擎AI全网营销Max版</h3>
 <div class="flex items-baseline mb-3">
 <span class="text-sm text-white/60">¥</span>
-<span class="text-5xl font-bold mx-1" style="font-family: 'DIN Alternate', 'Barlow Semi Condensed', 'Inter', sans-serif; font-variant-numeric: tabular-nums; background: linear-gradient(90deg, rgb(122, 122, 255), rgb(152, 16, 250)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">129,800</span>
+<span class="text-5xl font-bold mx-1 price-glyph grad-purple">129,800</span>
 <span class="text-sm text-white/40 ml-1">/ 1+12个月</span>
 </div>
 <div class="pt-4 mb-6 flex-grow mt-6">
 <div class="border-t border-white/10 pt-4 mb-6">
 <p class="font-bold text-white/60 mb-3 uppercase tracking-wider flex items-center gap-1" style="font-size: 16px;"><svg width="12" height="12" viewBox="0 0 7 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3.68395 0.328482C3.57814 -0.110154 3.4055 -0.109361 3.30081 0.330069L2.71051 2.8088C2.60526 3.24823 2.26778 3.72891 1.95927 3.87882L0.231805 4.71564C-0.0767104 4.86476 -0.0772673 5.11224 0.230134 5.26453L1.94757 6.11563C2.25497 6.26792 2.59356 6.75177 2.69937 7.19041L3.29858 9.67152C3.40439 10.1102 3.57591 10.1094 3.68005 9.66993L4.26534 7.19913C4.36947 6.7597 4.70639 6.27744 5.01435 6.12753L6.7691 5.27088C7.07706 5.12096 7.07706 4.87666 6.76854 4.72833L5.04164 3.89548C4.73312 3.74715 4.39398 3.26727 4.28817 2.82863L3.68395 0.328482Z" fill="currentColor"/></svg>AI全域内容生产服务</p>
 <div class="space-y-3 text-sm">
-<div class="flex justify-between text-white/80"><span class="text-white/60">拍摄服务（6小时/次）<span class="info-icon group relative inline-block ml-1 cursor-help align-text-bottom"><svg class="w-4 h-4 align-middle text-white/60" viewBox="0 0 20 20" stroke="currentColor" fill="none"><circle cx="10" cy="10" r="7" stroke-width="1.5"/><text x="10" y="13.5" text-anchor="middle" font-size="11" fill="currentColor">i</text></svg><span class="tooltip hidden group-hover:block absolute bottom-full left-0 mb-1 px-3 py-1.5 text-xs text-white bg-black/80 backdrop-blur-xl rounded whitespace-nowrap z-50">6小时/次，限指定城市</span></span></span><span style="background: linear-gradient(90deg, rgb(122, 122, 255), rgb(152, 16, 250)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">2次</span></div>
-<div class="flex justify-between text-white/80"><span class="text-white/60">AI混剪视频</span><span style="background: linear-gradient(90deg, rgb(122, 122, 255), rgb(152, 16, 250)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">960条</span></div>
-<div class="flex justify-between text-white/80"><span class="text-white/60">企业宣传片（不超过60s）<span class="info-icon group relative inline-block ml-1 cursor-help align-text-bottom"><svg class="w-4 h-4 align-middle text-white/60" viewBox="0 0 20 20" stroke="currentColor" fill="none"><circle cx="10" cy="10" r="7" stroke-width="1.5"/><text x="10" y="13.5" text-anchor="middle" font-size="11" fill="currentColor">i</text></svg><span class="tooltip hidden group-hover:block absolute bottom-full left-0 mb-1 px-3 py-1.5 text-xs text-white bg-black/80 backdrop-blur-xl rounded whitespace-nowrap z-50">不超过60秒</span></span></span><span style="background: linear-gradient(90deg, rgb(122, 122, 255), rgb(152, 16, 250)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">1条</span></div>
+<div class="flex justify-between text-white/80"><span class="text-white/60">拍摄服务（6小时/次）<span class="info-icon group relative inline-block ml-1 cursor-help align-text-bottom"><svg class="w-4 h-4 align-middle text-white/60" viewBox="0 0 20 20" stroke="currentColor" fill="none"><circle cx="10" cy="10" r="7" stroke-width="1.5"/><text x="10" y="13.5" text-anchor="middle" font-size="11" fill="currentColor">i</text></svg><span class="tooltip hidden group-hover:block absolute bottom-full left-0 mb-1 px-3 py-1.5 text-xs text-white bg-black/80 backdrop-blur-xl rounded whitespace-nowrap z-50">6小时/次，限指定城市</span></span></span><span class="grad-purple">2次</span></div>
+<div class="flex justify-between text-white/80"><span class="text-white/60">AI混剪视频</span><span class="grad-purple">960条</span></div>
+<div class="flex justify-between text-white/80"><span class="text-white/60">企业宣传片（不超过60s）<span class="info-icon group relative inline-block ml-1 cursor-help align-text-bottom"><svg class="w-4 h-4 align-middle text-white/60" viewBox="0 0 20 20" stroke="currentColor" fill="none"><circle cx="10" cy="10" r="7" stroke-width="1.5"/><text x="10" y="13.5" text-anchor="middle" font-size="11" fill="currentColor">i</text></svg><span class="tooltip hidden group-hover:block absolute bottom-full left-0 mb-1 px-3 py-1.5 text-xs text-white bg-black/80 backdrop-blur-xl rounded whitespace-nowrap z-50">不超过60秒</span></span></span><span class="grad-purple">1条</span></div>
 </div>
 </div>
 <div class="border-t border-white/10 pt-4 mb-6">
 <p class="font-bold text-white/60 mb-3 uppercase tracking-wider flex items-center gap-1" style="font-size: 16px;"><svg width="12" height="12" viewBox="0 0 7 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3.68395 0.328482C3.57814 -0.110154 3.4055 -0.109361 3.30081 0.330069L2.71051 2.8088C2.60526 3.24823 2.26778 3.72891 1.95927 3.87882L0.231805 4.71564C-0.0767104 4.86476 -0.0772673 5.11224 0.230134 5.26453L1.94757 6.11563C2.25497 6.26792 2.59356 6.75177 2.69937 7.19041L3.29858 9.67152C3.40439 10.1102 3.57591 10.1094 3.68005 9.66993L4.26534 7.19913C4.36947 6.7597 4.70639 6.27744 5.01435 6.12753L6.7691 5.27088C7.07706 5.12096 7.07706 4.87666 6.76854 4.72833L5.04164 3.89548C4.73312 3.74715 4.39398 3.26727 4.28817 2.82863L3.68395 0.328482Z" fill="currentColor"/></svg>海外账号矩阵与基础设施</p>
 <div class="space-y-3 text-sm">
-<div class="flex justify-between text-white/80"><span class="text-white/60">Tiktok主号</span><span style="background: linear-gradient(90deg, rgb(122, 122, 255), rgb(152, 16, 250)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">1个</span></div>
-<div class="flex justify-between text-white/80"><span class="text-white/60">Youtube主号</span><span style="background: linear-gradient(90deg, rgb(122, 122, 255), rgb(152, 16, 250)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">1个</span></div>
-<div class="flex justify-between text-white/80"><span class="text-white/60">Facebook主号</span><span style="background: linear-gradient(90deg, rgb(122, 122, 255), rgb(152, 16, 250)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">1个</span></div>
-<div class="flex justify-between text-white/80"><span class="text-white/60">Instagram主号</span><span style="background: linear-gradient(90deg, rgb(122, 122, 255), rgb(152, 16, 250)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">1个</span></div>
+<div class="flex justify-between text-white/80"><span class="text-white/60">Tiktok主号</span><span class="grad-purple">1个</span></div>
+<div class="flex justify-between text-white/80"><span class="text-white/60">Youtube主号</span><span class="grad-purple">1个</span></div>
+<div class="flex justify-between text-white/80"><span class="text-white/60">Facebook主号</span><span class="grad-purple">1个</span></div>
+<div class="flex justify-between text-white/80"><span class="text-white/60">Instagram主号</span><span class="grad-purple">1个</span></div>
 <div class="flex justify-between text-white/80"><span class="text-white/60">云真机服务</span><span class="text-right">4个主号</span></div>
 </div>
 </div>
@@ -852,15 +862,15 @@
 <p class="font-bold text-white/60 mb-3 uppercase tracking-wider flex items-center gap-1" style="font-size: 16px;"><svg width="12" height="12" viewBox="0 0 7 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3.68395 0.328482C3.57814 -0.110154 3.4055 -0.109361 3.30081 0.330069L2.71051 2.8088C2.60526 3.24823 2.26778 3.72891 1.95927 3.87882L0.231805 4.71564C-0.0767104 4.86476 -0.0772673 5.11224 0.230134 5.26453L1.94757 6.11563C2.25497 6.26792 2.59356 6.75177 2.69937 7.19041L3.29858 9.67152C3.40439 10.1102 3.57591 10.1094 3.68005 9.66993L4.26534 7.19913C4.36947 6.7597 4.70639 6.27744 5.01435 6.12753L6.7691 5.27088C7.07706 5.12096 7.07706 4.87666 6.76854 4.72833L5.04164 3.89548C4.73312 3.74715 4.39398 3.26727 4.28817 2.82863L3.68395 0.328482Z" fill="currentColor"/></svg>精准触达与流量增长</p>
 <div class="space-y-3 text-sm">
 <div class="flex justify-between text-white/80"><span class="text-white/60">数据定投</span><span class="text-right">4个主号智能数据精准投放</span></div>
-<div class="flex justify-between text-white/80"><span class="text-white/60">总播放量</span><span style="background: linear-gradient(90deg, rgb(122, 122, 255), rgb(152, 16, 250)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">30万</span></div>
+<div class="flex justify-between text-white/80"><span class="text-white/60">总播放量</span><span class="grad-purple">30万</span></div>
 </div>
 </div>
 <div class="border-t border-white/10 pt-4 mb-6">
 <p class="font-bold text-white/60 mb-3 uppercase tracking-wider flex items-center gap-1" style="font-size: 16px;"><svg width="12" height="12" viewBox="0 0 7 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3.68395 0.328482C3.57814 -0.110154 3.4055 -0.109361 3.30081 0.330069L2.71051 2.8088C2.60526 3.24823 2.26778 3.72891 1.95927 3.87882L0.231805 4.71564C-0.0767104 4.86476 -0.0772673 5.11224 0.230134 5.26453L1.94757 6.11563C2.25497 6.26792 2.59356 6.75177 2.69937 7.19041L3.29858 9.67152C3.40439 10.1102 3.57591 10.1094 3.68005 9.66993L4.26534 7.19913C4.36947 6.7597 4.70639 6.27744 5.01435 6.12753L6.7691 5.27088C7.07706 5.12096 7.07706 4.87666 6.76854 4.72833L5.04164 3.89548C4.73312 3.74715 4.39398 3.26727 4.28817 2.82863L3.68395 0.328482Z" fill="currentColor"/></svg>智能承接与商机转化</p>
 <div class="space-y-3 text-sm">
-<div class="flex justify-between text-white/80"><span class="text-white/60">建站</span><span style="background: linear-gradient(90deg, rgb(122, 122, 255), rgb(152, 16, 250)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">1个</span></div>
-<div class="flex justify-between text-white/80"><span class="text-white/60">Agent 智能体客服（含Token）</span><span style="background: linear-gradient(90deg, rgb(122, 122, 255), rgb(152, 16, 250)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">1个</span></div>
-<div class="flex justify-between text-white/80"><span class="text-white/60">线索<span class="info-icon group relative inline-block ml-1 cursor-help align-text-bottom"><svg class="w-4 h-4 align-middle text-white/60" viewBox="0 0 20 20" stroke="currentColor" fill="none"><circle cx="10" cy="10" r="7" stroke-width="1.5"/><text x="10" y="13.5" text-anchor="middle" font-size="11" fill="currentColor">i</text></svg><span class="tooltip hidden group-hover:block absolute bottom-full left-0 mb-1 px-3 py-1.5 text-xs text-white bg-black/80 backdrop-blur-xl rounded whitespace-nowrap z-50">含表单留资、WhatsApp 聊单、平台留言私信等咨询线索</span></span></span><span style="background: linear-gradient(90deg, rgb(122, 122, 255), rgb(152, 16, 250)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">150条</span></div>
+<div class="flex justify-between text-white/80"><span class="text-white/60">建站</span><span class="grad-purple">1个</span></div>
+<div class="flex justify-between text-white/80"><span class="text-white/60">Agent 智能体客服（含Token）</span><span class="grad-purple">1个</span></div>
+<div class="flex justify-between text-white/80"><span class="text-white/60">线索<span class="info-icon group relative inline-block ml-1 cursor-help align-text-bottom"><svg class="w-4 h-4 align-middle text-white/60" viewBox="0 0 20 20" stroke="currentColor" fill="none"><circle cx="10" cy="10" r="7" stroke-width="1.5"/><text x="10" y="13.5" text-anchor="middle" font-size="11" fill="currentColor">i</text></svg><span class="tooltip hidden group-hover:block absolute bottom-full left-0 mb-1 px-3 py-1.5 text-xs text-white bg-black/80 backdrop-blur-xl rounded whitespace-nowrap z-50">含表单留资、WhatsApp 聊单、平台留言私信等咨询线索</span></span></span><span class="grad-purple">150条</span></div>
 <div class="flex justify-between text-white/80"><span class="text-white/60">续约专享</span><span class="text-right">/</span></div>
 </div>
 </div>
@@ -876,13 +886,13 @@
                     <div class="p-6" style="border-radius: 20px; border: 1px solid rgba(255,255,255,.10); background: rgba(255,255,255,.04);">
                         <p class="font-bold mb-2">公域转私域智能包</p>
                         <p class="text-sm text-white/50 mb-4">星擎Tiktok Lite版可选</p>
-                        <p class="text-3xl font-bold mb-4" style="background: linear-gradient(90deg, rgb(254,154,0), rgb(245,73,0)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">¥9,800</p>
+                        <p class="text-3xl font-bold mb-4 grad-orange">¥9,800</p>
                         <div class="space-y-2 text-sm text-white/80"><div class="flex justify-between"><span class="text-white/60">建站</span><span>1个</span></div><div class="flex justify-between"><span class="text-white/60">Agent 智能体客服（含Token）</span><span>1个</span></div></div>
                     </div>
                     <div class="p-6" style="border-radius: 20px; border: 1px solid rgba(255,255,255,.10); background: rgba(255,255,255,.04);">
                         <p class="font-bold mb-2">星擎 Upsale 包</p>
                         <p class="text-sm text-white/50 mb-4">星擎Tiktok Pro版 / AI全网营销Max版可选</p>
-                        <p class="text-3xl font-bold mb-4" style="background: linear-gradient(90deg, rgb(122,122,255), rgb(152,16,250)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">¥15,000<span class="text-sm text-white/40"> /年</span></p>
+                        <p class="text-3xl font-bold mb-4 grad-purple">¥15,000<span class="text-sm text-white/40"> /年</span></p>
                         <div class="space-y-2 text-sm text-white/80"><div class="flex justify-between"><span class="text-white/60">单一平台卫星号</span><span>1个</span></div><div class="flex justify-between"><span class="text-white/60">AI混剪视频</span><span>240条</span></div><div class="flex justify-between"><span class="text-white/60">线索</span><span>30条</span></div></div>
                     </div>
                     <div class="p-6" style="border-radius: 20px; border: 1px solid rgba(255,255,255,.10); background: rgba(255,255,255,.04);">
@@ -901,7 +911,7 @@
             </div>
 
             <div class="text-center mb-24">
-                <p class="text-sm text-white/50" id="pricing-footnote" style="margin-top: 32px;">选择适合您的方案，开启AI短视频营销</p>
+                <p class="text-sm text-white/50" id="pricing-footnote">选择适合您的方案，开启AI短视频营销</p>
             </div>
 
         </div>
@@ -909,7 +919,7 @@
 
     <!-- Footer -->
     <footer role="contentinfo" aria-label="页脚导航和信息">
-        <div class="max-w-7xl mx-auto px-8">
+        <div class="max-w-7xl mx-auto px-8 bleed-mobile">
             <div class="footer-grid">
                 <div class="footer-brand">
                     <img src="images/视星擎.svg" alt="创视星擎" class="footer-logo">
