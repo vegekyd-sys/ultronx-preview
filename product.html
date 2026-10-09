@@ -488,7 +488,7 @@
         .agent-details {
             position: relative;
             padding: 24px;
-            border-radius: 14px;
+            border-radius: 24px;
         }
 
         .agent-details.show {
@@ -1760,7 +1760,7 @@
             }
 
             .border.border-white\/10.rounded-3xl {
-                border-radius: 12px !important;
+                border-radius: 24px !important;
             }
 
             #workflow-image {
@@ -1790,7 +1790,7 @@
                 max-width: none !important;
                 padding: 8px !important;
                 z-index: 10 !important;
-                border-radius: 12px !important;
+                border-radius: 24px !important;
             }
 
             #feature-card-left {
@@ -2097,7 +2097,7 @@
             section:has(img[alt="数据看板"]) .stagger-children > div {
                 padding: 12px 16px !important;
                 min-height: auto !important;
-                border-radius: 12px !important;
+                border-radius: 24px !important;
             }
 
             /* 卡片内的装饰性SVG图标变小 */
@@ -2589,6 +2589,12 @@
                 order: 4;
             }
         }
+
+        /* 卡片圆角统一：24px（web + H5 同值） */
+        .agent-card {
+            border-radius: 24px;
+        }
+
     </style>
 </head>
 <body>
@@ -2853,7 +2859,7 @@
                     <div class="absolute inset-0 bg-gradient-to-b from-white/5 to-transparent"></div>
                 </div>
 
-                <div id="feature-card-left" class="absolute top-20 bg-black/40 backdrop-blur-lg border border-white/20 rounded-2xl p-6 max-w-xs shadow-2xl hidden lg:block feature-card-left transition-all duration-500" style="left: -96px;">
+                <div id="feature-card-left" class="absolute top-20 bg-black/40 backdrop-blur-lg border border-white/20 rounded-3xl p-6 max-w-xs shadow-2xl hidden lg:block feature-card-left transition-all duration-500" style="left: -96px;">
                     <div class="flex items-center gap-4">
                         <div id="left-icon-bg" class="w-12 h-12 rounded-2xl bg-gradient-to-br from-purple-500 to-blue-500 flex items-center justify-center flex-shrink-0">
                             <svg id="left-icon" class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -2867,7 +2873,7 @@
                     </div>
                 </div>
 
-                <div id="feature-card-right" class="absolute bottom-20 bg-black/40 backdrop-blur-lg border border-white/20 rounded-2xl p-6 max-w-xs shadow-2xl hidden lg:block feature-card-right transition-all duration-500" style="right: -96px;">
+                <div id="feature-card-right" class="absolute bottom-20 bg-black/40 backdrop-blur-lg border border-white/20 rounded-3xl p-6 max-w-xs shadow-2xl hidden lg:block feature-card-right transition-all duration-500" style="right: -96px;">
                     <div class="flex items-center gap-4">
                         <div id="right-icon-bg" class="w-12 h-12 rounded-2xl bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center flex-shrink-0">
                             <svg id="right-icon" class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -2994,13 +3000,13 @@
 
             <!-- Agent详情悬浮框 -->
             <div id="agent-details" class="agent-details" style="width: 100%; max-width: 1024px; opacity: 0; transition: opacity 0.3s ease;">
-                <div id="agent-bg-blur" style="filter: blur(64px); height: 156px; opacity: 0.05; position: absolute; top: 0; left: 0; width: 100%; border-radius: 14px; background: linear-gradient(171deg, rgb(246, 51, 154) 0%, rgb(255, 32, 86) 100%); pointer-events: none; transition: background 0.3s ease;"></div>
+                <div id="agent-bg-blur" style="filter: blur(64px); height: 156px; opacity: 0.05; position: absolute; top: 0; left: 0; width: 100%; border-radius: 24px; background: linear-gradient(171deg, rgb(246, 51, 154) 0%, rgb(255, 32, 86) 100%); pointer-events: none; transition: background 0.3s ease;"></div>
 
                 <div style="position: relative;">
                     <p id="agent-desc" class="text-white/90 text-center mb-6" style="font-size: 18px; line-height: 28px;">智能生成字幕、标题和文案，完美匹配内容</p>
 
                     <div id="agent-features" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3" style="margin-bottom: 24px;">
-                        <div class="bg-white/5 border border-white/10 rounded-2xl px-4 py-3 flex items-center gap-3">
+                        <div class="bg-white/5 border border-white/10 rounded-3xl px-4 py-3 flex items-center gap-3">
                             <div class="w-5 h-5 rounded-full bg-gradient-to-br from-pink-500 to-red-500 flex items-center justify-center flex-shrink-0">
                                 <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M2.5 6L5 8.5L9.5 3.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -3008,7 +3014,7 @@
                             </div>
                             <span class="text-sm text-white/60">自动生成视频标题和描述</span>
                         </div>
-                        <div class="bg-white/5 border border-white/10 rounded-2xl px-4 py-3 flex items-center gap-3">
+                        <div class="bg-white/5 border border-white/10 rounded-3xl px-4 py-3 flex items-center gap-3">
                             <div class="w-5 h-5 rounded-full bg-gradient-to-br from-orange-500 to-yellow-500 flex items-center justify-center flex-shrink-0">
                                 <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M2.5 6L5 8.5L9.5 3.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -3016,7 +3022,7 @@
                             </div>
                             <span class="text-sm text-white/60">智能生成字幕和配字</span>
                         </div>
-                        <div class="bg-white/5 border border-white/10 rounded-2xl px-4 py-3 flex items-center gap-3">
+                        <div class="bg-white/5 border border-white/10 rounded-3xl px-4 py-3 flex items-center gap-3">
                             <div class="w-5 h-5 rounded-full bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center flex-shrink-0">
                                 <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M2.5 6L5 8.5L9.5 3.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -3024,7 +3030,7 @@
                             </div>
                             <span class="text-sm text-white/60">根据视频内容生成关键词</span>
                         </div>
-                        <div class="bg-white/5 border border-white/10 rounded-2xl px-4 py-3 flex items-center gap-3">
+                        <div class="bg-white/5 border border-white/10 rounded-3xl px-4 py-3 flex items-center gap-3">
                             <div class="w-5 h-5 rounded-full bg-gradient-to-br from-purple-500 to-indigo-500 flex items-center justify-center flex-shrink-0">
                                 <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M2.5 6L5 8.5L9.5 3.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -3112,7 +3118,7 @@
                 <!-- First Row: 3 cards -->
                 <div class="flex justify-center gap-6 mb-6 stagger-children">
                     <!-- TikTok -->
-                    <div class="border border-white/10 rounded-2xl w-[237px] h-[170px] flex flex-col items-center justify-center backdrop-blur-sm social-card" style="background: linear-gradient(144.32deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);">
+                    <div class="border border-white/10 rounded-3xl w-[237px] h-[170px] flex flex-col items-center justify-center backdrop-blur-sm social-card" style="background: linear-gradient(144.32deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);">
                         <svg class="w-12 h-12 mb-4" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
                             <path d="M145.009778 715.738074c0.18963-168.846222 140.47763-305.682963 313.609481-305.872593v183.523556c-69.252741 0.075852-125.345185 54.802963-125.458963 122.311111 0 60.112593 33.374815 124.776296 106.571852 124.776296 4.816593 0 119.239111-1.061926 119.239111-95.952592V48.924444h200.514371C759.675259 140.250074 835.602963 214.167704 929.204148 214.281481l-0.151704 183.182223A354.986667 354.986667 0 0 1 747.159704 349.108148l-0.075852 395.377778c0 181.551407-158.416593 279.514074-307.465482 279.514074-167.973926 0.037926-294.684444-132.513185-294.684444-308.261926z" fill="#FF4040"/>
                             <path d="M94.833778 666.775704c0.18963-168.846222 140.47763-305.682963 313.609481-305.834667v183.48563c-69.252741 0.075852-125.345185 54.802963-125.421037 122.349037 0 60.112593 33.298963 124.776296 106.496 124.776296 4.892444 0 119.277037-1.099852 119.277037-95.990519V0h200.514371c0.227556 91.287704 76.117333 165.243259 169.718518 165.357037l-0.151704 183.182222a354.986667 354.986667 0 0 1-181.854814-48.393481l-0.075852 395.415703c0 181.551407-158.416593 279.514074-307.465482 279.514075C221.50637 975.075556 94.833778 842.524444 94.833778 666.737778z" fill="#00F5FF"/>
@@ -3123,7 +3129,7 @@
                     </div>
 
                     <!-- YouTube -->
-                    <div class="border border-white/10 rounded-2xl w-[237px] h-[170px] flex flex-col items-center justify-center backdrop-blur-sm social-card" style="background: linear-gradient(144.32deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);">
+                    <div class="border border-white/10 rounded-3xl w-[237px] h-[170px] flex flex-col items-center justify-center backdrop-blur-sm social-card" style="background: linear-gradient(144.32deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);">
                         <svg class="w-12 h-12 mb-4" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
                             <path d="M426.666667 682.666667V384l256 149.845333L426.666667 682.666667z m587.093333-355.541334s-10.026667-71.04-40.704-102.357333c-38.954667-41.088-82.602667-41.258667-102.613333-43.648C727.168 170.666667 512.213333 170.666667 512.213333 170.666667h-0.426666s-214.954667 0-358.229334 10.453333c-20.053333 2.389333-63.658667 2.56-102.656 43.648-30.677333 31.317333-40.661333 102.4-40.661333 102.4S0 410.538667 0 493.952v78.293333c0 83.456 10.24 166.912 10.24 166.912s9.984 71.04 40.661333 102.357334c38.997333 41.088 90.154667 39.765333 112.938667 44.074666C245.76 893.568 512 896 512 896s215.168-0.341333 358.442667-10.752c20.053333-2.432 63.658667-2.602667 102.613333-43.690667 30.72-31.317333 40.704-102.4 40.704-102.4s10.24-83.413333 10.24-166.869333v-78.250667c0-83.456-10.24-166.912-10.24-166.912z" fill="#FF0000"/>
                         </svg>
@@ -3132,7 +3138,7 @@
                     </div>
 
                     <!-- Facebook -->
-                    <div class="border border-white/10 rounded-2xl w-[237px] h-[170px] flex flex-col items-center justify-center backdrop-blur-sm social-card" style="background: linear-gradient(144.32deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);">
+                    <div class="border border-white/10 rounded-3xl w-[237px] h-[170px] flex flex-col items-center justify-center backdrop-blur-sm social-card" style="background: linear-gradient(144.32deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);">
                         <svg class="w-12 h-12 mb-4" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
                             <path d="M1023.914667 512c0-282.794667-229.205333-512-511.957334-512C229.205333 0 0 229.205333 0 512c0 255.488 187.221333 467.285333 431.957333 505.685333v-357.717333H301.994667v-148.010667h129.962666V399.189333c0-128.341333 76.458667-199.210667 193.365334-199.210666 56.021333 0 114.602667 9.984 114.602666 9.984v125.994666H675.413333c-63.573333 0-83.413333 39.466667-83.413333 79.957334V512h141.994667l-22.698667 148.010667h-119.296v357.717333c244.736-38.4 431.957333-250.197333 431.957333-505.728z" fill="#0064e0"/>
                         </svg>
@@ -3144,14 +3150,14 @@
                 <!-- Second Row: 2 cards -->
                 <div class="flex justify-center gap-6 stagger-children social-row-2">
                     <!-- Instagram -->
-                    <div class="border border-white/10 rounded-2xl w-[237px] h-[170px] flex flex-col items-center justify-center backdrop-blur-sm social-card" style="background: linear-gradient(144.32deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);">
+                    <div class="border border-white/10 rounded-3xl w-[237px] h-[170px] flex flex-col items-center justify-center backdrop-blur-sm social-card" style="background: linear-gradient(144.32deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);">
                         <svg class="w-12 h-12 mb-4 opacity-60" viewBox="0 0 48 48" fill="none"><path d="M24 4.32c6.41 0 7.167.028 9.696.14 2.34.107 3.61.497 4.456.825 1.12.436 1.918.957 2.756 1.795.838.838 1.36 1.636 1.795 2.756.328.846.718 2.116.825 4.456.112 2.53.14 3.286.14 9.696 0 6.41-.028 7.167-.14 9.696-.107 2.34-.497 3.61-.825 4.456-.436 1.12-.957 1.918-1.795 2.756-.838.838-1.636 1.36-2.756 1.795-.846.328-2.116.718-4.456.825-2.53.112-3.286.14-9.696.14-6.41 0-7.167-.028-9.696-.14-2.34-.107-3.61-.497-4.456-.825-1.12-.436-1.918-.957-2.756-1.795-.838-.838-1.36-1.636-1.795-2.756-.328-.846-.718-2.116-.825-4.456C4.348 31.167 4.32 30.41 4.32 24c0-6.41.028-7.167.14-9.696.107-2.34.497-3.61.825-4.456.436-1.12.957-1.918 1.795-2.756.838-.838 1.636-1.36 2.756-1.795.846-.328 2.116-.718 4.456-.825C16.833 4.348 17.59 4.32 24 4.32zM24 0c-6.52 0-7.336.028-9.895.144-2.555.116-4.3.522-5.822 1.116-1.577.613-2.915 1.434-4.248 2.767C2.702 5.36 1.88 6.698 1.267 8.275.673 9.797.267 11.542.151 14.097.035 16.656.007 17.472.007 24s.028 7.344.144 9.903c.116 2.555.522 4.3 1.116 5.822.613 1.577 1.434 2.915 2.767 4.248 1.333 1.333 2.671 2.154 4.248 2.767 1.522.594 3.267 1 5.822 1.116 2.559.116 3.375.144 9.895.144s7.336-.028 9.895-.144c2.555-.116 4.3-.522 5.822-1.116 1.577-.613 2.915-1.434 4.248-2.767 1.333-1.333 2.154-2.671 2.767-4.248.594-1.522 1-3.267 1.116-5.822.116-2.559.144-3.375.144-9.895s-.028-7.336-.144-9.895c-.116-2.555-.522-4.3-1.116-5.822-.613-1.577-1.434-2.915-2.767-4.248C39.86 2.702 38.522 1.88 36.945 1.267 35.423.673 33.678.267 31.123.151 28.564.035 27.748.007 24.228.007L24 0z" fill="currentColor"/><path d="M24 11.68a12.32 12.32 0 1012.32 12.32A12.32 12.32 0 0024 11.68zm0 20.32a8 8 0 110-16 8 8 0 010 16zM38.16 10.4a2.88 2.88 0 11-5.76 0 2.88 2.88 0 015.76 0z" fill="currentColor"/></svg>
                         <h3 class="text-lg font-bold mb-1 opacity-60">Instagram</h3>
                         <p class="text-sm text-white/40">Coming Soon</p>
                     </div>
 
                     <!-- Twitter -->
-                    <div class="border border-white/10 rounded-2xl w-[237px] h-[170px] flex flex-col items-center justify-center backdrop-blur-sm social-card" style="background: linear-gradient(144.32deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);">
+                    <div class="border border-white/10 rounded-3xl w-[237px] h-[170px] flex flex-col items-center justify-center backdrop-blur-sm social-card" style="background: linear-gradient(144.32deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);">
                         <svg class="w-12 h-12 mb-4 opacity-60" viewBox="0 0 48 48" fill="none"><path d="M36.6526 3.8078H43.3995L28.6594 20.6548L46 43.5797H32.4225L21.7881 29.6759L9.61989 43.5797H2.86886L18.6349 25.56L2 3.8078H15.9222L25.5348 16.5165L36.6526 3.8078ZM34.2846 39.5414H38.0232L13.8908 7.63406H9.87892L34.2846 39.5414Z" fill="currentColor"/></svg>
                         <h3 class="text-lg font-bold mb-1 opacity-60">Twitter</h3>
                         <p class="text-sm text-white/40">Coming Soon</p>
@@ -3342,7 +3348,7 @@
             <!-- Stats Cards -->
             <div class="grid grid-cols-1 md:grid-cols-4 gap-6 max-w-5xl mx-auto stagger-children fade-in-element" style="margin-top: 48px;">
                 <!-- 总播放量 -->
-                <div class="relative overflow-hidden rounded-2xl p-6 animate-on-scroll" style="padding: 1.5rem 2rem; background: linear-gradient(135deg, rgba(77, 159, 255, 0.15) 0%, rgba(122, 122, 255, 0.15) 50%, rgba(157, 122, 255, 0.10) 100%); border: 1px solid rgba(122, 122, 255, 0.3); backdrop-filter: blur(20px);">
+                <div class="relative overflow-hidden rounded-3xl p-6 animate-on-scroll" style="padding: 1.5rem 2rem; background: linear-gradient(135deg, rgba(77, 159, 255, 0.15) 0%, rgba(122, 122, 255, 0.15) 50%, rgba(157, 122, 255, 0.10) 100%); border: 1px solid rgba(122, 122, 255, 0.3); backdrop-filter: blur(20px);">
                     <div class="relative z-10">
                         <p class="text-white/60 mb-2" style="font-size: 14px;">总播放量</p>
                         <div class="flex items-baseline gap-3 mb-2">
@@ -3357,7 +3363,7 @@
                 </div>
 
                 <!-- 总互动数 -->
-                <div class="relative overflow-hidden rounded-2xl p-6 animate-on-scroll" style="padding: 1.5rem 2rem; background: linear-gradient(135deg, rgba(122, 122, 255, 0.15) 0%, rgba(157, 122, 255, 0.15) 50%, rgba(173, 70, 255, 0.10) 100%); border: 1px solid rgba(157, 122, 255, 0.3); backdrop-filter: blur(20px);">
+                <div class="relative overflow-hidden rounded-3xl p-6 animate-on-scroll" style="padding: 1.5rem 2rem; background: linear-gradient(135deg, rgba(122, 122, 255, 0.15) 0%, rgba(157, 122, 255, 0.15) 50%, rgba(173, 70, 255, 0.10) 100%); border: 1px solid rgba(157, 122, 255, 0.3); backdrop-filter: blur(20px);">
                     <div class="relative z-10">
                         <p class="text-white/60 mb-2" style="font-size: 14px;">总互动数</p>
                         <div class="flex items-baseline gap-3 mb-2">
@@ -3372,7 +3378,7 @@
                 </div>
 
                 <!-- 粉丝增长 -->
-                <div class="relative overflow-hidden rounded-2xl p-6 animate-on-scroll" style="padding: 1.5rem 2rem; background: linear-gradient(135deg, rgba(157, 122, 255, 0.15) 0%, rgba(173, 70, 255, 0.15) 50%, rgba(122, 122, 255, 0.10) 100%); border: 1px solid rgba(173, 70, 255, 0.3); backdrop-filter: blur(20px);">
+                <div class="relative overflow-hidden rounded-3xl p-6 animate-on-scroll" style="padding: 1.5rem 2rem; background: linear-gradient(135deg, rgba(157, 122, 255, 0.15) 0%, rgba(173, 70, 255, 0.15) 50%, rgba(122, 122, 255, 0.10) 100%); border: 1px solid rgba(173, 70, 255, 0.3); backdrop-filter: blur(20px);">
                     <div class="relative z-10">
                         <p class="text-white/60 mb-2" style="font-size: 14px;">粉丝增长</p>
                         <div class="flex items-baseline gap-3 mb-2">
@@ -3387,7 +3393,7 @@
                 </div>
 
                 <!-- 平均转化率 -->
-                <div class="relative overflow-hidden rounded-2xl p-6 animate-on-scroll" style="padding: 1.5rem 2rem; background: linear-gradient(135deg, rgba(173, 70, 255, 0.15) 0%, rgba(122, 122, 255, 0.15) 50%, rgba(77, 159, 255, 0.10) 100%); border: 1px solid rgba(122, 122, 255, 0.3); backdrop-filter: blur(20px);">
+                <div class="relative overflow-hidden rounded-3xl p-6 animate-on-scroll" style="padding: 1.5rem 2rem; background: linear-gradient(135deg, rgba(173, 70, 255, 0.15) 0%, rgba(122, 122, 255, 0.15) 50%, rgba(77, 159, 255, 0.10) 100%); border: 1px solid rgba(122, 122, 255, 0.3); backdrop-filter: blur(20px);">
                     <div class="relative z-10">
                         <p class="text-white/60 mb-2" style="font-size: 14px;">平均转化率</p>
                         <div class="flex items-baseline gap-3 mb-2">
@@ -3961,7 +3967,7 @@
 
                         // 更新特性
                         agentFeatures.innerHTML = data.features.map(feature => `
-                            <div class="bg-white/5 border border-white/10 rounded-2xl px-4 py-3 flex items-center gap-3">
+                            <div class="bg-white/5 border border-white/10 rounded-3xl px-4 py-3 flex items-center gap-3">
                                 <div class="w-4 h-4 rounded-full flex items-center justify-center flex-shrink-0" style="background: ${data.gradient};">
                                     <img src="images/icon-check.svg" alt="" aria-hidden="true" class="w-2.5 h-2.5">
                                 </div>
@@ -3990,7 +3996,7 @@
                     agentBgBlur.style.background = firstData.gradient.replace('135deg', '171deg');
                     agentDesc.textContent = firstData.desc;
                     agentFeatures.innerHTML = firstData.features.map(feature => `
-                        <div class="bg-white/5 border border-white/10 rounded-2xl px-4 py-3 flex items-center gap-3">
+                        <div class="bg-white/5 border border-white/10 rounded-3xl px-4 py-3 flex items-center gap-3">
                             <div class="w-4 h-4 rounded-full flex items-center justify-center flex-shrink-0" style="background: ${firstData.gradient};">
                                 <img src="images/icon-check.svg" alt="" aria-hidden="true" class="w-2.5 h-2.5">
                             </div>
