@@ -10,12 +10,12 @@
     <link rel="canonical" href="https://www.ultronx.ai/pricing.html">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="星擎">
-    <meta property="og:title" content="定价详情 - 星擎｜Pro / Pro+ / Max 套餐完整权益">
+    <meta property="og:title" content="定价详情 - 星擎｜Lite / Pro / Max 套餐完整权益">
     <meta property="og:description" content="Lite ¥29,800（1+3个月）· Tiktok Pro ¥99,800（1+12个月）· AI全网营销Max ¥129,800（1+12个月）。权益、账号矩阵、播放量与线索目标一页看清。">
     <meta property="og:url" content="https://www.ultronx.ai/pricing.html">
     <meta property="og:image" content="https://www.ultronx.ai/images/favicon.png">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="定价详情 - 星擎｜Pro / Pro+ / Max">
+    <meta name="twitter:title" content="定价详情 - 星擎｜Lite / Pro / Max">
     <meta name="twitter:description" content="Lite ¥29,800 · Tiktok Pro ¥99,800 · AI全网营销Max ¥129,800。">
     <meta name="twitter:image" content="https://www.ultronx.ai/images/favicon.png">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600;700&display=swap">
@@ -433,6 +433,12 @@
                 padding-right: 0 !important;
             }
 
+            /* 增值服务区块：移动端保留左右 20px 页面间距（与卡片左右留白一致） */
+            #upgrade-services {
+                padding-left: 20px !important;
+                padding-right: 20px !important;
+            }
+
             /* Pricing cards horizontal scroll */
             #pricing-grid {
                 display: flex !important;
@@ -710,9 +716,9 @@
 
         <!-- Pricing Tabs -->
         <div class="pricing-tabs">
-            <button class="pricing-tab active" data-plan="max">Max 旗舰版</button>
-            <button class="pricing-tab" data-plan="pro-plus">Pro+ 专业版</button>
-            <button class="pricing-tab" data-plan="pro">Pro 正式版</button>
+            <button class="pricing-tab active" data-plan="max">Max 版</button>
+            <button class="pricing-tab" data-plan="pro-plus">Pro 版</button>
+            <button class="pricing-tab" data-plan="pro">Lite 版</button>
         </div>
 
         <div class="max-w-7xl mx-auto px-8 relative z-10">
@@ -859,7 +865,7 @@
 </div>
 
             
-            <div class="mt-16">
+            <div class="mt-16" id="upgrade-services">
                 <h3 class="text-2xl font-bold mb-6 text-center">增值服务</h3>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                     <div class="p-6" style="border-radius: 20px; border: 1px solid rgba(255,255,255,.10); background: rgba(255,255,255,.04);">
