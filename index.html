@@ -10,6 +10,21 @@
         /* Smooth scrolling with performance */
         html {
             scroll-behavior: smooth;
+            overflow-y: scroll;
+            overflow-x: hidden;
+            scrollbar-gutter: stable;
+        }
+
+        /* 自定义滚动条（与定价页/产品页一致） */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.05);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 4px;
         }
 
         @media (prefers-reduced-motion: reduce) {
@@ -3743,14 +3758,18 @@
                 animation: fadeInUp 0.4s ease-out forwards;
             }
 
-            /* ===== 导航栏优化 ===== */
+            /* ===== 导航栏（与定价页/产品页统一）===== */
+            .navbar {
+                height: 60px !important;
+            }
             .nav-container {
-                height: 60px;
-                padding: 0 20px;
+                height: 60px !important;
+                padding: 0 20px !important;
+                box-sizing: border-box;
             }
 
             .nav-logo img {
-                height: 24px;
+                height: 24px !important;
             }
 
             .nav-menu {
@@ -5674,14 +5693,15 @@
             backface-visibility: hidden;
         }
 
-        /* Hide scrollbar but keep scrolling */
-        html {
-            scrollbar-width: none;
-            -ms-overflow-style: none;
-        }
-
-        html::-webkit-scrollbar {
-            display: none;
+        /* 隐藏滚动条（与定价页/产品页一致） */
+        @media (max-width: 768px) {
+            html {
+                overflow-y: auto !important;
+                scrollbar-gutter: auto !important;
+                scrollbar-width: none !important;
+                -ms-overflow-style: none !important;
+            }
+            html::-webkit-scrollbar { display: none !important; }
         }
 
     </style>
@@ -5704,20 +5724,20 @@
 
 
     <!-- Navigation -->
-    <nav class="navbar">
+<nav class="navbar">
         <div class="nav-container">
             <a href="index.html" class="nav-logo">
                 <img src="images/视星擎.svg" alt="创视星擎">
             </a>
-            <ul class="nav-menu">
-                <li><a href="https://xingqing.ultronx.tech/login" class="nav-link" id="xingqing-login-link">星擎</a></li>
-                <li><a href="pricing.html" class="nav-link">定价</a></li>
-            </ul>
             <button class="mobile-menu-toggle" aria-label="打开菜单">
                 <span></span>
                 <span></span>
                 <span></span>
             </button>
+            <ul class="nav-menu">
+                <li><a href="https://xingqing.ultronx.tech/login" class="nav-link" id="xingqing-login-link">星擎</a></li>
+                <li><a href="pricing.html" class="nav-link">定价</a></li>
+            </ul>
         </div>
     </nav>
 
@@ -6987,7 +7007,7 @@
 
     <!-- Footer -->
     <footer role="contentinfo" aria-label="页脚导航和信息">
-        <div class="container" style="max-width: 1280px; margin: 0 auto; padding: 0 20px;">
+        <div class="container" style="max-width: 1280px; margin: 0 auto; padding: 0 20px; box-sizing: border-box;">
             <div class="footer-grid">
                 <div class="footer-brand">
                     <img src="images/视星擎.svg" alt="创视星擎" class="footer-logo">
