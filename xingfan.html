@@ -434,6 +434,14 @@
             50%      { opacity: 0.9; }
         }
 
+        /* 手机端：底图按宽度铺满，避免 cover 把底部地图放大裁碎 */
+        @media (max-width: 768px) {
+            .hero-bg-image {
+                background-size: 100% auto;
+                background-position: center bottom;
+            }
+        }
+
         /* ── 首屏底部地图层（只保留地图，无商品） ── */
         .hero-map-layer {
             position: absolute; left: 0; right: 0; bottom: 0; height: 42%;
