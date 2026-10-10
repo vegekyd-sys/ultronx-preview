@@ -2799,9 +2799,14 @@
             #xf-dual-grid > div { flex: none !important; scroll-snap-align: none !important; }
             #xf-dual-grid > div:first-child { grid-column: auto !important; }
         }
-            /* ① 星擎 + 星帆：手机端背景主视觉再下移 40px（合计 +80px） */
+            /* ① 星擎 + 星帆：手机端换成专用的竖版底图（和首屏同一套做法） */
         @media (max-width: 768px) {
-            #xf-dual-bg { background-position: center center, center calc(50% + 140px) !important; }
+            #xf-dual-bg {
+                background-image: linear-gradient(180deg, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.52) 28%, rgba(0,0,0,0.58) 60%, rgba(0,0,0,0.985) 100%), url('images/xingfan-hero-bg-mobile.jpg') !important;
+                background-size: cover, cover !important;
+                background-position: center center, center center !important;
+                background-repeat: no-repeat, no-repeat !important;
+            }
         }
     </style>
 </head>
