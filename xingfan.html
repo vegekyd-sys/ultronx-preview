@@ -2799,6 +2799,10 @@
             #xf-dual-grid > div { flex: none !important; scroll-snap-align: none !important; }
             #xf-dual-grid > div:first-child { grid-column: auto !important; }
         }
+            /* ① 星擎 + 星帆：手机端背景主视觉再下移 40px（合计 +80px） */
+        @media (max-width: 768px) {
+            #xf-dual-bg { background-position: center center, center calc(50% + 80px) !important; }
+        }
     </style>
 </head>
 <body>
@@ -3013,7 +3017,7 @@
 
     <!-- 星擎 + 星帆 -->
     <section class="relative py-32 overflow-hidden" style="background: #000;">
-        <div class="absolute inset-0" style="background-image: linear-gradient(180deg, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.52) 28%, rgba(0,0,0,0.58) 60%, rgba(0,0,0,0.985) 100%), url('images/xingfan-hero-bg.jpg'); background-size: cover, cover; background-position: center center, center calc(50% + 40px); background-repeat: no-repeat, no-repeat;"></div>
+        <div id="xf-dual-bg" class="absolute inset-0" style="background-image: linear-gradient(180deg, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.52) 28%, rgba(0,0,0,0.58) 60%, rgba(0,0,0,0.985) 100%), url('images/xingfan-hero-bg.jpg'); background-size: cover, cover; background-position: center center, center calc(50% + 40px); background-repeat: no-repeat, no-repeat;"></div>
         <div class="absolute inset-0 flex items-center justify-center"><div class="absolute w-[70%] h-[70%] rounded-[16777200px] glow-breathe" style="opacity: 0.74; background: linear-gradient(90deg, rgba(56, 189, 248, 0.27) 0%, rgba(37, 99, 235, 0.27) 50%, rgba(37, 99, 235, 0.19) 100%); filter: blur(120px);"></div></div>
         <div class="max-w-6xl mx-auto px-8 relative z-10">
             <div class="text-center mb-20">
@@ -3090,7 +3094,7 @@
         </div>
         <div class="max-w-4xl mx-auto px-8 text-center relative z-10">
             <h2 class="text-3xl md:text-5xl font-bold mb-8 fade-in-element" style="line-height: 1.5; font-weight: 600; background-image: linear-gradient(180deg, #ffffff 0%, #cfe8ff 46%, #7dbeff 100%); background-size: 100% 100%; -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">
-                从开店到出单：<br class="cta-br">让增长可复制
+                从开店到出单 <br class="cta-br">让增长可复制
             </h2>
             <p class="text-white mb-12 fade-in-element" style="font-size: 18px; line-height: 28px;">以 AI Agent 全链路托管，支撑消费品牌稳定出单</p>
                         <div class="cta-tags fade-in-element" style="display: flex; align-items: center; justify-content: center; gap: 12px;">
