@@ -755,6 +755,37 @@
             #xf-data-grid figcaption span:last-child { font-size: 12px !important; line-height: 18px !important; }
         }
 
+        /* 首屏副标题：手机端在这里换行 */
+        .sub-br { display: none; }
+        @media (max-width: 768px) { .sub-br { display: inline; } }
+
+        @media (max-width: 768px) {
+            /* 首屏 4 个数字：一行 2 个（标签不再挤断行）+ 数字与标签拉开 */
+            #hero-stats { grid-template-columns: repeat(2, 1fr) !important; gap: 26px 18px !important; margin-top: 44px !important; }
+            #hero-stats div[class*="text-5xl"], #hero-stats .number-flip { margin-bottom: 6px !important; }
+            #hero-stats div[class*="text-5xl"] + div, #hero-stats .number-flip + div { font-size: 13px !important; margin-top: 4px !important; }
+            /* 5 个 Agent：上排 3、下排 2 */
+            #xf-agents-a { grid-template-columns: repeat(3, 1fr) !important; gap: 10px !important; }
+            #xf-agents-b { grid-template-columns: repeat(2, 1fr) !important; gap: 10px !important; }
+            #xf-agents-a > div, #xf-agents-b > div { padding: 14px !important; border-radius: 18px !important; }
+            #xf-agents-a > div > div:first-child, #xf-agents-b > div > div:first-child {
+                width: 40px !important; height: 40px !important; border-radius: 12px !important; margin-bottom: 10px !important;
+            }
+            #xf-agents-a h3, #xf-agents-b h3 { font-size: 14px !important; margin-bottom: 4px !important; }
+            #xf-agents-a p, #xf-agents-b p { font-size: 11px !important; line-height: 16px !important; }
+            /* 真实数据 / 星擎+星帆：手机端横向滑动，避免「2+1 右边空一格」 */
+            #xf-data-grid, #xf-dual-grid {
+                display: flex !important; overflow-x: auto !important; scroll-snap-type: x mandatory !important;
+                gap: 12px !important; padding: 4px 2px 10px 2px !important; margin: 0 !important; max-width: 100% !important;
+                -webkit-overflow-scrolling: touch !important; scrollbar-width: none !important;
+            }
+            #xf-data-grid::-webkit-scrollbar, #xf-dual-grid::-webkit-scrollbar { display: none !important; }
+            #xf-data-grid > figure { flex: 0 0 74% !important; scroll-snap-align: center !important; }
+            #xf-dual-grid > div { flex: 0 0 74% !important; scroll-snap-align: center !important; }
+            /* 适合谁：2 个一行 */
+            #xf-who-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 12px !important; }
+        }
+
         /* Navigation */
         .navbar {
             position: fixed;
@@ -2751,11 +2782,11 @@
                 从开店<br>到出单
             </h1>
 
-            <p class="text-gray-300 font-light mb-32 hero-item" style="font-size: 20px; font-weight: 400; letter-spacing: -0.45px; animation-delay: 0.6s;">消费品出海 · TikTok Shop 全托管 · AI Agent 全链路驱动</p>
+            <p class="text-gray-300 font-light mb-32 hero-item" style="font-size: 20px; font-weight: 400; letter-spacing: -0.45px; animation-delay: 0.6s;">消费品出海 · TikTok Shop 全托管<br class="sub-br"> · AI Agent 全链路驱动</p>
 
             
 
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-12 max-w-4xl mx-auto">
+            <div id="hero-stats" class="grid grid-cols-2 md:grid-cols-4 gap-12 max-w-4xl mx-auto">
                 <div class="text-center hero-item" style="animation-delay: 1s;">
                     <div class="text-5xl font-bold mb-3" style="font-family: 'DIN Alternate', 'Inter', sans-serif; background: linear-gradient(154deg, #ffffff 0%, #8ec9ff 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">5</div>
                     <div class="text-lg text-white/50">AI Agent 协作</div>
@@ -2795,7 +2826,7 @@
                     面向 <strong class="text-white">消费品 / DTC 品牌</strong>，星帆提供 <strong class="text-white">TikTok Shop 全托管运营</strong>：<br class="intro-br">从开店到出单，一条 <strong class="text-white">AI Agent 全链路</strong>把选品到履约串成可持续的增长闭环。
                 </p>
                 <p class="xf-sub fade-in-element mt-20 mb-10">五个 Agent 分工协作，覆盖从选品到复盘的完整环节</p>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-left" style="text-align: left;">
+                <div id="xf-agents-a" class="grid grid-cols-1 md:grid-cols-3 gap-8 text-left" style="text-align: left;">
                     <div class="relative bg-white/5 border border-white/10 rounded-3xl p-8 fade-in-element">
                         <div class="flex items-center justify-center mb-6" style="width: 56px; height: 56px; border-radius: 18px; background: linear-gradient(135deg, rgb(246,51,154), rgb(255,32,86)); box-shadow: 0 14px 30px -16px rgba(246,51,154,0.85), inset 0 1px 0 rgba(255,255,255,0.38);">
                             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.5" y2="16.5"></line></svg>
@@ -2818,7 +2849,7 @@
                         <p class="text-white/50 leading-relaxed" style="font-size: 15px;">内容与素材生产 —— 产品短视频制作、带货脚本与 A/B 测试素材批量生产，保障持续日更产能。</p>
                     </div>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8 md:max-w-4xl md:mx-auto text-left" style="text-align: left;">
+            <div id="xf-agents-b" class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8 md:max-w-4xl md:mx-auto text-left" style="text-align: left;">
                     <div class="relative bg-white/5 border border-white/10 rounded-3xl p-8 fade-in-element">
                         <div class="flex items-center justify-center mb-6" style="width: 56px; height: 56px; border-radius: 18px; background: linear-gradient(135deg, rgb(173,70,255), rgb(97,95,255)); box-shadow: 0 14px 30px -16px rgba(173,70,255,0.85), inset 0 1px 0 rgba(255,255,255,0.38);">
                             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.6" y1="10.5" x2="15.4" y2="6.5"></line><line x1="8.6" y1="13.5" x2="15.4" y2="17.5"></line></svg>
@@ -2960,7 +2991,7 @@
                 </h2>
                 <p class="xf-sub fade-in-element">适配这样的企业</p>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div id="xf-who-grid" class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div class="relative bg-white/5 border border-white/10 rounded-3xl p-8 fade-in-element flex items-start gap-4">
                     <svg class="flex-shrink-0" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="rgb(56,189,248)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-top: 5px;"><polyline points="20 6 9 17 4 12"></polyline></svg>
                     <p class="text-white" style="font-size: 17px; line-height: 30px;"><strong class="text-white">消费品 / DTC 品牌</strong> —— 家居、美妆、3C 配件、服饰、宠物、户外等，面向海外消费者直接销售。</p>
@@ -2994,7 +3025,7 @@
             </div>
         </div>
         <div class="max-w-4xl mx-auto px-8 text-center relative z-10">
-            <h2 class="text-3xl md:text-5xl font-bold mb-8 fade-in-element" style="line-height: 1.5; font-weight: 600; background-image: linear-gradient(171deg, #ffffff 0%, #cfe8ff 50%, #8ec9ff 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">
+            <h2 class="text-3xl md:text-5xl font-bold mb-8 fade-in-element" style="line-height: 1.5; font-weight: 600; background-image: linear-gradient(180deg, #ffffff 0%, #cfe8ff 46%, #7dbeff 100%); background-size: 100% 100%; -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">
                 从开店到出单：让增长可复制
             </h2>
             <p class="text-white mb-12 fade-in-element" style="font-size: 18px; line-height: 28px;">以 AI Agent 全链路托管，支撑消费品牌稳定出单</p>
