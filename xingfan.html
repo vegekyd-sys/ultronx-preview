@@ -2784,6 +2784,21 @@
             /* ④ 手机端断行 */
             .cta-br { display: inline; }
         }
+            /* ③ 星擎 + 星帆：手机端竖排 3 块（不滑动）——覆盖前面的横滑规则 */
+        @media (max-width: 768px) {
+            #xf-dual-grid {
+                display: grid !important;
+                grid-template-columns: 1fr !important;
+                gap: 12px !important;
+                overflow: visible !important;
+                width: auto !important;
+                max-width: none !important;
+                margin: 0 !important;
+                padding: 0 !important;
+            }
+            #xf-dual-grid > div { flex: none !important; scroll-snap-align: none !important; }
+            #xf-dual-grid > div:first-child { grid-column: auto !important; }
+        }
     </style>
 </head>
 <body>
