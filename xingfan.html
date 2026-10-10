@@ -2758,6 +2758,10 @@
                 white-space: normal !important;
             }
         }
+            /* ② 真实业务数据：滑动行真正通栏（解除 max-width 限制，左右各 -20px 之外再补满） */
+        @media (max-width: 768px) {
+            #xf-data-grid { max-width: none !important; width: calc(100% + 40px) !important; }
+        }
     </style>
 </head>
 <body>
