@@ -737,6 +737,24 @@
             .cta-tags { flex-wrap: nowrap; }
         }
 
+        /* 星帆是什么 段落：换行只在桌面生效 */
+        .intro-br { display: none; }
+        @media (min-width: 769px) { .intro-br { display: inline; } }
+
+        /* 手机端：核心交付 / 星擎+星帆 / 真实数据 —— 一行 2 块 */
+        @media (max-width: 768px) {
+            #xf-core-grid, #xf-dual-grid, #xf-data-grid {
+                grid-template-columns: repeat(2, 1fr) !important;
+                gap: 12px !important;
+            }
+            #xf-core-grid > div, #xf-dual-grid > div { padding: 18px !important; border-radius: 20px !important; }
+            #xf-core-grid h3, #xf-dual-grid h3 { font-size: 16px !important; margin-bottom: 6px !important; }
+            #xf-core-grid p, #xf-dual-grid p { font-size: 13px !important; line-height: 20px !important; }
+            #xf-core-grid svg { width: 24px !important; height: 24px !important; }
+            #xf-data-grid figcaption span:first-child { font-size: 16px !important; }
+            #xf-data-grid figcaption span:last-child { font-size: 12px !important; line-height: 18px !important; }
+        }
+
         /* Navigation */
         .navbar {
             position: fixed;
@@ -2733,7 +2751,7 @@
                 从开店<br>到出单
             </h1>
 
-            <p class="text-gray-300 font-light mb-32 hero-item" style="font-size: 20px; font-weight: 400; letter-spacing: -0.45px; animation-delay: 0.6s;">消费品出海 · TikTok Shop 全托管，AI Agent 全链路驱动</p>
+            <p class="text-gray-300 font-light mb-32 hero-item" style="font-size: 20px; font-weight: 400; letter-spacing: -0.45px; animation-delay: 0.6s;">消费品出海 · TikTok Shop 全托管 · AI Agent 全链路驱动</p>
 
             
 
@@ -2773,8 +2791,8 @@
                 <p class="xf-sub fade-in-element">消费品出海的 TikTok Shop 全托管</p>
             </div>
             <div class="max-w-4xl mx-auto text-center">
-                <p class="text-white/70 fade-in-element" style="font-size: 20px; line-height: 36px;">
-                    面向 <strong class="text-white">消费品 / DTC 品牌</strong>，星帆提供 <strong class="text-white">TikTok Shop 全托管运营</strong>：<br>从开店到出单，一条 <strong class="text-white">AI Agent 全链路</strong>把选品到履约串成可持续的增长闭环。
+                <p class="text-white fade-in-element" style="font-size: 20px; line-height: 36px;">
+                    面向 <strong class="text-white">消费品 / DTC 品牌</strong>，星帆提供 <strong class="text-white">TikTok Shop 全托管运营</strong>：<br class="intro-br">从开店到出单，一条 <strong class="text-white">AI Agent 全链路</strong>把选品到履约串成可持续的增长闭环。
                 </p>
                 <p class="xf-sub fade-in-element mt-20 mb-10">五个 Agent 分工协作，覆盖从选品到复盘的完整环节</p>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-left" style="text-align: left;">
@@ -2831,7 +2849,7 @@
                 </h2>
                 <p class="xf-sub fade-in-element">六项核心交付，一支全托管团队</p>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div id="xf-core-grid" class="grid grid-cols-1 md:grid-cols-3 gap-8">
                     <div class="relative bg-white/5 border border-white/10 rounded-3xl p-8 fade-in-element">
                         <div class="flex items-center justify-center mb-5" style="width: 56px; height: 56px; border-radius: 50%; background: rgba(246,51,154,0.14); border: 1.5px solid rgba(246,51,154,0.5); box-shadow: inset 0 0 20px rgba(246,51,154,0.10);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="rgb(246,51,154)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 9.5 5 4h14l1.5 5.5"></path><path d="M4 9.5V19a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1V9.5"></path><path d="M9.5 20v-6h5v6"></path></svg></div>
                         <h3 class="xf-cardtitle-s mb-2">店铺注册与开通</h3>
@@ -2880,7 +2898,7 @@
                 </h2>
                 <p class="xf-sub fade-in-element">账号资产、买家互动与店铺出单，全链路数据可查</p>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-14 md:max-w-5xl md:mx-auto">
+            <div id="xf-data-grid" class="grid grid-cols-1 md:grid-cols-3 gap-10 md:max-w-4xl md:mx-auto">
                 <figure class="fade-in-element">
                     <div class="xf-shot"><img src="images/3c-account-data.jpg" alt="账号资产" loading="lazy"></div>
                     <figcaption class="mt-5" style="text-align: center;"><span class="xf-cardtitle-s">账号资产</span><br><span class="xf-note">粉丝、互动与账号资料沉淀为可复用资产</span></figcaption>
@@ -2909,7 +2927,7 @@
                 </h2>
                 <p class="xf-sub fade-in-element">B2B 获客与 B2C 出单，覆盖海外市场双模式</p>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div id="xf-dual-grid" class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div class="relative bg-white/5 border border-white/10 rounded-3xl p-8 fade-in-element" style="background: rgba(255,255,255,0.07); border-color: rgba(255,255,255,0.14); backdrop-filter: blur(18px) saturate(1.25); -webkit-backdrop-filter: blur(18px) saturate(1.25);">
                     <div class="xf-tile flex items-center justify-center mb-5" style="width: 56px; height: 56px; border-radius: 18px;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"></circle><path d="M3.5 12h17"></path><path d="M12 3.5a15 15 0 0 1 0 17a15 15 0 0 1 0-17z"></path></svg></div>
                     <h3 class="xf-cardtitle mb-3">B2B + B2C</h3>
