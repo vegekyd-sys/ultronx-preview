@@ -2762,6 +2762,28 @@
         @media (max-width: 768px) {
             #xf-data-grid { max-width: none !important; width: calc(100% + 40px) !important; }
         }
+            /* ④ 尾屏标题断行点（只有手机端断） */
+        .cta-br { display: none; }
+
+        @media (max-width: 768px) {
+            /* ① 首屏：副标题↔数字间距加大；左右两组之间的列间距收小 */
+            #hero-sub { margin-bottom: 52px !important; }
+            #hero-stats { gap: 26px 10px !important; }
+            /* ② 真实数据：默认左边留边距、右边通栏；滑动时左右都贴屏 */
+            #xf-data-grid { padding-left: 20px !important; padding-right: 0 !important; }
+            /* ③ 星擎+星帆：回到横向 3 块（可左右滑动） */
+            #xf-dual-grid {
+                display: flex !important; overflow-x: auto !important; scroll-snap-type: x mandatory !important;
+                gap: 12px !important; width: calc(100% + 40px) !important; max-width: none !important;
+                margin-left: -20px !important; margin-right: -20px !important;
+                padding-left: 20px !important; padding-right: 0 !important;
+                scrollbar-width: none !important; -webkit-overflow-scrolling: touch !important;
+            }
+            #xf-dual-grid::-webkit-scrollbar { display: none !important; }
+            #xf-dual-grid > div { flex: 0 0 74% !important; scroll-snap-align: center !important; grid-column: auto !important; }
+            /* ④ 手机端断行 */
+            .cta-br { display: inline; }
+        }
     </style>
 </head>
 <body>
@@ -3053,7 +3075,7 @@
         </div>
         <div class="max-w-4xl mx-auto px-8 text-center relative z-10">
             <h2 class="text-3xl md:text-5xl font-bold mb-8 fade-in-element" style="line-height: 1.5; font-weight: 600; background-image: linear-gradient(180deg, #ffffff 0%, #cfe8ff 46%, #7dbeff 100%); background-size: 100% 100%; -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">
-                从开店到出单：让增长可复制
+                从开店到出单：<br class="cta-br">让增长可复制
             </h2>
             <p class="text-white mb-12 fade-in-element" style="font-size: 18px; line-height: 28px;">以 AI Agent 全链路托管，支撑消费品牌稳定出单</p>
                         <div class="cta-tags fade-in-element" style="display: flex; align-items: center; justify-content: center; gap: 12px;">
